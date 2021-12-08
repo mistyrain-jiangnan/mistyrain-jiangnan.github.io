@@ -2,8 +2,8 @@
 title: flex 布局
 urlname: btx8xl
 date: '2021-11-18 19:18:06 +0800'
-tags: []
-categories: []
+tags: flex
+categories: flex
 ---
 
 flex 布局 又称 弹性布局 是前端布局方式中的一种布局方式，较于传统的盒子模型 flex 布局更具有灵活性

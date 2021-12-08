@@ -2,8 +2,8 @@
 title: 从用户输入URL到浏览器呈现页面经过了哪些过程
 urlname: esffih
 date: '2021-09-03 16:14:15 +0800'
-tags: []
-categories: []
+tags: http
+categories: http
 ---
 
 ### DNS 解析

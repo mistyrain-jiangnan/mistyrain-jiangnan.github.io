@@ -1,14 +1,5 @@
-# .github.io
 
-<p align="center"><a href="https://adkcss.coding-pages.com" target="_blank" rel="noopener noreferrer"><img width="100" src="https://adkcss.coding-pages.com/favicon.png" alt="Blog logo"></a></p>
-
-<p align="center">
-  <a href="https://travis-ci.com//MyBlog"><img src="https://travis-ci.com//.github.io.svg" alt="Build Status"></a>
-  <a href="https://github.com//hexo-blog-fly/network"><img src="https://img.shields.io/github/forks//hexo-blog-fly.svg" alt="GitHub forks"></a>
-  <a href="https://github.com//hexo-blog-fly/stargazers"><img src="https://img.shields.io/github/stars//hexo-blog-fly.svg" alt="GitHub stars"></a>
-  <br>
-
-**博客基于`Hexo`框架搭建，用到[hexo-theme-matery](https://github.com//hexo-theme-matery)主题,并在此基础之上做了很多修改，修复了一些bug，增加了一些新的特性和功能，博客地址：[https://.github.io](https://.github.io/)，博客演示：[sunhwee.com](http://mistyrainblog.top/)。**
+**博客基于`Hexo`框架搭建，用到[hexo-theme-matery](https://github.com//hexo-theme-matery)主题,并在此基础之上做了很多修改，修复了一些bug，增加了一些新的特性和功能，博客地址：[https://.github.io](https://.github.io/)，博客演示：[mistyrainblog.top](http://mistyrainblog.top/)。**
 
 **简单使用方法**：
 
