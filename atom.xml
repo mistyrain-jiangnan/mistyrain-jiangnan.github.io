@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>烟雨江南</title>
+  
+  <subtitle>烟雨江南的博客</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://mistyrain-jiangnan.top/"/>
+  <updated>2021-12-07T09:30:20.375Z</updated>
+  <id>https://mistyrain-jiangnan.top/</id>
+  
+  <author>
+    <name>烟雨江南</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>flex 布局</title>
+    <link href="https://mistyrain-jiangnan.top/2021/11/18/btx8xl/"/>
+    <id>https://mistyrain-jiangnan.top/2021/11/18/btx8xl/</id>
+    <published>2021-11-18T11:18:06.000Z</published>
+    <updated>2021-12-07T09:30:20.375Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;flex 布局 又称 弹性布局 是前端布局方式中的一种布局方式，较于传统的盒子模型 flex 布局更具有灵活性&lt;/p&gt;
+&lt;h2 id=&quot;使用&quot;&gt;&lt;a href=&quot;#使用&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>插件形式注册全局组件</title>
+    <link href="https://mistyrain-jiangnan.top/2021/11/18/yynwou/"/>
+    <id>https://mistyrain-jiangnan.top/2021/11/18/yynwou/</id>
+    <published>2021-11-18T11:08:50.000Z</published>
+    <updated>2021-12-07T09:30:20.007Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;使用-vue-use-以插件形式注册全局组件&quot;&gt;&lt;a href=&quot;#使用-vue-use-以插件形式注册全局组件&quot; class=&quot;headerlink&quot; title=&quot;使用 vue.use() 以插件形式注册全局组件&quot;&gt;&lt;/a&gt;使用 vue.use()
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>工作中用到的函数</title>
+    <link href="https://mistyrain-jiangnan.top/2021/11/18/acu5in/"/>
+    <id>https://mistyrain-jiangnan.top/2021/11/18/acu5in/</id>
+    <published>2021-11-18T09:44:43.000Z</published>
+    <updated>2021-12-08T02:21:45.599Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;计算服务器时间&quot;&gt;&lt;a href=&quot;#计算服务器时间&quot; class=&quot;headerlink&quot; title=&quot;计算服务器时间&quot;&gt;&lt;/a&gt;计算服务器时间&lt;/h2&gt;&lt;pre class=&quot; language-javascript&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+      <category term="函数" scheme="https://mistyrain-jiangnan.top/categories/%E5%87%BD%E6%95%B0/"/>
+    
+    
+      <category term="函数" scheme="https://mistyrain-jiangnan.top/tags/%E5%87%BD%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>各种校验和正则</title>
+    <link href="https://mistyrain-jiangnan.top/2021/11/18/wwasw8/"/>
+    <id>https://mistyrain-jiangnan.top/2021/11/18/wwasw8/</id>
+    <published>2021-11-18T09:42:21.000Z</published>
+    <updated>2021-12-07T09:30:19.169Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;密码校验规则-必须包含大写字母、小写字母、数字，特殊字符中的三种类型，不可包含汉字&quot;&gt;&lt;a href=&quot;#密码校验规则-必须包含大写字母、小写字母、数字，特殊字符中的三种类型，不可包含汉字&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>账号密码</title>
+    <link href="https://mistyrain-jiangnan.top/2021/11/08/gp2pgz/"/>
+    <id>https://mistyrain-jiangnan.top/2021/11/08/gp2pgz/</id>
+    <published>2021-11-08T10:49:14.000Z</published>
+    <updated>2021-12-07T09:30:20.010Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;小飞机的&lt;br&gt;163 邮箱&lt;br&gt;@zdh137204&lt;/p&gt;
+&lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>前端加解密</title>
+    <link href="https://mistyrain-jiangnan.top/2021/11/03/su461v/"/>
+    <id>https://mistyrain-jiangnan.top/2021/11/03/su461v/</id>
+    <published>2021-11-03T05:44:13.000Z</published>
+    <updated>2021-12-07T09:30:19.429Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;request-文件中通过-axion-请求来实现封装的请求拦截&quot;&gt;&lt;a href=&quot;#request-文件中通过-axion-请求来实现封装的请求拦截&quot; class=&quot;headerlink&quot; title=&quot;request 文件中通过 axion
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>打字机效果组件 。</title>
+    <link href="https://mistyrain-jiangnan.top/2021/10/23/hhkdgl/"/>
+    <id>https://mistyrain-jiangnan.top/2021/10/23/hhkdgl/</id>
+    <published>2021-10-23T04:05:05.000Z</published>
+    <updated>2021-12-07T09:30:20.021Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre class=&quot; language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;template&lt;span class=&quot;token
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>使用Web动画API制作播放粒子效果</title>
+    <link href="https://mistyrain-jiangnan.top/2021/10/12/tw5n2f/"/>
+    <id>https://mistyrain-jiangnan.top/2021/10/12/tw5n2f/</id>
+    <published>2021-10-12T07:05:47.000Z</published>
+    <updated>2021-12-07T09:30:20.392Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;HTML&quot;&gt;&lt;a href=&quot;#HTML&quot; class=&quot;headerlink&quot; title=&quot;HTML&quot;&gt;&lt;/a&gt;HTML&lt;/h2&gt;&lt;pre class=&quot; language-javascript&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>前端生成pdf文件</title>
+    <link href="https://mistyrain-jiangnan.top/2021/10/11/wd1b7r/"/>
+    <id>https://mistyrain-jiangnan.top/2021/10/11/wd1b7r/</id>
+    <published>2021-10-11T09:22:21.000Z</published>
+    <updated>2021-12-07T09:30:19.444Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;dom-结构&quot;&gt;&lt;a href=&quot;#dom-结构&quot; class=&quot;headerlink&quot; title=&quot;dom 结构&quot;&gt;&lt;/a&gt;dom 结构&lt;/h2&gt;&lt;pre class=&quot; language-javascript&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Element回到顶部的组件</title>
+    <link href="https://mistyrain-jiangnan.top/2021/10/11/wgc4ro/"/>
+    <id>https://mistyrain-jiangnan.top/2021/10/11/wgc4ro/</id>
+    <published>2021-10-11T02:36:58.000Z</published>
+    <updated>2021-12-07T09:30:20.034Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;Dom-结构&quot;&gt;&lt;a href=&quot;#Dom-结构&quot; class=&quot;headerlink&quot; title=&quot;Dom 结构&quot;&gt;&lt;/a&gt;Dom 结构&lt;/h3&gt;&lt;pre class=&quot; language-javascript&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>满足大部分要求的button组件</title>
+    <link href="https://mistyrain-jiangnan.top/2021/09/24/gg2asx/"/>
+    <id>https://mistyrain-jiangnan.top/2021/09/24/gg2asx/</id>
+    <published>2021-09-24T09:46:44.000Z</published>
+    <updated>2021-12-07T09:30:20.061Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;组件页面结构&quot;&gt;&lt;a href=&quot;#组件页面结构&quot; class=&quot;headerlink&quot; title=&quot;组件页面结构&quot;&gt;&lt;/a&gt;组件页面结构&lt;/h2&gt;&lt;pre class=&quot; language-javascript&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>基于Vue的前端架构</title>
+    <link href="https://mistyrain-jiangnan.top/2021/09/24/nftml3/"/>
+    <id>https://mistyrain-jiangnan.top/2021/09/24/nftml3/</id>
+    <published>2021-09-24T05:54:22.000Z</published>
+    <updated>2021-12-07T09:30:20.281Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-分解需求&quot;&gt;&lt;a href=&quot;#1-分解需求&quot; class=&quot;headerlink&quot; title=&quot;1.分解需求&quot;&gt;&lt;/a&gt;1.分解需求&lt;/h2&gt;&lt;h3 id=&quot;技术栈&quot;&gt;&lt;a href=&quot;#技术栈&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>纯 CSS 实现文字输入效果</title>
+    <link href="https://mistyrain-jiangnan.top/2021/09/16/gv5gfw/"/>
+    <id>https://mistyrain-jiangnan.top/2021/09/16/gv5gfw/</id>
+    <published>2021-09-16T10:43:03.000Z</published>
+    <updated>2021-12-07T09:30:20.401Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://codepen.io/Chokcoco/pen/jOwEqvR&quot;&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;pre class=&quot; language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>有趣的网站</title>
+    <link href="https://mistyrain-jiangnan.top/2021/09/10/lxo0mf/"/>
+    <id>https://mistyrain-jiangnan.top/2021/09/10/lxo0mf/</id>
+    <published>2021-09-10T09:18:07.000Z</published>
+    <updated>2021-12-07T09:30:20.301Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ol&gt;
+&lt;li&gt;Flex Box 冒险游戏: &lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>图解 Git 各种用法，简单明了，一目了然！</title>
+    <link href="https://mistyrain-jiangnan.top/2021/09/09/vfv2ou/"/>
+    <id>https://mistyrain-jiangnan.top/2021/09/09/vfv2ou/</id>
+    <published>2021-09-09T08:28:17.000Z</published>
+    <updated>2021-12-07T09:30:19.529Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;基本用法&quot;&gt;&lt;a href=&quot;#基本用法&quot; class=&quot;headerlink&quot; title=&quot;基本用法&quot;&gt;&lt;/a&gt;基本用法&lt;/h2&gt;&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>如何实现一个文件的上传</title>
+    <link href="https://mistyrain-jiangnan.top/2021/09/06/oiqhu4/"/>
+    <id>https://mistyrain-jiangnan.top/2021/09/06/oiqhu4/</id>
+    <published>2021-09-06T08:26:30.000Z</published>
+    <updated>2021-12-07T09:30:19.747Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript 的 8 种数据类型以及它们的底层数据结构</title>
+    <link href="https://mistyrain-jiangnan.top/2021/09/06/vprpcx/"/>
+    <id>https://mistyrain-jiangnan.top/2021/09/06/vprpcx/</id>
+    <published>2021-09-06T07:59:45.000Z</published>
+    <updated>2021-12-07T09:30:19.859Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;基本类型：String、Boolean、Number、Undefined、Null、Symbol、BigInt&lt;br&gt;引用类型：Object&lt;br&gt;下面我会详细说一下其中七种数据类型（不包括 BigInt）中可能你不太知道的一些细节。&lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>一些常用的代码片段</title>
+    <link href="https://mistyrain-jiangnan.top/2021/09/06/uig1g2/"/>
+    <id>https://mistyrain-jiangnan.top/2021/09/06/uig1g2/</id>
+    <published>2021-09-06T06:17:02.000Z</published>
+    <updated>2021-12-07T09:30:19.241Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-下载一个-excel-文档&quot;&gt;&lt;a href=&quot;#1-下载一个-excel-文档&quot; class=&quot;headerlink&quot; title=&quot;1. 下载一个 excel 文档&quot;&gt;&lt;/a&gt;1. 下载一个 excel 文档&lt;/h2&gt;&lt;p&gt;同时适用于 word,ppt
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>前端性能优化</title>
+    <link href="https://mistyrain-jiangnan.top/2021/09/03/gttgdc/"/>
+    <id>https://mistyrain-jiangnan.top/2021/09/03/gttgdc/</id>
+    <published>2021-09-03T08:14:17.000Z</published>
+    <updated>2021-12-07T09:30:19.879Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;CSS&quot;&gt;&lt;a href=&quot;#CSS&quot; class=&quot;headerlink&quot; title=&quot;CSS&quot;&gt;&lt;/a&gt;CSS&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;优化选择器路径：健全的 css 选择器固然是能让开发看起来更清晰，然后对于 css
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>从用户输入URL到浏览器呈现页面经过了哪些过程</title>
+    <link href="https://mistyrain-jiangnan.top/2021/09/03/esffih/"/>
+    <id>https://mistyrain-jiangnan.top/2021/09/03/esffih/</id>
+    <published>2021-09-03T08:14:15.000Z</published>
+    <updated>2021-12-07T09:30:19.913Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;DNS-解析&quot;&gt;&lt;a href=&quot;#DNS-解析&quot; class=&quot;headerlink&quot; title=&quot;DNS 解析&quot;&gt;&lt;/a&gt;DNS 解析&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;浏览器根据地址去本身缓存中查找 dns 解析记录，如果有，则直接返回 IP
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
