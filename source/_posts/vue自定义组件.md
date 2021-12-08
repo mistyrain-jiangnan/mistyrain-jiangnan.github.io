@@ -2,8 +2,8 @@
 title: 插件形式注册全局组件
 urlname: yynwou
 date: '2021-11-18 19:08:50 +0800'
-tags: []
-categories: []
+tags: vue自定义组件
+categories: vue自定义组件
 ---
 
 ## 使用 vue.use() 以插件形式注册全局组件
@@ -24,23 +24,23 @@ vue.use ( ) 它的参数是一个对象 ，在这个对象中存有一个 instal
 ```javascript
 // 单独定义js文件
 // 先引入 组件
-	// vue2
+ // vue2
 export default{
-	install(Vue){
-  	Vue.component(自定义标签 ,自定义组件名)
+ install(Vue){
+   Vue.component(自定义标签 ,自定义组件名)
   }
 }
-	// vue3
+ // vue3
 export default {
-	install(app){
-  	app.component(自定义标签 ,自定义组件名)
+ install(app){
+   app.component(自定义标签 ,自定义组件名)
   }
 }
 
 // main.js中 导入扩展文件 注册
-	// vue2
+ // vue2
 Vue.use(功能名)
-	// vue3中
+ // vue3中
 createApp(App).use(store).use(router).use(组件).mount('#app')
 ```
 

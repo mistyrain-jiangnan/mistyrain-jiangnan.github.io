@@ -2,11 +2,11 @@
 title: flex实现中间文字，两边横线（1px）
 urlname: qvq4h7
 date: '2021-08-06 16:30:33 +0800'
-tags: []
-categories: []
+tags: css
+categories: css
 ---
 
-### 首先来看组件的需求：
+### 首先来看组件的需求
 
 - 左右两边的横线在移动端显示为 1px。
 - 中间内容部分可以随意传入文字内容。

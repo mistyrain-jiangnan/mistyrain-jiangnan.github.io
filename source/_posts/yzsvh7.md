@@ -2,8 +2,8 @@
 title: 数组 Array方法
 urlname: yzsvh7
 date: '2021-09-03 15:05:24 +0800'
-tags: []
-categories: []
+tags: 数组
+categories: 数组
 ---
 
 ## 数组去重

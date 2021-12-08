@@ -2,8 +2,8 @@
 title: 文本内容复制指令 v-copy
 urlname: ypo6s9
 date: '2021-08-06 16:21:52 +0800'
-tags: []
-categories: []
+tags: vue自定义指令
+categories: vue自定义指令
 ---
 
 使用该指令可以复制元素的文本内容。

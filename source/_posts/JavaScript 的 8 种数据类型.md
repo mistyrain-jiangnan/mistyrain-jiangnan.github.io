@@ -2,8 +2,8 @@
 title: JavaScript 的 8 种数据类型以及它们的底层数据结构
 urlname: vprpcx
 date: '2021-09-06 15:59:45 +0800'
-tags: []
-categories: []
+tags: Js
+categories: Js
 ---
 
 基本类型：String、Boolean、Number、Undefined、Null、Symbol、BigInt

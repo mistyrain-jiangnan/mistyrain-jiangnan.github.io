@@ -2,8 +2,8 @@
 title: 图解 Git 各种用法，简单明了，一目了然！
 urlname: vfv2ou
 date: '2021-09-09 16:28:17 +0800'
-tags: []
-categories: []
+tags: git
+categories: git图解
 ---
 
 ## 基本用法
@@ -75,7 +75,7 @@ reset 命令把当前分支指向另一个位置，并且有选择的变动工�
 ![image.png](https://cdn.nlark.com/yuque/0/2021/png/12838787/1631176104160-8487aeac-bb81-4858-80b1-588b6cfeaec4.png#clientId=ue81bae5b-8541-4&from=paste&id=u16342c63&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1&originWidth=1&originalType=url∶=1&size=68&status=done&style=none&taskId=u44149ff3-450e-43f1-932d-bfbce045a4f)
 如果没有给出提交点的版本号，那么默认用*HEAD*。这样，分支指向不变，但是索引会回滚到最后一次提交，如果用--hard 选项，工作目录也同样。
 ![image.png](https://cdn.nlark.com/yuque/0/2021/png/12838787/1631176104349-6a1f2180-6bde-4193-8102-de1468564ff6.png#clientId=ue81bae5b-8541-4&from=paste&id=u4e67063c&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1&originWidth=1&originalType=url∶=1&size=68&status=done&style=none&taskId=u72100c88-b175-497f-9506-16e266dd8ea)
-如果给了文件名(或者 -p 选项), 那么工作效果和带文件名的 checkout 差不多，除了索引被更新。Java 核心技术教程和示例源码：https://github.com/javastacks/javastack
+如果给了文件名(或者 -p 选项), 那么工作效果和带文件名的 checkout 差不多，除了索引被更新。Java 核心技术教程和示例源码：<https://github.com/javastacks/javastack>
 ![image.png](https://cdn.nlark.com/yuque/0/2021/png/12838787/1631176104342-c920fcd5-072c-4e0f-b0b8-997917154f36.png#clientId=ue81bae5b-8541-4&from=paste&id=u880dc6b7&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1&originWidth=1&originalType=url∶=1&size=68&status=done&style=none&taskId=u803dfb5b-1a2b-4397-a5ff-018b7781a55)
 
 ### Merge

@@ -2,8 +2,8 @@
 title: 前端生成pdf文件
 urlname: wd1b7r
 date: '2021-10-11 17:22:21 +0800'
-tags: []
-categories: []
+tags: Js
+categories: Js
 ---
 
 ## dom 结构

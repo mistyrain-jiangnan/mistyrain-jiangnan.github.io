@@ -2,8 +2,8 @@
 title: 基于Vue的前端架构
 urlname: nftml3
 date: '2021-09-24 13:54:22 +0800'
-tags: []
-categories: []
+tags: vue
+categories: vue
 ---
 
 ## 1.分解需求

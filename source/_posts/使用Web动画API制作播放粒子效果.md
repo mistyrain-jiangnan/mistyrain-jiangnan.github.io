@@ -2,8 +2,8 @@
 title: 使用Web动画API制作播放粒子效果
 urlname: tw5n2f
 date: '2021-10-12 15:05:47 +0800'
-tags: []
-categories: []
+tags: css
+categories: css
 ---
 
 ## HTML
