@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mistyrain-jiangnan.top/"/>
-  <updated>2021-12-07T09:30:20.375Z</updated>
+  <updated>2021-12-08T07:13:14.903Z</updated>
   <id>https://mistyrain-jiangnan.top/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>flex 布局</title>
-    <link href="https://mistyrain-jiangnan.top/2021/11/18/btx8xl/"/>
-    <id>https://mistyrain-jiangnan.top/2021/11/18/btx8xl/</id>
+    <link href="https://mistyrain-jiangnan.top/2021/11/18/flex-bu-ju/"/>
+    <id>https://mistyrain-jiangnan.top/2021/11/18/flex-bu-ju/</id>
     <published>2021-11-18T11:18:06.000Z</published>
-    <updated>2021-12-07T09:30:20.375Z</updated>
+    <updated>2021-12-08T07:13:14.903Z</updated>
     
     <summary type="html">
     
@@ -36,6 +36,10 @@
     
     </summary>
     
+      <category term="flex" scheme="https://mistyrain-jiangnan.top/categories/flex/"/>
+    
+    
+      <category term="flex" scheme="https://mistyrain-jiangnan.top/tags/flex/"/>
     
   </entry>
   
@@ -63,10 +67,10 @@
   
   <entry>
     <title>工作中用到的函数</title>
-    <link href="https://mistyrain-jiangnan.top/2021/11/18/acu5in/"/>
-    <id>https://mistyrain-jiangnan.top/2021/11/18/acu5in/</id>
+    <link href="https://mistyrain-jiangnan.top/2021/11/18/gong-zuo-zhong-yong-dao-de-han-shu/"/>
+    <id>https://mistyrain-jiangnan.top/2021/11/18/gong-zuo-zhong-yong-dao-de-han-shu/</id>
     <published>2021-11-18T09:44:43.000Z</published>
-    <updated>2021-12-08T02:21:45.599Z</updated>
+    <updated>2021-12-08T07:11:37.472Z</updated>
     
     <summary type="html">
     
@@ -110,32 +114,6 @@
   </entry>
   
   <entry>
-    <title>账号密码</title>
-    <link href="https://mistyrain-jiangnan.top/2021/11/08/gp2pgz/"/>
-    <id>https://mistyrain-jiangnan.top/2021/11/08/gp2pgz/</id>
-    <published>2021-11-08T10:49:14.000Z</published>
-    <updated>2021-12-07T09:30:20.010Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;小飞机的&lt;br&gt;163 邮箱&lt;br&gt;@zdh137204&lt;/p&gt;
-&lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>前端加解密</title>
     <link href="https://mistyrain-jiangnan.top/2021/11/03/su461v/"/>
     <id>https://mistyrain-jiangnan.top/2021/11/03/su461v/</id>
@@ -159,10 +137,10 @@
   
   <entry>
     <title>打字机效果组件 。</title>
-    <link href="https://mistyrain-jiangnan.top/2021/10/23/hhkdgl/"/>
-    <id>https://mistyrain-jiangnan.top/2021/10/23/hhkdgl/</id>
+    <link href="https://mistyrain-jiangnan.top/2021/10/23/da-zi-ji-xiao-guo-zu-jian/"/>
+    <id>https://mistyrain-jiangnan.top/2021/10/23/da-zi-ji-xiao-guo-zu-jian/</id>
     <published>2021-10-23T04:05:05.000Z</published>
-    <updated>2021-12-07T09:30:20.021Z</updated>
+    <updated>2021-12-08T07:19:19.182Z</updated>
     
     <summary type="html">
     
@@ -176,6 +154,10 @@
     
     </summary>
     
+      <category term="vue组件" scheme="https://mistyrain-jiangnan.top/categories/vue%E7%BB%84%E4%BB%B6/"/>
+    
+    
+      <category term="vue组件" scheme="https://mistyrain-jiangnan.top/tags/vue%E7%BB%84%E4%BB%B6/"/>
     
   </entry>
   
@@ -247,10 +229,10 @@
   
   <entry>
     <title>满足大部分要求的button组件</title>
-    <link href="https://mistyrain-jiangnan.top/2021/09/24/gg2asx/"/>
-    <id>https://mistyrain-jiangnan.top/2021/09/24/gg2asx/</id>
+    <link href="https://mistyrain-jiangnan.top/2021/09/24/button-zu-jian/"/>
+    <id>https://mistyrain-jiangnan.top/2021/09/24/button-zu-jian/</id>
     <published>2021-09-24T09:46:44.000Z</published>
-    <updated>2021-12-07T09:30:20.061Z</updated>
+    <updated>2021-12-08T07:15:49.405Z</updated>
     
     <summary type="html">
     
@@ -264,6 +246,10 @@
     
     </summary>
     
+      <category term="vue组件" scheme="https://mistyrain-jiangnan.top/categories/vue%E7%BB%84%E4%BB%B6/"/>
+    
+    
+      <category term="vue组件" scheme="https://mistyrain-jiangnan.top/tags/vue%E7%BB%84%E4%BB%B6/"/>
     
   </entry>
   
@@ -291,10 +277,10 @@
   
   <entry>
     <title>纯 CSS 实现文字输入效果</title>
-    <link href="https://mistyrain-jiangnan.top/2021/09/16/gv5gfw/"/>
-    <id>https://mistyrain-jiangnan.top/2021/09/16/gv5gfw/</id>
+    <link href="https://mistyrain-jiangnan.top/2021/09/16/chun-css-shi-xian-wen-zi-shu-ru-xiao-guo/"/>
+    <id>https://mistyrain-jiangnan.top/2021/09/16/chun-css-shi-xian-wen-zi-shu-ru-xiao-guo/</id>
     <published>2021-09-16T10:43:03.000Z</published>
-    <updated>2021-12-07T09:30:20.401Z</updated>
+    <updated>2021-12-08T07:18:56.538Z</updated>
     
     <summary type="html">
     
@@ -310,6 +296,10 @@
     
     </summary>
     
+      <category term="css" scheme="https://mistyrain-jiangnan.top/categories/css/"/>
+    
+    
+      <category term="css" scheme="https://mistyrain-jiangnan.top/tags/css/"/>
     
   </entry>
   
@@ -427,10 +417,10 @@
   
   <entry>
     <title>前端性能优化</title>
-    <link href="https://mistyrain-jiangnan.top/2021/09/03/gttgdc/"/>
-    <id>https://mistyrain-jiangnan.top/2021/09/03/gttgdc/</id>
+    <link href="https://mistyrain-jiangnan.top/2021/09/03/qian-duan-xing-neng-you-hua/"/>
+    <id>https://mistyrain-jiangnan.top/2021/09/03/qian-duan-xing-neng-you-hua/</id>
     <published>2021-09-03T08:14:17.000Z</published>
-    <updated>2021-12-07T09:30:19.879Z</updated>
+    <updated>2021-12-08T07:18:03.551Z</updated>
     
     <summary type="html">
     
@@ -445,15 +435,19 @@
     
     </summary>
     
+      <category term="性能优化" scheme="https://mistyrain-jiangnan.top/categories/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+    
+      <category term="性能优化" scheme="https://mistyrain-jiangnan.top/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
   <entry>
     <title>从用户输入URL到浏览器呈现页面经过了哪些过程</title>
-    <link href="https://mistyrain-jiangnan.top/2021/09/03/esffih/"/>
-    <id>https://mistyrain-jiangnan.top/2021/09/03/esffih/</id>
+    <link href="https://mistyrain-jiangnan.top/2021/09/03/cong-yong-hu-shu-ru-url-dao-liu-lan-qi-cheng-xian-ye-mian-jing-guo-liao-na-xie-guo-cheng/"/>
+    <id>https://mistyrain-jiangnan.top/2021/09/03/cong-yong-hu-shu-ru-url-dao-liu-lan-qi-cheng-xian-ye-mian-jing-guo-liao-na-xie-guo-cheng/</id>
     <published>2021-09-03T08:14:15.000Z</published>
-    <updated>2021-12-07T09:30:19.913Z</updated>
+    <updated>2021-12-08T07:14:04.668Z</updated>
     
     <summary type="html">
     
@@ -463,6 +457,32 @@
         
           &lt;h3 id=&quot;DNS-解析&quot;&gt;&lt;a href=&quot;#DNS-解析&quot; class=&quot;headerlink&quot; title=&quot;DNS 解析&quot;&gt;&lt;/a&gt;DNS 解析&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;浏览器根据地址去本身缓存中查找 dns 解析记录，如果有，则直接返回 IP
+        
+      
+    
+    </summary>
+    
+      <category term="http" scheme="https://mistyrain-jiangnan.top/categories/http/"/>
+    
+    
+      <category term="http" scheme="https://mistyrain-jiangnan.top/tags/http/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常见 meta 标签</title>
+    <link href="https://mistyrain-jiangnan.top/2021/09/03/chang-jian-meta-biao-qian/"/>
+    <id>https://mistyrain-jiangnan.top/2021/09/03/chang-jian-meta-biao-qian/</id>
+    <published>2021-09-03T08:14:14.000Z</published>
+    <updated>2021-12-08T07:12:22.277Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;网页相关信息&quot;&gt;&lt;a href=&quot;#网页相关信息&quot; class=&quot;headerlink&quot; title=&quot;网页相关信息&quot;&gt;&lt;/a&gt;网页相关信息&lt;/h2&gt;&lt;h3 id=&quot;网页关键字-SEO&quot;&gt;&lt;a href=&quot;#网页关键字-SEO&quot;
         
       
     
