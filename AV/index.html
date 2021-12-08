@@ -41,7 +41,6 @@
 
     <script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-    
     <script>
         var _hmt = _hmt || [];
         (function () {
@@ -478,6 +477,40 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                         <i class="fa fa-music"></i>&nbsp;&nbsp;听听音乐
                     </div>
                     
+                        <!--  烟雨江南   -->
+
+
+<link rel="stylesheet" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css">
+<div class="music-player">
+    
+    <div class="row">
+        
+        
+        <div class="col s12 ">
+            <div id="aplayer" class="music"></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script>
+<script>
+    $(function () {
+        new APlayer({
+            container: document.getElementById('aplayer'),
+            fixed: 'true' === 'true',
+            autoplay: 'false' === 'true',
+            theme: '#542674',
+            loop: 'all',
+            order: 'list',
+            preload: 'auto',
+            volume: Number('0.7'),
+            listFolded: 'false' === 'true',
+            listMaxHeight: '300px',
+            audio: JSON.parse('[{"name":"姐姐","artist":"贾盛强","url":"http://music.163.com/song/media/outer/url?id=33255931.mp3","cover":"http://p1.music.126.net/cpoUinrExafBHL5Nv5iDHQ==/109951166361218466.jpg?param=130y130"},{"name":"红昭愿","artist":"音阙诗听","url":"http://music.163.com/song/media/outer/url?id=452986458.mp3","cover":"http://p2.music.126.net/8ltR3o9R8uJ9_5Cc71cDhA==/109951162951242154.jpg?param=130y130"},{"name":"从前慢","artist":"洪尘","url":"http://music.163.com/song/media/outer/url?id=30635706.mp3","cover":"http://p1.music.126.net/4GMiYS1VYjHvyrMrW7ns7Q==/18229902788956334.jpg?param=130y130"},{"name":"牵丝戏","artist":"银临 / Aki阿杰","url":"http://music.163.com/song/media/outer/url?id=30352891.mp3","cover":"http://p2.music.126.net/Nd86SOcyCxU5Qu7jdZn_MQ==/7725168696876736.jpg?param=130y130"},{"name":"亦是此间少年","artist":"枯木逢春","url":"http://music.163.com/song/media/outer/url?id=1316921651.mp3","cover":"http://p1.music.126.net/dHRFJJ9nfF_9YTxOz9UXUQ==/109951163901435148.jpg?param=130y130"}]')
+        });
+    });
+</script>
+                    
 
                 </div>
 
@@ -816,5 +849,5 @@ $(function () {
             </script>
         
 
-    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"top","width":150,"height":200},"mobile":{"show":true},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
 </html>
