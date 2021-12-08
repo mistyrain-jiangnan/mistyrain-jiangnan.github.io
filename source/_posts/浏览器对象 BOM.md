@@ -2,8 +2,8 @@
 title: 浏览器对象 BOM
 urlname: hkb043
 date: '2021-09-03 15:00:09 +0800'
-tags: []
-categories: []
+tags: 浏览器对象
+categories: 浏览器对象
 ---
 
 ## 返回当前网页地址

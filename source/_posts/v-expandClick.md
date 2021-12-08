@@ -2,8 +2,8 @@
 title: 元素点击范围扩展指令 v-expandClick
 urlname: kurz0v
 date: '2021-08-06 16:20:32 +0800'
-tags: []
-categories: []
+tags: vue 指令
+categories: vue 指令
 ---
 
 # v-expandClick
@@ -50,7 +50,7 @@ export default function (el, binding) {
 | top, right, bottom, left | 上右下左扩展宽度（逗号分割）， |
 | 单位 px                  | 10,10,10,10                    | String | 可填 |
 
-#### 然后你可以在模板中任何元素上使用新的 `v-expandClick` `property`，如下：
+#### 然后你可以在模板中任何元素上使用新的 `v-expandClick` `property`，如下
 
 ```javascript
 <div v-expandClick="20,30,40,50" @click="glabClickoutside"> 点击范围扩大</div>

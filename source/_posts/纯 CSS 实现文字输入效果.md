@@ -2,8 +2,8 @@
 title: 纯 CSS 实现文字输入效果
 urlname: gv5gfw
 date: '2021-09-16 18:43:03 +0800'
-tags: []
-categories: []
+tags: css
+categories: css
 ---
 
 [
