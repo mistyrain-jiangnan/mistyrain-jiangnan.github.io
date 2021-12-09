@@ -10,20 +10,21 @@
     "clean:yuque": "yuque-hexo clean"
   },
   "yuqueConfig": {
-    "postPath": "source/_posts",
+    "postPath": "source/_posts/yuque",
+    "name": "blog",
     "cachePath": "yuque.json",
-    "mdNameFormat": "slug",
+    "mdNameFormat": "title",
     "adapter": "hexo",
     "concurrency": 5,
     "baseUrl": "https://www.yuque.com/api/v2",
     "login": "u12459189",
-    "repo": "mko1kh",
+    "repo": "hyt0s6",
     "token": "kYwYCXK8BItTvDo6XpXYYt2uarULtxk86kpNFesc",
     "onlyPublished": true,
     "onlyPublic": true
   },
   "devDependencies": {
-    "yuque-hexo": "^1.7.0"
+    "yuque-hexo": "^1.6.0"
   },
   "dependencies": {
     "@babel/core": "^7.5.5",

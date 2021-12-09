@@ -2,8 +2,8 @@
 title: 插件形式注册全局组件
 urlname: yynwou
 date: '2021-11-18 19:08:50 +0800'
-tags: vue自定义组件
-categories: vue自定义组件
+tags: vue 指令
+categories: vue 指令
 ---
 
 ## 使用 vue.use() 以插件形式注册全局组件

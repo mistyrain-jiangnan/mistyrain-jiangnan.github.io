@@ -2,8 +2,8 @@
 title: 满足大部分要求的button组件
 urlname: gg2asx
 date: '2021-09-24 17:46:44 +0800'
-tags: vue组件
-categories: vue组件
+tags: Vue组件
+categories: Vue组件
 ---
 
 ## 组件页面结构

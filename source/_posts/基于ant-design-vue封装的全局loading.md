@@ -2,8 +2,8 @@
 title: 基于ant-design-vue封装的全局loading
 urlname: euhuhq
 date: '2021-08-10 11:02:15 +0800'
-tags: vue组件
-categories: vue组件
+tags: Vue组件
+categories: Vue组件
 ---
 
 ### Dom 结构
