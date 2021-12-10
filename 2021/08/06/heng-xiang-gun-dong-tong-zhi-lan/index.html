@@ -131,6 +131,15 @@
     </li>
     
     <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于我</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
         <a href="/navigate" class="waves-effect waves-light">
             
             <span>快捷导航</span>
@@ -195,6 +204,19 @@
                 <i class="fa fa-archive"></i>
               
               <span>归档</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/about" class="waves-effect waves-light">
+              
+                <i class="fa fa-user-circle-o"></i>
+              
+              <span>关于我</span>
             </a>
 
             
@@ -275,6 +297,15 @@
         </li>
         
         <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于我
+            </a>
+        </li>
+        
+        <li>
             <a href="/navigate" class="waves-effect waves-light">
                 
                 <i class="fa fa-fw fa-link"></i>
@@ -338,6 +369,17 @@
                         <i class="fa fa-fw fa-archive"></i>
                         
                         归档
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        关于我
                     </a>
               
             </li>
@@ -564,8 +606,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/vue%E7%BB%84%E4%BB%B6/" target="_blank">
-                                <span class="chip bg-color">vue组件</span>
+                            <a href="/tags/Vue%E7%BB%84%E4%BB%B6/" target="_blank">
+                                <span class="chip bg-color">Vue组件</span>
                             </a>
                         
                     </div>
@@ -576,8 +618,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/vue%E7%BB%84%E4%BB%B6/" class="post-category" target="_blank">
-                                vue组件
+                            <a href="/categories/Vue%E7%BB%84%E4%BB%B6/" class="post-category" target="_blank">
+                                Vue组件
                             </a>
                         
                     </div>
@@ -985,50 +1027,54 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/08/06/heng-xiang-gun-dong-tong-zhi-lan/">
+                <a href="/pages/70a5db/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="横向滚动通知栏">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="变量、作用域、内存">
                         
-                        <span class="card-title">横向滚动通知栏</span>
+                        <span class="card-title">变量、作用域、内存</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Dom 结构
-&lt;template lang="pug">
-.notice-board-wrapper(v-show="show")
-  .left(ref="animateParent")
-    .animate(ref="anim
+                            变量需要注意的是：
+
+基本类型的值是按值访问(by value)，
+引用类型是按引用访问(by refernce)。
+函数内的参数是按值传递
+
+举个例子：
+let num1 = 5
+let num2 = num1
+console.log(n
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-08-06
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-06-17
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/vue%E7%BB%84%E4%BB%B6/" class="post-category" target="_blank">
-                                    vue组件
+                            <a href="/categories/Js/" class="post-category" target="_blank">
+                                    Js
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vue%E7%BB%84%E4%BB%B6/" target="_blank">
-                        <span class="chip bg-color">vue组件</span>
+                    <a href="/tags/Js/" target="_blank">
+                        <span class="chip bg-color">Js</span>
                     </a>
                     
                 </div>
@@ -1202,7 +1248,7 @@
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">41.8k</span> 字
+                <span class="white-color">59.9k</span> 字
             
 
             
@@ -1429,5 +1475,5 @@ $(function () {
             </script>
         
 
-    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":200},"mobile":{"show":true},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+    <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":200},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
 </html>
