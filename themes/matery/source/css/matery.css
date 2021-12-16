@@ -17,7 +17,7 @@
 @media only screen and (min-width: 993px) {
     .container {
         width: 85%;
-        max-width: 1125px;
+        max-width: 1890px;
     }
 
     .post-container {
@@ -1950,8 +1950,15 @@ footer .copy-right {
 }
 
 /* 二级菜单样式定义 烟雨江南  add  */
-.nav-menu {}
-
+.nav-menu {
+    
+}
+.nav-menu .nav-item:hover {
+    transition: all .5s linear 0s;
+    /*缩放*/
+    transform: scale(1.1);
+    border-bottom: 1px solid #baccd9;
+}
 .nav-menu li .sub-nav {
     position: absolute;
     top: 77px;
@@ -2068,7 +2075,7 @@ footer .copy-right {
     margin: 0px;
 }
 
-.nav-item li:hover a {
+/* .nav-item li:hover a {
     color: #FFF;
     background: rgba(0, 0, 0, .1);
-}
+} */
