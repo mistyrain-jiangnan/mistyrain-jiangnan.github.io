@@ -181,7 +181,7 @@ banner:
 profile:
   avatar: /medias/avatars/hwsun.jpg
   career: 电子科技大学 | 电子与通信工程 | 计算机视觉
-  introduction: 我是电子科技大学信息与通信工程学院2018级硕士研究生。研究方向是计算机视觉，深度学习。我们实验室是智能视觉信息处理与通信实验室(IVIPC)，欢迎大家报考！
+  introduction: ''
 
 # config my projects informations in about page.
 # If you don't want to display this `My Projects` content, you can deactivate or delete this configuration.
