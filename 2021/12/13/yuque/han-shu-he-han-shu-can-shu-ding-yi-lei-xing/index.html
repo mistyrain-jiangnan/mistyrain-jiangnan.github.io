@@ -10,8 +10,7 @@
     <meta name="baidu-site-verification" content="fmlEuI34ir" />
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY" />
     <meta name="description" content="1.函数类型(1) 为函数定义类型我们可以给函数定义类型，这个定义包括对参数和返回值的类型定义，我们先来看简单的定义写法：
-function add(arg1: number, arg2: number): number {
-  retur">
+function add(arg1: number, arg2: number): number &amp;amp;#123">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -672,13 +671,13 @@ function add(arg1: number, arg2: number): number {
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="1-函数类型"><a href="#1-函数类型" class="headerlink" title="1.函数类型"></a>1.函数类型</h2><h3 id="1-为函数定义类型"><a href="#1-为函数定义类型" class="headerlink" title="(1) 为函数定义类型"></a>(1) 为函数定义类型</h3><p>我们可以给函数定义类型，这个定义包括对参数和返回值的类型定义，我们先来看简单的定义写法：</p>
-<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span>arg1<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">,</span> arg2<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">number</span> <span class="token punctuation">{</span>
+<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span>arg1<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">,</span> arg2<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">number</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> x <span class="token operator">+</span> y<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// 或者</span>
-<span class="token keyword">const</span> add <span class="token operator">=</span> <span class="token punctuation">(</span>arg1<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">,</span> arg2<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">number</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+<span class="token keyword">const</span> add <span class="token operator">=</span> <span class="token punctuation">(</span>arg1<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">,</span> arg2<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">number</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> x <span class="token operator">+</span> y<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span></code></pre>
 <p>在上面的例子中我们用 function 和箭头函数两种形式定义了 add 函数，以展示如何定义函数类型。这里参数 arg1 和 arg2 都是数值类型，最后通过相加得到的结果也是数值类型。<br>如果在这里省略参数的类型，TypeScript 会默认这个参数是 any 类型；如果省略返回值的类型，如果函数无返回值，那么 TypeScript 会默认函数返回值是 void 类型；如果函数有返回值，那么 TypeScript 会根据我们定义的逻辑推断出返回类型。</p>
 <h3 id="2-完整的函数类型"><a href="#2-完整的函数类型" class="headerlink" title="(2) 完整的函数类型"></a>(2) 完整的函数类型</h3><p>一个函数的定义包括函数名、参数、逻辑和返回值。我们为一个函数定义类型时，完整的定义应该包括参数类型和返回值类型。上面的例子中，我们都是在定义函数的指定参数类型和返回值类型。接下来我们看下，如何定义一个完整的函数类型，以及用这个函数类型来规定一个函数定义时参数和返回值需要符合的类型。先来看例子然后再进行解释：</p>
 <pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">let</span> add<span class="token punctuation">:</span> <span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">number</span><span class="token punctuation">;</span>
@@ -688,9 +687,9 @@ add <span class="token operator">=</span> <span class="token punctuation">(</spa
 <pre class=" language-typescript"><code class="language-typescript">     不能将类型<span class="token string">"(arg1: string, arg2: string) => string"</span>分配给类型<span class="token string">"(x: number, y: number) => number"</span>。   参数<span class="token string">"arg1"</span>和<span class="token string">"x"</span> 的类型不兼容。     不能将类型<span class="token string">"number"</span>分配给类型<span class="token string">"string"</span>。</code></pre>
 <p>函数中如果使用了函数体之外定义的变量，这个变量的类型是不体现在函数类型定义的。</p>
 <h3 id="3-使用接口定义函数类型"><a href="#3-使用接口定义函数类型" class="headerlink" title="(3) 使用接口定义函数类型"></a>(3) 使用接口定义函数类型</h3><p>使用接口定义函数类型：</p>
-<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">interface</span> <span class="token class-name">Add</span> <span class="token punctuation">{</span>
+<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">interface</span> <span class="token class-name">Add</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 <span class="token keyword">let</span> add<span class="token punctuation">:</span> Add <span class="token operator">=</span> <span class="token punctuation">(</span>arg1<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">,</span> arg2<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">string</span> <span class="token operator">=</span><span class="token operator">></span> arg1 <span class="token operator">+</span> arg2<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// error 不能将类型“(arg1: string, arg2: string) => string”分配给类型“Add”</span></code></pre>
 <p>这里我们通过接口的形式定义函数类型，这个接口 Add 定义了这个结构是一个函数，两个参数类型都是 number 类型，返回值也是 number 类型。然后我们指定变量 add 类型为 Add 时，再要给 add 赋值，就必须是一个函数，且参数类型和返回值类型都要满足接口 Add，显然例子中这个函数并不满足条件，所以报错了。</p>
 <h3 id="4-使用类型别名"><a href="#4-使用类型别名" class="headerlink" title="(4) 使用类型别名"></a>(4) 使用类型别名</h3><p>我们可以使用类型别名来定义函数类型，使用类型别名定义函数类型更直观易读，我们来看一下具体的写法：</p>
@@ -710,41 +709,41 @@ add <span class="token operator">=</span> <span class="token punctuation">(</spa
 <h3 id="2-默认参数"><a href="#2-默认参数" class="headerlink" title="(2) 默认参数"></a>(2) 默认参数</h3><p>在 ES6 标准出来之前，我们的默认参数实现起来比较繁琐：<br>// javascript var count = 0; function countUp(step) { step = step || 1; count += step; }<br>上面我们定义了一个计数器增值函数，这个函数有一个参数 step，即每次增加的步长，如果不传入参数，那么 step 接受到的就是 undefined，undefined 转换为布尔值是 false，所以 step || 1 这里取了 1，从而达到了不传参数默认 step === 1 的效果。<br>在 ES6 中，我们定义函数时给参数设默认值就很方便了，直接在参数后面使用等号连接默认值即可：<br>// javascript const count = 0; const countUp = (step = 1) =&gt; { count += step; };<br>你会发现，可选参数和带默认值的参数在函数调用时都是可以不传实参的，但是区别在于定义函数的时候，可选参数必须放在必选参数后面，而带默认值的参数则可放在必须参数前后都可。<br>当我们为参数指定了默认参数的时候，TypeScript 会识别默认参数的类型；当我们在调用函数时，如果给这个带默认值的参数传了别的类型的参数则会报错：<br>const add = (x: number, y = 2) =&gt; { return x + y; }; add(1, “a”); // error 类型”string”的参数不能赋给类型”number”的参数<br>当然了，你也可以显式地给 y 设置类型：<br>const add = (x: number, y: number = 2) =&gt; { return x + y; };</p>
 <h3 id="3-剩余参数"><a href="#3-剩余参数" class="headerlink" title="(3) 剩余参数"></a>(3) 剩余参数</h3><p>在 JS 中，如果我们定义一个函数，这个函数可以输入任意个数的参数，那么我们就无法在定义参数列表的时候挨个定义。在 ES6 发布之前，我们需要用到 arguments 来获取参数列表。arguments 是每一个函数都包含的一个类数组对象，它包含在函数调用时传入函数的所有实际参数（简称实参），它还包含一个 length 属性，记录参数个数。来看下面的例子，我们来模拟实现函数的重载：</p>
 <pre class=" language-typescript"><code class="language-typescript"><span class="token comment" spellcheck="true">// javascript</span>
-<span class="token keyword">function</span> <span class="token function">handleData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">function</span> <span class="token function">handleData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span>arguments<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">return</span> arguments<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span>
   <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>arguments<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword">return</span> arguments<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> arguments<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
   <span class="token keyword">else</span> <span class="token keyword">return</span> <span class="token keyword">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>slice<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">"_"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 <span class="token function">handleData</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 4</span>
 <span class="token function">handleData</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 6</span>
 <span class="token function">handleData</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// '1_2_3_4_5'</span>
 <span class="token comment" spellcheck="true">// 这段代码如果在TypeScript环境中，三个对handleData函数的调用都会报错，因为handleData函数定义的时候没有参数。</span></code></pre>
 <p>上面这个函数通过判断传入实参的个数，做出不同的处理并返回结果。else 后面的逻辑是如果实参个数不为 1 和 2，那么将这些参数拼接成以”_“连接的字符串。<br>你应该注意到了我们使用 Array.prototype.slice.apply(arguments)对 arguments 做了处理，前面我们讲过 arguments 不是数组，而是类数组对象，如果直接在 arguments 调用 join 方法，它是没有这个方法的。所以我们通过这个处理得到一个包含 arguments 中所有元素的真实数组。<br>在 ES6 中，加入了”…”拓展运算符，它可以将一个函数或对象进行拆解。它还支持用在函数的参数列表中，用来处理任意数量的参数：</p>
-<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">const</span> handleData <span class="token operator">=</span> <span class="token punctuation">(</span>arg1<span class="token punctuation">,</span> <span class="token operator">...</span>args<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">const</span> handleData <span class="token operator">=</span> <span class="token punctuation">(</span>arg1<span class="token punctuation">,</span> <span class="token operator">...</span>args<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token comment" spellcheck="true">// 这里省略逻辑</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
 <span class="token function">handleData</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// [ 2, 3, 4, 5 ]</span></code></pre>
 <p>可以看到，args 是除了 arg1 之外的所有实参的集合，它是一个数组。<br>补充：”…”运算符可以拆解数组和对象，比如：arr1 = [1, 2]，arr2 = [3, 4]，那么[…arr1, …arr2]的结果就是[1, 2, 3, 4]，他还可以用在方法的参数中：如果使用 arr1.push(arr2)，则 arr1 结果是[1, 2, [3, 4]]，如果你想让他们合并成一个函数而不使用 concat 方法，就可以使用 arr1.push(…arr2)。还有对象的使用方法：obj1 = { a: ‘aa’ }，obj2 = { b: ‘bb’ }，则{ …obj1, …obj2 }的结果是{ a: ‘aa’, b: ‘bb’ }。<br>在 TypeScript 中你可以为剩余参数指定类型，先来看例子：<br>const handleData = (arg1: number, …args: number[]) =&gt; { // }; handleData(1, “a”); // error 类型”string”的参数不能赋给类型”number”的参数</p>
 <h2 id="3-函数重载，此重载-vs-彼重载"><a href="#3-函数重载，此重载-vs-彼重载" class="headerlink" title="3 函数重载，此重载 vs 彼重载"></a>3 函数重载，此重载 vs 彼重载</h2><p>在其他一些强类型语言中，函数重载是指定义几个函数名相同，但参数个数或类型不同的函数，在调用时传入不同的参数，编译器会自动调用适合的函数。但是 JavaScript 作为一个动态语言是没有函数重载的，只能我们自己在函数体内通过判断参数的个数、类型来指定不同的处理逻辑。来看个简单的例子</p>
-<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">const</span> handleData <span class="token operator">=</span> <span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> value <span class="token operator">===</span> <span class="token string">"string"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">const</span> handleData <span class="token operator">=</span> <span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> value <span class="token operator">===</span> <span class="token string">"string"</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> value<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">else</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> value<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">"_"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span></code></pre>
 <p>这个例子中，当传入的参数为字符串时，将它进行切割，比如传入的是’abc’，返回的将是数组[‘a’, ‘b’, ‘c’]；如果传入的是一个数值类型，则将数字转为字符串然后切割成单个数字然后拼接成字符串，比如传入的是 123，则返回的是’1_2_3’。你可以看到传入的参数类型不同，返回的值的类型是不同的，<br>在 TypeScript 中有函数重载的概念，但并不是定义几个同名实体函数，然后根据不同的参数个数或类型来自动调用相应的函数。TypeScript 的函数重载是在类型系统层面的，是为了更好地进行类型推断。TypeScript 的函数重载通过为一个函数指定多个函数类型定义，从而对函数调用的返回值进行检查。来看例子：</p>
 <pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">function</span> <span class="token function">handleData</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 这个是重载的一部分，指定当参数类型为string时，返回值为string类型的元素构成的数组</span>
 <span class="token keyword">function</span> <span class="token function">handleData</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 这个也是重载的一部分，指定当参数类型为number时，返回值类型为string</span>
-<span class="token keyword">function</span> <span class="token function">handleData</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token keyword">any</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">any</span> <span class="token punctuation">{</span>
+<span class="token keyword">function</span> <span class="token function">handleData</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token keyword">any</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">any</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token comment" spellcheck="true">// 这个就是重载的内容了，他是实体函数，不算做重载的部分</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> x <span class="token operator">===</span> <span class="token string">"string"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> x <span class="token operator">===</span> <span class="token string">"string"</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> x<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">else</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> x<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">"_"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 <span class="token function">handleData</span><span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">"_"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token function">handleData</span><span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">"_"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// error 类型"string"上不存在属性"join"</span>
 <span class="token function">handleData</span><span class="token punctuation">(</span><span class="token keyword">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// error 类型"boolean"的参数不能赋给类型"number"的参数。</span></code></pre>
@@ -761,26 +760,8 @@ add <span class="token operator">=</span> <span class="token punctuation">(</spa
 <li>默认参数：这是在 ES6 标准中添加的语法，为函数参数指定默认参数，写法就是在参数名后面使用=连接默认参数</li>
 <li>剩余参数：这也是在 ES6 中添加的语法，可以使用…参数名来获取剩余任意多个参数，获取的是一个数组。</li>
 </ul>
-<p>学习了函数重载。着重强调的是，这里的函数重载区别于其他语言中的重载，TypeScript 中的重载是为了针对不同参数个数和类型，推断返回值类型。<br><img src="https://cdn.jsdelivr.net/gh//cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://cdn.nlark.com/yuque/0/2021/jpeg/12838787/1639380599741-01dff690-389b-49c7-9943-6737d7ce0db4.jpeg#clientId=u4a462bc7-b87a-4&amp;from=ui&amp;id=ud459aace&amp;margin=%5Bobject%20Object%5D&amp;name=5cf4bff500010be916000896.jpg&amp;originHeight=896&amp;originWidth=1600&amp;originalType=binary%E2%88%B6=1&amp;size=197840&amp;status=done&amp;style=none&amp;taskId=u070f9149-4014-4741-8932-98f9adecd7a" alt="5cf4bff500010be916000896.jpg"></p>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+<p>学习了函数重载。着重强调的是，这里的函数重载区别于其他语言中的重载，TypeScript 中的重载是为了针对不同参数个数和类型，推断返回值类型。<br><img src="https://cdn.jsdelivr.net/gh//cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://cdn.nlark.com/yuque/0/2021/jpeg/12838787/1639380599741-01dff690-389b-49c7-9943-6737d7ce0db4.jpeg#clientId=u4a462bc7-b87a-4&from=ui&id=ud459aace&margin=%5Bobject%20Object%5D&name=5cf4bff500010be916000896.jpg&originHeight=896&originWidth=1600&originalType=binary%E2%88%B6=1&size=197840&status=done&style=none&taskId=u070f9149-4014-4741-8932-98f9adecd7a" alt="5cf4bff500010be916000896.jpg"></p>
+
             </div>
             <hr/>
 
@@ -1019,8 +1000,7 @@ Techniques, strategies and recipes for building a modern web app with multiple t
                     <div class="summary block-with-text">
                         
                             1.索引类型我们可以使用接口描述索引的类型和通过索引得到的值的类型，比如一个数组[‘a’, ‘b’]，数字索引 0 对应的通过索引得到的值为’a’。我们可以同时给索引和值都设置类型，看下面的示例：
-interface RoleDic {
- 
+interface RoleDic &am
                         
                     </div>
                     <div class="publish-info">
@@ -1217,7 +1197,7 @@ interface RoleDic {
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">80.8k</span> 字
+                <span class="white-color">84.5k</span> 字
             
 
             

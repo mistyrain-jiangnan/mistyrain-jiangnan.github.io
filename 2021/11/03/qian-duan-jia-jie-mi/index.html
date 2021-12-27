@@ -646,14 +646,14 @@ import store from &#34;@/store&#34;">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        746
+                        922
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        4 分
+                        5 分
                     </div>
                     
                 
@@ -672,208 +672,190 @@ import store from &#34;@/store&#34;">
             <div id="articleContent">
                 <h2 id="request-文件中通过-axion-请求来实现封装的请求拦截"><a href="#request-文件中通过-axion-请求来实现封装的请求拦截" class="headerlink" title="request 文件中通过 axion 请求来实现封装的请求拦截"></a>request 文件中通过 axion 请求来实现封装的请求拦截</h2><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">import</span> configs <span class="token keyword">from</span> <span class="token string">"@/config/defaultSettings"</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//自定义的公共请求方法</span>
 <span class="token keyword">import</span> store <span class="token keyword">from</span> <span class="token string">"@/store"</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span> ACCESS_TOKEN <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@/store/mutation-types"</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//获取到的token</span>
+<span class="token keyword">import</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> ACCESS_TOKEN <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">from</span> <span class="token string">"@/store/mutation-types"</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//获取到的token</span>
 <span class="token keyword">import</span> notification <span class="token keyword">from</span> <span class="token string">"ant-design-vue/es/notification"</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//组件库的提示</span>
 <span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">"axios"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">"vue"</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span> decodeAesString<span class="token punctuation">,</span> encodeAesString <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./aes"</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//加解密的方法</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span> VueAxios <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./axios"</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span> encrypt <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./encrypt"</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span> getTSL<span class="token punctuation">,</span> isUndefined <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./util"</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//判断服务器的时间工具函数</span>
+<span class="token keyword">import</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> decodeAesString<span class="token punctuation">,</span> encodeAesString <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">from</span> <span class="token string">"./aes"</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//加解密的方法</span>
+<span class="token keyword">import</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> VueAxios <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">from</span> <span class="token string">"./axios"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> encrypt <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">from</span> <span class="token string">"./encrypt"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> getTSL<span class="token punctuation">,</span> isUndefined <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">from</span> <span class="token string">"./util"</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//判断服务器的时间工具函数</span>
 
 <span class="token comment" spellcheck="true">// 创建 axios 实例</span>
-<span class="token keyword">const</span> service <span class="token operator">=</span> axios<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+<span class="token keyword">const</span> service <span class="token operator">=</span> axios<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token comment" spellcheck="true">// baseURL: process.env.VUE_APP_API_BASE_URL, // api base_url</span>
   timeout<span class="token punctuation">:</span> <span class="token number">60000</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 请求超时时间</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token keyword">const</span> err <span class="token operator">=</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">.</span>response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">const</span> err <span class="token operator">=</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">.</span>response<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token keyword">const</span> data <span class="token operator">=</span> error<span class="token punctuation">.</span>response<span class="token punctuation">.</span>data<span class="token punctuation">;</span>
     <span class="token keyword">const</span> token <span class="token operator">=</span> Vue<span class="token punctuation">.</span>ls<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span>ACCESS_TOKEN<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">.</span>response<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">502</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      notification<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">.</span>response<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">502</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+      notification<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         message<span class="token punctuation">:</span> <span class="token string">"Bad Gateway"</span><span class="token punctuation">,</span>
         description<span class="token punctuation">:</span> data<span class="token punctuation">.</span>message<span class="token punctuation">,</span>
-      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">.</span>response<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">403</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      notification<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">.</span>response<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">403</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+      notification<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         message<span class="token punctuation">:</span> <span class="token string">"当前用户认证已失效"</span><span class="token punctuation">,</span>
         description<span class="token punctuation">:</span> data<span class="token punctuation">.</span>message<span class="token punctuation">,</span>
-      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">.</span>response<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">500</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      notification<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">.</span>response<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">500</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+      notification<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         message<span class="token punctuation">:</span> data<span class="token punctuation">.</span>message <span class="token operator">||</span> <span class="token string">"请求异常"</span><span class="token punctuation">,</span>
-      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">.</span>response<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">406</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      notification<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">.</span>response<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">406</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+      notification<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         message<span class="token punctuation">:</span> data<span class="token punctuation">.</span>message <span class="token operator">||</span> <span class="token string">"参数含有特殊字符"</span><span class="token punctuation">,</span>
-      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+      <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>
       error<span class="token punctuation">.</span>response<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">401</span> <span class="token operator">&amp;&amp;</span>
       <span class="token operator">!</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>result <span class="token operator">&amp;&amp;</span> data<span class="token punctuation">.</span>result<span class="token punctuation">.</span>isLogin<span class="token punctuation">)</span>
-    <span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      notification<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+      notification<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         message<span class="token punctuation">:</span> <span class="token string">"Unauthorized"</span><span class="token punctuation">,</span>
         description<span class="token punctuation">:</span> <span class="token string">"Authorization verification failed"</span><span class="token punctuation">,</span>
-      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span>token<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>token<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         <span class="token comment" spellcheck="true">// 清除已存在的token信息，权限信息</span>
         store<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">"SET_TOKEN"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         store<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">"SET_PERMISSIONS"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         Vue<span class="token punctuation">.</span>ls<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>ACCESS_TOKEN<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token comment" spellcheck="true">// 跳转到getToken接口</span>
         <span class="token comment" spellcheck="true">// store.dispatch('GetToken')</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
+      <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">// request interceptor</span>
-service<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>request<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>config<span class="token punctuation">.</span>url<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">"/bro-server/api"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>configs<span class="token punctuation">.</span>appSecurityEnabled <span class="token operator">===</span> <span class="token string">"true"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+service<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>request<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>config<span class="token punctuation">.</span>url<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">"/bro-server/api"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>configs<span class="token punctuation">.</span>appSecurityEnabled <span class="token operator">===</span> <span class="token string">"true"</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
       <span class="token comment" spellcheck="true">// 只有 请求 /rds/api 时才对body进行加密</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span>config<span class="token punctuation">.</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        config<span class="token punctuation">.</span>data <span class="token operator">=</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>config<span class="token punctuation">.</span>data<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        config<span class="token punctuation">.</span>data <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
           eptJsonData<span class="token punctuation">:</span> <span class="token function">encodeAesString</span><span class="token punctuation">(</span>
             JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>config<span class="token punctuation">.</span>data<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">,</span>
             <span class="token string">"xxx"</span><span class="token punctuation">,</span>
             <span class="token string">"xxx"</span>
           <span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token punctuation">}</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span>config<span class="token punctuation">.</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        config<span class="token punctuation">.</span>data <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+      <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">else</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>config<span class="token punctuation">.</span>data<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        config<span class="token punctuation">.</span>data <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
           data<span class="token punctuation">:</span> config<span class="token punctuation">.</span>data<span class="token punctuation">.</span>data<span class="token punctuation">,</span>
-        <span class="token punctuation">}</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+      <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
   <span class="token keyword">const</span> token <span class="token operator">=</span> Vue<span class="token punctuation">.</span>ls<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span>ACCESS_TOKEN<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">const</span> sCct <span class="token operator">=</span> <span class="token function">getTSL</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">const</span> ORG_ID <span class="token operator">=</span> store<span class="token punctuation">.</span>getters<span class="token punctuation">.</span>org<span class="token punctuation">.</span>id<span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>token<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>token<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     config<span class="token punctuation">.</span>headers<span class="token punctuation">[</span><span class="token string">"Authorization"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"Bearer "</span> <span class="token operator">+</span> token<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 让每个请求携带自定义 token 请根据实际情况自行修改</span>
     config<span class="token punctuation">.</span>headers<span class="token punctuation">[</span><span class="token string">"s-cct"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">encrypt</span><span class="token punctuation">(</span>sCct<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">isUndefined</span><span class="token punctuation">(</span>ORG_ID<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">isUndefined</span><span class="token punctuation">(</span>ORG_ID<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
       config<span class="token punctuation">.</span>headers<span class="token punctuation">[</span><span class="token string">"ORG_ID"</span><span class="token punctuation">]</span> <span class="token operator">=</span> ORG_ID<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> config<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// 封装post 和get请求</span>
 <span class="token comment" spellcheck="true">// 1. get</span>
 <span class="token comment" spellcheck="true">/**
- * @param {*} url :请求路径 eg:"/api/login"
- * @param {*} params 参数 eg:{phone:"",password:""}
+ * @param &amp;#123;*&amp;#125; url :请求路径 eg:"/api/login"
+ * @param &amp;#123;*&amp;#125; params 参数 eg:&amp;#123;phone:"",password:""&amp;#125;
  * @param 使用方法 get(url, params)
  */</span>
-<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token keyword">get</span> <span class="token operator">=</span> <span class="token punctuation">(</span>url<span class="token punctuation">,</span> params <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-    service<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> <span class="token punctuation">{</span> params <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token keyword">get</span> <span class="token operator">=</span> <span class="token punctuation">(</span>url<span class="token punctuation">,</span> params <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    service<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> params <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
       <span class="token function">resolve</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">// 2.post</span>
 <span class="token comment" spellcheck="true">/**
- * @param {*} url :请求路径 eg:"/api/login"
- * @param {*} params 参数 eg:{phone:"",password:""}
+ * @param &amp;#123;*&amp;#125; url :请求路径 eg:"/api/login"
+ * @param &amp;#123;*&amp;#125; params 参数 eg:&amp;#123;phone:"",password:""&amp;#125;
  * @param 使用方法 post(url, params)
  */</span>
-<span class="token keyword">export</span> <span class="token keyword">const</span> post <span class="token operator">=</span> <span class="token punctuation">(</span>url<span class="token punctuation">,</span> params<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> post <span class="token operator">=</span> <span class="token punctuation">(</span>url<span class="token punctuation">,</span> params<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token keyword">let</span> data <span class="token operator">=</span> <span class="token keyword">null</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>Object<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>toString<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'Array'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    data <span class="token operator">=</span> qs<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>params<span class="token punctuation">,</span> <span class="token punctuation">{</span> arrayFormat<span class="token punctuation">:</span> <span class="token string">'brackets'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>Object<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>toString<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'Array'</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    data <span class="token operator">=</span> qs<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>params<span class="token punctuation">,</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> arrayFormat<span class="token punctuation">:</span> <span class="token string">'brackets'</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">else</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     data <span class="token operator">=</span> params
-  <span class="token punctuation">}</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
   <span class="token comment" spellcheck="true">// 返回</span>
-  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-    service<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    service<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
       <span class="token function">resolve</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// response interceptor</span>
-service<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+service<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span>
     configs<span class="token punctuation">.</span>appSecurityEnabled <span class="token operator">===</span> <span class="token string">"true"</span> <span class="token operator">&amp;&amp;</span>
     response<span class="token punctuation">.</span>config<span class="token punctuation">.</span>url<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">"/bro-server/api"</span><span class="token punctuation">)</span>
-  <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token comment" spellcheck="true">// 只有 从 /rds/api中获取的结果才进行解密</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>eptJsonData<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>eptJsonData<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
       <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token function">decodeAesString</span><span class="token punctuation">(</span>
         response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>eptJsonData<span class="token punctuation">,</span>
         <span class="token string">"brains0123456789"</span><span class="token punctuation">,</span>
         <span class="token string">"brains0123456789"</span>
       <span class="token punctuation">)</span><span class="token punctuation">;</span>
       response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>data <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> response<span class="token punctuation">.</span>data<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token keyword">const</span> installer <span class="token operator">=</span> <span class="token punctuation">{</span>
-  vm<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token function">install</span><span class="token punctuation">(</span>Vue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">const</span> installer <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  vm<span class="token punctuation">:</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+  <span class="token function">install</span><span class="token punctuation">(</span>Vue<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueAxios<span class="token punctuation">,</span> service<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
 
-<span class="token keyword">export</span> <span class="token punctuation">{</span> installer <span class="token keyword">as</span> VueAxios<span class="token punctuation">,</span> service <span class="token keyword">as</span> axios <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<span class="token keyword">export</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> installer <span class="token keyword">as</span> VueAxios<span class="token punctuation">,</span> service <span class="token keyword">as</span> axios <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span></code></pre>
 <h2 id="加解密的实现原理"><a href="#加解密的实现原理" class="headerlink" title="加解密的实现原理"></a>加解密的实现原理</h2><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">import</span> CryptoJS <span class="token keyword">from</span> <span class="token string">"crypto-js/crypto-js"</span><span class="token punctuation">;</span>
 
-<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">encodeAesString</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> key<span class="token punctuation">,</span> iv<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">encodeAesString</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> key<span class="token punctuation">,</span> iv<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   key <span class="token operator">=</span> CryptoJS<span class="token punctuation">.</span>enc<span class="token punctuation">.</span>Utf8<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
   iv <span class="token operator">=</span> CryptoJS<span class="token punctuation">.</span>enc<span class="token punctuation">.</span>Utf8<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>iv<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">const</span> encrypted <span class="token operator">=</span> CryptoJS<span class="token punctuation">.</span>AES<span class="token punctuation">.</span><span class="token function">encrypt</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> key<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> encrypted <span class="token operator">=</span> CryptoJS<span class="token punctuation">.</span>AES<span class="token punctuation">.</span><span class="token function">encrypt</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> key<span class="token punctuation">,</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     iv<span class="token punctuation">:</span> iv<span class="token punctuation">,</span>
     mode<span class="token punctuation">:</span> CryptoJS<span class="token punctuation">.</span>mode<span class="token punctuation">.</span>CBC<span class="token punctuation">,</span>
     padding<span class="token punctuation">:</span> CryptoJS<span class="token punctuation">.</span>pad<span class="token punctuation">.</span>Pkcs7<span class="token punctuation">,</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token comment" spellcheck="true">// 返回的是base64格式的密文</span>
   <span class="token keyword">return</span> encrypted<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">// encrypted 为是base64格式的密文</span>
-<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">decodeAesString</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">,</span> key<span class="token punctuation">,</span> iv<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">decodeAesString</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">,</span> key<span class="token punctuation">,</span> iv<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   key <span class="token operator">=</span> CryptoJS<span class="token punctuation">.</span>enc<span class="token punctuation">.</span>Utf8<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
   iv <span class="token operator">=</span> CryptoJS<span class="token punctuation">.</span>enc<span class="token punctuation">.</span>Utf8<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>iv<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">const</span> decrypted <span class="token operator">=</span> CryptoJS<span class="token punctuation">.</span>AES<span class="token punctuation">.</span><span class="token function">decrypt</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">,</span> key<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> decrypted <span class="token operator">=</span> CryptoJS<span class="token punctuation">.</span>AES<span class="token punctuation">.</span><span class="token function">decrypt</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">,</span> key<span class="token punctuation">,</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     iv<span class="token punctuation">:</span> iv<span class="token punctuation">,</span>
     mode<span class="token punctuation">:</span> CryptoJS<span class="token punctuation">.</span>mode<span class="token punctuation">.</span>CBC<span class="token punctuation">,</span>
     padding<span class="token punctuation">:</span> CryptoJS<span class="token punctuation">.</span>pad<span class="token punctuation">.</span>Pkcs7<span class="token punctuation">,</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> decrypted<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>CryptoJS<span class="token punctuation">.</span>enc<span class="token punctuation">.</span>Utf8<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+
             </div>
             <hr/>
 
@@ -1117,8 +1099,8 @@ service<span class="token punctuation">.</span>interceptors<span class="token pu
   &lt;/div>
 &lt;/template>
 &lt;script>
-export default {
-  name: 'VueTex
+export default &amp;#123;
+  name
                         
                     </div>
                     <div class="publish-info">
@@ -1315,7 +1297,7 @@ export default {
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">80.8k</span> 字
+                <span class="white-color">84.5k</span> 字
             
 
             

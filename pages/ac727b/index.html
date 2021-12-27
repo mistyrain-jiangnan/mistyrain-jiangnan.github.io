@@ -647,7 +647,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        197
+                        169
                     </div>
                     
 
@@ -674,49 +674,31 @@
                 <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>字面量类型是，使用<code>type</code>关键字，直接命名变量的类型范围，使用字面量类型的范围为：<code>number</code>、<code>string</code>、<code>boolean</code>。</p>
 <h3 id="命名字符串类型"><a href="#命名字符串类型" class="headerlink" title="命名字符串类型"></a>命名字符串类型</h3><pre class=" language-typescript"><code class="language-typescript">type  Name <span class="token operator">=</span> <span class="token string">"mss"</span> <span class="token operator">|</span> <span class="token string">"szl"</span> <span class="token operator">|</span> <span class="token string">"no"</span></code></pre>
 <p>然后我们就可以根据不同的<code>Name</code>做不同的操作：</p>
-<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">function</span> <span class="token punctuation">(</span>name<span class="token punctuation">:</span> Name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>name <span class="token operator">==</span> <span class="token string">'mss'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">function</span> <span class="token punctuation">(</span>name<span class="token punctuation">:</span> Name<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>name <span class="token operator">==</span> <span class="token string">'mss'</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
 
-  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">'szl'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">'szl'</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
 
-  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>name <span class="token operator">==</span> <span class="token string">'no'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>name <span class="token operator">==</span> <span class="token string">'no'</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
 
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
 <p>这里传入的<code>name</code>只能是<code>mss</code>、<code>szl</code>、<code>no</code>三者之一。</p>
 <h3 id="命名数值类型"><a href="#命名数值类型" class="headerlink" title="命名数值类型"></a>命名数值类型</h3><pre class=" language-typescript"><code class="language-typescript">type LessThan4 <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">|</span> <span class="token number">2</span> <span class="token operator">|</span> <span class="token number">3</span></code></pre>
 <p>使用方式和字符串类型一样。</p>
 <p>3.命名布尔类型</p>
-<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">interface</span> <span class="token class-name">Sucess</span> <span class="token punctuation">{</span>
+<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">interface</span> <span class="token class-name">Sucess</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   flag<span class="token punctuation">:</span> <span class="token keyword">true</span>
   <span class="token keyword">do</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">void</span>
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
-<span class="token keyword">interface</span> <span class="token class-name">Failure</span> <span class="token punctuation">{</span>
+<span class="token keyword">interface</span> <span class="token class-name">Failure</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   flag<span class="token punctuation">:</span> fasle
   <span class="token keyword">do</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">void</span>
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
 type ValidationResult <span class="token operator">=</span> Sucess <span class="token operator">|</span> Failure</code></pre>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+
             </div>
             <hr/>
 
@@ -1152,7 +1134,7 @@ type ValidationResult <span class="token operator">=</span> Sucess <span class="
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">80.8k</span> 字
+                <span class="white-color">84.5k</span> 字
             
 
             

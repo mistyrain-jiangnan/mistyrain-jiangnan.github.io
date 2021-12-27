@@ -653,7 +653,7 @@ web">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        315
+                        317
                     </div>
                     
 
@@ -692,53 +692,35 @@ web">
 <li>webview 中不显示 input</li>
 </ol>
 <h2 id="存在隐式转换"><a href="#存在隐式转换" class="headerlink" title="=== 存在隐式转换"></a>=== 存在隐式转换</h2><p>解决方案：<br>使用 == 替换</p>
-<h2 id="数组的数据监听存在问题"><a href="#数组的数据监听存在问题" class="headerlink" title="数组的数据监听存在问题"></a>数组的数据监听存在问题</h2><pre><code>&lt;input type="number" bindinput="codeInput" data-index="0" class="{{ activeInput['0'] === ''? '':'is-active' }}"/&gt;
-&lt;input type="number" bindinput="codeInput" data-index="1" class="{{ activeInput['1'] === ''? '':'is-active' }}"/&gt;</code></pre><pre><code>nx.Component({
-  data: {
+<h2 id="数组的数据监听存在问题"><a href="#数组的数据监听存在问题" class="headerlink" title="数组的数据监听存在问题"></a>数组的数据监听存在问题</h2><pre><code>&lt;input type=&quot;number&quot; bindinput=&quot;codeInput&quot; data-index=&quot;0&quot; class=&quot;&#123;&#123; activeInput['0'] === ''? '':'is-active' &#125;&#125;&quot;/&gt;
+&lt;input type=&quot;number&quot; bindinput=&quot;codeInput&quot; data-index=&quot;1&quot; class=&quot;&#123;&#123; activeInput['1'] === ''? '':'is-active' &#125;&#125;&quot;/&gt;</code></pre><pre><code>nx.Component(&#123;
+  data: &#123;
     activeInput: []
-  },
-  methods: {
-    codeInput(inEvent) {
+  &#125;,
+  methods: &#123;
+    codeInput(inEvent) &#123;
       const index = Number(inEvent.target.dataset.index);
       const value = inEvent.detail.value;
-      this.setData({ [`activeInput.${index}`]: value });
-    },
-   }
-});</code></pre><p>解决方案：<br>将 data 写做类数组的形式</p>
-<pre><code>nx.Component({
-  data: {
-    activeInput: {
-      0: '',
-      1: '',
-      2: '',
-      3: '',
-      4: '',
-      5: '',
+      this.setData(&#123; [`activeInput.$&#123;index&#125;`]: value &#125;);
+    &#125;,
+   &#125;
+&#125;);</code></pre><p>解决方案：<br>将 data 写做类数组的形式</p>
+<pre><code>nx.Component(&#123;
+  data: &#123;
+    activeInput: &#123;
+      0: &#39;&#39;,
+      1: &#39;&#39;,
+      2: &#39;&#39;,
+      3: &#39;&#39;,
+      4: &#39;&#39;,
+      5: &#39;&#39;,
       length: 6
-    }
-  },
-});</code></pre><h2 id="cover-view-注意"><a href="#cover-view-注意" class="headerlink" title="cover-view 注意"></a>cover-view 注意</h2><ol>
+    &#125;
+  &#125;,
+&#125;);</code></pre><h2 id="cover-view-注意"><a href="#cover-view-注意" class="headerlink" title="cover-view 注意"></a>cover-view 注意</h2><ol>
 <li>不能通过 <code>z-index</code> 来设置 cover-view 的层级，可以使用加载顺序来影响它的层级</li>
 </ol>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+
             </div>
             <hr/>
 
@@ -1179,7 +1161,7 @@ Eve
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">80.8k</span> 字
+                <span class="white-color">84.5k</span> 字
             
 
             

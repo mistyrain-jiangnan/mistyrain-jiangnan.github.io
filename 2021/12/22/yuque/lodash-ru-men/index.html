@@ -645,14 +645,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.1k
+                        2.4k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        9 分
+                        11 分
                     </div>
                     
                 
@@ -687,118 +687,118 @@
 <p>Fixed Arity，固化参数个数，便于柯里化</p>
 <p>Rearragned Arguments， 重新调整参数位置，便于函数之间的聚合</p>
 <p>Capped Iteratee Argument， 封装 Iteratee 参数</p>
-<h2 id="1、N-次循环"><a href="#1、N-次循环" class="headerlink" title="1、N 次循环"></a>1、N 次循环</h2><pre><code>&lt;script type="text/javascript"&gt;
- console.log('------- javascript -------')
+<h2 id="1、N-次循环"><a href="#1、N-次循环" class="headerlink" title="1、N 次循环"></a>1、N 次循环</h2><pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+ console.log(&#39;------- javascript -------&#39;)
  //js原生的循环方法
- for(var i = 0; i &lt; 5; i++){
+ for(var i = 0; i &lt; 5; i++)&#123;
   console.log(i);
- }
- console.log('------- lodash -------')
+ &#125;
+ console.log(&#39;------- lodash -------&#39;)
  //ladash的times方法
- _.times(5,function(a){
+ _.times(5,function(a)&#123;
   console.log(a)
- });&lt;/script&gt;</code></pre><p>for 语句是执行循环的不二选择，但在上面代码的使用场景下，_.times()的解决方式更加简洁和易于理解。</p>
-<h2 id="2、深层查找属性值"><a href="#2、深层查找属性值" class="headerlink" title="2、深层查找属性值"></a>2、深层查找属性值</h2><pre><code>&lt;script type="text/javascript"&gt;
-    var ownerArr = [{
-        "owner": "Colin",
-        "pets": [{"name": "dog1"}, {"name": "dog2"}]
-    }, {
-        "owner": "John",
-        "pets": [{"name": "dog3"}, {"name": "dog4"}]
-    }];
-    var jsMap = ownerArr.map(function (owner) {
+ &#125;);&lt;/script&gt;</code></pre><p>for 语句是执行循环的不二选择，但在上面代码的使用场景下，_.times()的解决方式更加简洁和易于理解。</p>
+<h2 id="2、深层查找属性值"><a href="#2、深层查找属性值" class="headerlink" title="2、深层查找属性值"></a>2、深层查找属性值</h2><pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var ownerArr = [&#123;
+        &quot;owner&quot;: &quot;Colin&quot;,
+        &quot;pets&quot;: [&#123;&quot;name&quot;: &quot;dog1&quot;&#125;, &#123;&quot;name&quot;: &quot;dog2&quot;&#125;]
+    &#125;, &#123;
+        &quot;owner&quot;: &quot;John&quot;,
+        &quot;pets&quot;: [&#123;&quot;name&quot;: &quot;dog3&quot;&#125;, &#123;&quot;name&quot;: &quot;dog4&quot;&#125;]
+    &#125;];
+    var jsMap = ownerArr.map(function (owner) &#123;
         return owner.pets[0].name;
-    });
-    console.log('------- jsMap -------');
+    &#125;);
+    console.log(&#39;------- jsMap -------&#39;);
     console.log(jsMap);
 
-    var lodashMap = _.map(ownerArr, 'pets[0].name');
-    console.log('------- lodashMap -------');
+    var lodashMap = _.map(ownerArr, &#39;pets[0].name&#39;);
+    console.log(&#39;------- lodashMap -------&#39;);
     console.log(lodashMap);&lt;/script&gt;</code></pre><p>Lodash 中的_.map 方法和 JavaScript 中原生的数组方法非常的像，但它还是有非常有用的升级。 你可以通过一个字符串而不是回调函数来浏览深度嵌套的对象属性。</p>
-<h2 id="3、深克隆对象"><a href="#3、深克隆对象" class="headerlink" title="3、深克隆对象"></a>3、深克隆对象</h2><pre><code>&lt;script type="text/javascript"&gt;
-    var objA = {
-        "name": "戈德斯文"
-    };
+<h2 id="3、深克隆对象"><a href="#3、深克隆对象" class="headerlink" title="3、深克隆对象"></a>3、深克隆对象</h2><pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var objA = &#123;
+        &quot;name&quot;: &quot;戈德斯文&quot;
+    &#125;;
     var objB = _.cloneDeep(objA);
     console.log(objA);
     console.log(objB);
     console.log(objA === objB);&lt;/script&gt;</code></pre><p>深度克隆 JavaScript 对象是困难的，并且也没有什么简单的解决方案。你可以使用原生的解决方案:JSON.parse(JSON.stringify(objectToClone))  进行深度克隆。但是，这种方案仅在对象内部没有方法的时候才可行。</p>
-<h2 id="4、在指定范围内获取一个随机值"><a href="#4、在指定范围内获取一个随机值" class="headerlink" title="4、在指定范围内获取一个随机值"></a>4、在指定范围内获取一个随机值</h2><pre><code>&lt;script type="text/javascript"&gt;
-    function getRandomNumber(min, max){
+<h2 id="4、在指定范围内获取一个随机值"><a href="#4、在指定范围内获取一个随机值" class="headerlink" title="4、在指定范围内获取一个随机值"></a>4、在指定范围内获取一个随机值</h2><pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    function getRandomNumber(min, max)&#123;
         return Math.floor(Math.random() * (max - min)) + min;
-    }
+    &#125;
     console.log(getRandomNumber(15, 20));
 
     console.log(_.random(15, 20));
 &lt;/script&gt;</code></pre><p>Lodash 中的  <em>.random  方法要比上面的原生方法更强大与灵活。你可以只传入一个参数作为最大值， 你也可以指定返回的结果为浮点数</em>.random(15,20,true)</p>
-<h2 id="5、扩展对象"><a href="#5、扩展对象" class="headerlink" title="5、扩展对象"></a>5、扩展对象</h2><pre><code>&lt;script type="text/javascript"&gt;
-    Object.prototype.extend = function(obj) {
-        for (var i in obj) {
-            if (obj.hasOwnProperty(i)) {    //判断被扩展的对象有没有某个属性，
+<h2 id="5、扩展对象"><a href="#5、扩展对象" class="headerlink" title="5、扩展对象"></a>5、扩展对象</h2><pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    Object.prototype.extend = function(obj) &#123;
+        for (var i in obj) &#123;
+            if (obj.hasOwnProperty(i)) &#123;    //判断被扩展的对象有没有某个属性，
                 this[i] = obj[i];
-            }
-        }
-    };
+            &#125;
+        &#125;
+    &#125;;
 
-    var objA = {"name": "戈德斯文", "car": "宝马"};
-    var objB = {"name": "柴硕", "loveEat": true};
+    var objA = &#123;&quot;name&quot;: &quot;戈德斯文&quot;, &quot;car&quot;: &quot;宝马&quot;&#125;;
+    var objB = &#123;&quot;name&quot;: &quot;柴硕&quot;, &quot;loveEat&quot;: true&#125;;
 
     objA.extend(objB);
     console.log(objA);
 
     console.log(_.assign(objA, objB));&lt;/script&gt;</code></pre><p>_.assign  方法也可以接收多个参数对象进行扩展，都是往后面的对象上合并</p>
-<h2 id="6、从列表中随机的选择列表项"><a href="#6、从列表中随机的选择列表项" class="headerlink" title="6、从列表中随机的选择列表项"></a>6、从列表中随机的选择列表项</h2><pre><code>&lt;script type="text/javascript"&gt;
-    var smartTeam = ["戈德斯文", "杨海月", "柴硕", "师贝贝"];
+<h2 id="6、从列表中随机的选择列表项"><a href="#6、从列表中随机的选择列表项" class="headerlink" title="6、从列表中随机的选择列表项"></a>6、从列表中随机的选择列表项</h2><pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var smartTeam = [&quot;戈德斯文&quot;, &quot;杨海月&quot;, &quot;柴硕&quot;, &quot;师贝贝&quot;];
 
-    function randomSmarter(smartTeam){
+    function randomSmarter(smartTeam)&#123;
         var index = Math.floor(Math.random() * smartTeam.length);
         return smartTeam[index];
-    }
+    &#125;
 
     console.log(randomSmarter(smartTeam));
 
     // Lodash
     console.log(_.sample(smartTeam));
     console.log(_.sampleSize(smartTeam,2));&lt;/script&gt;</code></pre><p>此外，你也可以指定随机返回元素的个数_.sampleSize(smartTeam,n)，n 为需要返回的元素个数</p>
-<h2 id="7、判断对象中是否含有某元素"><a href="#7、判断对象中是否含有某元素" class="headerlink" title="7、判断对象中是否含有某元素"></a>7、判断对象中是否含有某元素</h2><pre><code>&lt;script type="text/javascript"&gt;
-    var smartPerson = {
-            'name': '戈德斯文',
-            'gender': 'male'
-        },
-        smartTeam = ["戈德斯文", "杨海月", "柴硕", "师贝贝"];
+<h2 id="7、判断对象中是否含有某元素"><a href="#7、判断对象中是否含有某元素" class="headerlink" title="7、判断对象中是否含有某元素"></a>7、判断对象中是否含有某元素</h2><pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var smartPerson = &#123;
+            &#39;name&#39;: &#39;戈德斯文&#39;,
+            &#39;gender&#39;: &#39;male&#39;
+        &#125;,
+        smartTeam = [&quot;戈德斯文&quot;, &quot;杨海月&quot;, &quot;柴硕&quot;, &quot;师贝贝&quot;];
 
 
-    console.log(_.includes(smartPerson, '戈德斯文'));
-    console.log(_.includes(smartTeam, '杨海月'));
-    console.log(_.includes(smartTeam, '杨海月',2));&lt;/script&gt;</code></pre><p>_.includes()第一个参数是需要查询的对象，第二个参数是需要查询的元素，第三个参数是开始查询的下标</p>
-<h2 id="8、遍历循环"><a href="#8、遍历循环" class="headerlink" title="8、遍历循环"></a>8、遍历循环</h2><pre><code>&lt;script type="text/javascript"&gt;
-    _([1, 2]).forEach(function(value) {
+    console.log(_.includes(smartPerson, &#39;戈德斯文&#39;));
+    console.log(_.includes(smartTeam, &#39;杨海月&#39;));
+    console.log(_.includes(smartTeam, &#39;杨海月&#39;,2));&lt;/script&gt;</code></pre><p>_.includes()第一个参数是需要查询的对象，第二个参数是需要查询的元素，第三个参数是开始查询的下标</p>
+<h2 id="8、遍历循环"><a href="#8、遍历循环" class="headerlink" title="8、遍历循环"></a>8、遍历循环</h2><pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    _([1, 2]).forEach(function(value) &#123;
         console.log(value);
-    });
-    _.forEach([1, 3] , function(value, key) {
+    &#125;);
+    _.forEach([1, 3] , function(value, key) &#123;
         console.log(key,value);
-    });&lt;/script&gt;</code></pre><p>这两种方法都会分别输出‘1’和‘2’，不仅是数组，对象也可以，数组的是后 key 是元素的下标，当传入的是对象的时候，key 是属性，value 是值</p>
+    &#125;);&lt;/script&gt;</code></pre><p>这两种方法都会分别输出‘1’和‘2’，不仅是数组，对象也可以，数组的是后 key 是元素的下标，当传入的是对象的时候，key 是属性，value 是值</p>
 <h2 id="9、遍历循环执行某个方法"><a href="#9、遍历循环执行某个方法" class="headerlink" title="9、遍历循环执行某个方法"></a>9、遍历循环执行某个方法</h2><p>_.map()</p>
-<pre><code>&lt;script type="text/javascript"&gt;
-    function square(n) {
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    function square(n) &#123;
         return n * n;
-    }
+    &#125;
 
     console.log(_.map([4, 8], square));
     // =&gt; [16, 64]
 
-    console.log(_.map({ 'a': 4, 'b': 8 }, square));
+    console.log(_.map(&#123; &#39;a&#39;: 4, &#39;b&#39;: 8 &#125;, square));
     // =&gt; [16, 64] (iteration order is not guaranteed)
 
     var users = [
-        { 'user': 'barney' },
-        { 'user': 'fred' }
+        &#123; &#39;user&#39;: &#39;barney&#39; &#125;,
+        &#123; &#39;user&#39;: &#39;fred&#39; &#125;
     ];
 
     // The `_.property` iteratee shorthand.
-    console.log(_.map(users, 'user'));
-    // =&gt; ['barney', 'fred']&lt;/script&gt;</code></pre><h2 id="10、检验值是否为空"><a href="#10、检验值是否为空" class="headerlink" title="10、检验值是否为空"></a>10、检验值是否为空</h2><p>_.isEmpty()</p>
-<pre><code>&lt;script type="text/javascript"&gt;
+    console.log(_.map(users, &#39;user&#39;));
+    // =&gt; [&#39;barney&#39;, &#39;fred&#39;]&lt;/script&gt;</code></pre><h2 id="10、检验值是否为空"><a href="#10、检验值是否为空" class="headerlink" title="10、检验值是否为空"></a>10、检验值是否为空</h2><p>_.isEmpty()</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
     _.isEmpty(null);
     // =&gt; true
 
@@ -811,20 +811,20 @@
     _.isEmpty([1, 2, 3]);
     // =&gt; false
 
-    _.isEmpty({ 'a': 1 });
+    _.isEmpty(&#123; &#39;a&#39;: 1 &#125;);
     // =&gt; false&lt;/script&gt;</code></pre><h2 id="11、查找属性"><a href="#11、查找属性" class="headerlink" title="11、查找属性"></a>11、查找属性</h2><p><em>.find()、</em>.filter()、_.reject()</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span><span class="token operator">></span>
     <span class="token keyword">var</span> users <span class="token operator">=</span> <span class="token punctuation">[</span>
-        <span class="token punctuation">{</span><span class="token string">'user'</span><span class="token punctuation">:</span> <span class="token string">'barney'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token number">36</span><span class="token punctuation">,</span> <span class="token string">'active'</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-        <span class="token punctuation">{</span><span class="token string">'user'</span><span class="token punctuation">:</span> <span class="token string">'fred'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token string">'active'</span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-        <span class="token punctuation">{</span><span class="token string">'user'</span><span class="token punctuation">:</span> <span class="token string">'pebbles'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'active'</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span>
+        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">'user'</span><span class="token punctuation">:</span> <span class="token string">'barney'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token number">36</span><span class="token punctuation">,</span> <span class="token string">'active'</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">'user'</span><span class="token punctuation">:</span> <span class="token string">'fred'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token string">'active'</span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">'user'</span><span class="token punctuation">:</span> <span class="token string">'pebbles'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'active'</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
     <span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>_<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>users<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>o<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>_<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>users<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>o<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> o<span class="token punctuation">.</span>age <span class="token operator">&lt;</span> <span class="token number">40</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>_<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>users<span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'active'</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>_<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>users<span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'active'</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>_<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>users<span class="token punctuation">,</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'active'</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>_<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>users<span class="token punctuation">,</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'active'</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>_<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>users<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'active'</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>_<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>users<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'active'</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>_<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>users<span class="token punctuation">,</span> <span class="token string">'active'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -838,57 +838,39 @@
     <span class="token keyword">var</span> arr2 <span class="token operator">=</span> _<span class="token punctuation">.</span><span class="token function">uniq</span><span class="token punctuation">(</span>arr1<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 
-    <span class="token keyword">function</span> <span class="token function">unique</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">function</span> <span class="token function">unique</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         <span class="token keyword">var</span> newArr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>newArr<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>newArr<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
                 newArr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
+            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> newArr<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr1<span class="token punctuation">)</span><span class="token punctuation">;</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr2<span class="token punctuation">)</span><span class="token punctuation">;</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">unique</span><span class="token punctuation">(</span>arr1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
 <p><em>.uniqBy(array,[iteratee=</em>.identity])这个方法类似  _.uniq，除了它接受一个  iteratee（迭代函数），调用每一个数组（array）的每个元素以产生唯一性计算的标准。iteratee 调用时会传入一个参数：(value)。</p>
-<pre><code>&lt;script type="text/javascript"&gt;
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
     console.log(_.uniqBy([2.1, 1.2, 2.3], Math.floor));
     // =&gt; [2.1, 1.2]
 
-    console.log(_.uniqBy([{ 'x': 1 }, { 'x': 2 }, { 'x': 1 }], 'x'));
-    // =&gt; [{ 'x': 1 }, { 'x': 2 }]&lt;/script&gt;</code></pre><p>Math.floor 只是向下取整，去重，并没有改变原有的数组，所以还是 2.1 和 1.2，不是 2 和 1。</p>
+    console.log(_.uniqBy([&#123; &#39;x&#39;: 1 &#125;, &#123; &#39;x&#39;: 2 &#125;, &#123; &#39;x&#39;: 1 &#125;], &#39;x&#39;));
+    // =&gt; [&#123; &#39;x&#39;: 1 &#125;, &#123; &#39;x&#39;: 2 &#125;]&lt;/script&gt;</code></pre><p>Math.floor 只是向下取整，去重，并没有改变原有的数组，所以还是 2.1 和 1.2，不是 2 和 1。</p>
 <h2 id="13、模板插入"><a href="#13、模板插入" class="headerlink" title="13、模板插入"></a>13、模板插入</h2><p>_.template([string=’’], [options={}])</p>
-<pre><code>&lt;div id="container"&gt;&lt;/div&gt;
-&lt;script src="https://cdn.bootcss.com/lodash.js/4.17.4/lodash.min.js"&gt;&lt;/script&gt;&lt;script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"&gt;&lt;/script&gt;&lt;script type="text/javascript"&gt;
-    $(function () {
-        var data = [{name: '戈德斯文'}, {name: '柴硕'}, {name: '杨海月'}];
-        $('#container').html( _.template($('#tpl').html(), data) )
-    });&lt;/script&gt;&lt;script type="text/template" id="tpl"&gt;
-    &lt;% _.each(obj,function(e,i){ %&gt;
+<pre><code>&lt;div id=&quot;container&quot;&gt;&lt;/div&gt;
+&lt;script src=&quot;https://cdn.bootcss.com/lodash.js/4.17.4/lodash.min.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;
+    $(function () &#123;
+        var data = [&#123;name: &#39;戈德斯文&#39;&#125;, &#123;name: &#39;柴硕&#39;&#125;, &#123;name: &#39;杨海月&#39;&#125;];
+        $(&#39;#container&#39;).html( _.template($(&#39;#tpl&#39;).html(), data) )
+    &#125;);&lt;/script&gt;&lt;script type=&quot;text/template&quot; id=&quot;tpl&quot;&gt;
+    &lt;% _.each(obj,function(e,i)&#123; %&gt;
         &lt;ul&gt;
             &lt;li&gt;&lt;%= e.name %&gt;&lt;%= i %&gt;&lt;/li&gt;
         &lt;/ul&gt;
-    &lt;%})%&gt;&lt;/script&gt;
- 注意，这个&lt;script&gt;标签的type是text/template，类似于react的JSX的写法，就是js和html可以混写，用&lt;% %&gt;括起来的就是js代码，可以执行，直接写的就是html的标签，并且有类似MVC框架的的数据绑定，在&lt;%= %&gt;中可以调用到数据呈现（纯属个人见解，不知道理解的对不对）</code></pre><script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+    &lt;%&#125;)%&gt;&lt;/script&gt;
+ 注意，这个&lt;script&gt;标签的type是text/template，类似于react的JSX的写法，就是js和html可以混写，用&lt;% %&gt;括起来的就是js代码，可以执行，直接写的就是html的标签，并且有类似MVC框架的的数据绑定，在&lt;%= %&gt;中可以调用到数据呈现（纯属个人见解，不知道理解的对不对）</code></pre>
             </div>
             <hr/>
 
@@ -1325,7 +1307,7 @@ JavaScript 的单线程，与它的用途有关。作为浏览器
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">80.8k</span> 字
+                <span class="white-color">84.5k</span> 字
             
 
             

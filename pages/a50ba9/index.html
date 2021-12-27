@@ -10,8 +10,7 @@
     <meta name="baidu-site-verification" content="fmlEuI34ir" />
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY" />
     <meta name="description" content="前言泛型是为了构建通用化的组件所设计的。在强类型语言中,泛型是构建大型复杂系统的主要特性之一，它允许将类型定义通用化，而不是单一的形式。
-基本使用function doSomeThing&amp;lt;T&gt;(arg: T): T {
-  retur">
+基本使用function doSomeThing&amp;lt;T&gt;(arg: T): T &amp;amp;#123">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -672,36 +671,36 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><code>泛型</code>是为了构建通用化的组件所设计的。在强类型语言中,<code>泛型</code>是构建大型复杂系统的主要特性之一，它允许将类型定义通用化，而不是单一的形式。</p>
-<h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">function</span> doSomeThing<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span>arg<span class="token punctuation">:</span> T<span class="token punctuation">)</span><span class="token punctuation">:</span> T <span class="token punctuation">{</span>
+<h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">function</span> doSomeThing<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span>arg<span class="token punctuation">:</span> T<span class="token punctuation">)</span><span class="token punctuation">:</span> T <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> arg<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
 <p>相比于我们之前学习的类型定义的方式，这里我们多了一个<code>&lt;T&gt;</code>,在TypeScript中，这就叫<code>泛型</code>,表示的语义为，当你调用这个函数的时候除了传递常用的参数，你也可以传递类型，内部会使用传递的这个类型。</p>
 <p>比如，我们传递一个<code>string</code>类型：</p>
 <pre class=" language-typescript"><code class="language-typescript">doSomeThing<span class="token operator">&lt;</span><span class="token keyword">string</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token string">"mss"</span><span class="token punctuation">)</span></code></pre>
 <p>值得注意的是，当你使用了<code>泛型</code>,TypeScript会默认会通过外部传入的类型，推断内部变量或者函数的返回值的类型，并且强制内部的类型要符合外部传入的类型，否则，TypeScript会报错：</p>
-<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">function</span> doSomeThing<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span>arg<span class="token punctuation">:</span> T<span class="token punctuation">)</span><span class="token punctuation">:</span> T <span class="token punctuation">{</span>
+<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">function</span> doSomeThing<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span>arg<span class="token punctuation">:</span> T<span class="token punctuation">)</span><span class="token punctuation">:</span> T <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arg<span class="token punctuation">.</span>length<span class="token punctuation">)</span>
   <span class="token keyword">return</span> arg<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">// Property 'length' does not exist on type 'T'</span></code></pre>
 <p>但是我们有的数据类型就是存在<code>length</code>属性的，那我们这时应该怎么做呢？比如数组来说，TypeScript允许我们直接定义数组的泛型：</p>
-<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">function</span> deArr<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span>arg<span class="token punctuation">:</span> T<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span> T<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">function</span> deArr<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span>arg<span class="token punctuation">:</span> T<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span> T<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arg<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> arg<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
 <p>此时我们访问<code>length</code>就是合法的。</p>
 <p>同时，定义数组的泛型也可以这样写，这种方式和上面那种方式是等效的：</p>
-<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">function</span> deAnotherArr<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span>arg<span class="token punctuation">:</span> <span class="token keyword">Array</span><span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">Array</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token punctuation">{</span>
+<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">function</span> deAnotherArr<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span>arg<span class="token punctuation">:</span> <span class="token keyword">Array</span><span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">Array</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arg<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> arg
-<span class="token punctuation">}</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
 <p>这种方式也是可以，完全取决于你个人的喜好。</p>
 <h3 id="使用泛型类型"><a href="#使用泛型类型" class="headerlink" title="使用泛型类型"></a>使用泛型类型</h3><p>基本使用</p>
-<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">function</span> doSomeThing<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span>arg<span class="token punctuation">:</span> T<span class="token punctuation">)</span><span class="token punctuation">:</span> T <span class="token punctuation">{</span>
+<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">function</span> doSomeThing<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span>arg<span class="token punctuation">:</span> T<span class="token punctuation">)</span><span class="token punctuation">:</span> T <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arg<span class="token punctuation">.</span>length<span class="token punctuation">)</span>
   <span class="token keyword">return</span> arg<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
 <span class="token keyword">let</span> myDoSomeThing<span class="token punctuation">:</span> <span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span>arg<span class="token punctuation">:</span> T<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> T <span class="token operator">=</span> doSomeThing<span class="token punctuation">;</span></code></pre>
 <p>传入的类型参数，也可以不用和函数定义的<code>T</code>保持一致：</p>
@@ -709,37 +708,37 @@
 <p>这样也是可以的。</p>
 <h3 id="泛型接口"><a href="#泛型接口" class="headerlink" title="泛型接口"></a>泛型接口</h3><p>基本使用：</p>
 <p>我们首先定义一个<code>泛型</code>接口：</p>
-<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">interface</span> <span class="token class-name">GenericInterFace</span> <span class="token punctuation">{</span>
+<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">interface</span> <span class="token class-name">GenericInterFace</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span>arg<span class="token punctuation">:</span> T<span class="token punctuation">)</span><span class="token punctuation">:</span> T
-<span class="token punctuation">}</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
 <p>然后我们这样使用：</p>
-<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">let</span> genericInterFace<span class="token punctuation">:</span> GenericInterFace <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token keyword">get</span><span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span>arg<span class="token punctuation">:</span> T<span class="token punctuation">)</span><span class="token punctuation">:</span>T <span class="token punctuation">{</span>
+<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">let</span> genericInterFace<span class="token punctuation">:</span> GenericInterFace <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token keyword">get</span><span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span>arg<span class="token punctuation">:</span> T<span class="token punctuation">)</span><span class="token punctuation">:</span>T <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> arg<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
 <p>也可以在定义接口的时候将传入泛型的类型:</p>
-<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">interface</span> <span class="token class-name">GenericInterFace</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token punctuation">{</span>
+<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">interface</span> <span class="token class-name">GenericInterFace</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token punctuation">(</span>arg<span class="token punctuation">:</span> T<span class="token punctuation">)</span><span class="token punctuation">:</span> T
-<span class="token punctuation">}</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
 <p>使用的方式和上面的例子一样：</p>
-<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">let</span> genericInterFace<span class="token punctuation">:</span> GenericInterFace <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token keyword">get</span><span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span>arg<span class="token punctuation">:</span> T<span class="token punctuation">)</span><span class="token punctuation">:</span>T <span class="token punctuation">{</span>
+<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">let</span> genericInterFace<span class="token punctuation">:</span> GenericInterFace <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token keyword">get</span><span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span>arg<span class="token punctuation">:</span> T<span class="token punctuation">)</span><span class="token punctuation">:</span>T <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> arg<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
 <p>此外，前面的例子里面，当我们使用泛型的时候，由于TypeScript编译器不能推断传入的<code>T</code>的类型，当然这也不可能推断，所以当我们试图在内部访问<code>length</code>属性的时候，就会报错。然后，我们这里可以利用接口，在编译之前就给开发一个友好的提示：</p>
 <p>定义一个<code>length</code>的接口：</p>
-<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">interface</span> <span class="token class-name">Lengthwise</span> <span class="token punctuation">{</span>
+<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">interface</span> <span class="token class-name">Lengthwise</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   length<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
 <p>然后重写我们前面的<code>doSomeThing</code>例子：</p>
-<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">function</span> doSomeThing<span class="token operator">&lt;</span>T <span class="token keyword">extends</span> <span class="token class-name">Lengthwise</span><span class="token operator">></span><span class="token punctuation">(</span>arg<span class="token punctuation">:</span> T<span class="token punctuation">)</span><span class="token punctuation">:</span> T <span class="token punctuation">{</span>
+<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">function</span> doSomeThing<span class="token operator">&lt;</span>T <span class="token keyword">extends</span> <span class="token class-name">Lengthwise</span><span class="token operator">></span><span class="token punctuation">(</span>arg<span class="token punctuation">:</span> T<span class="token punctuation">)</span><span class="token punctuation">:</span> T <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arg<span class="token punctuation">.</span>length<span class="token punctuation">)</span>
   <span class="token keyword">return</span> arg<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
 <p>此时就不会报错，这里已经确保了传入的参数必定是有<code>length</code>属性的。</p>
 <h3 id="泛型类"><a href="#泛型类" class="headerlink" title="泛型类"></a>泛型类</h3><p>泛型类在结构上和泛型接口差不多。</p>
-<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">class</span> <span class="token class-name">GenericClass</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token punctuation">{</span>
+<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">class</span> <span class="token class-name">GenericClass</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   name<span class="token punctuation">:</span> T
   add<span class="token punctuation">:</span> <span class="token punctuation">(</span>x<span class="token punctuation">:</span> T<span class="token punctuation">,</span> y<span class="token punctuation">:</span>T<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> T
-<span class="token punctuation">}</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
 <p>然后我们可以正常的通过<code>new</code>关键字进行实例化。</p>
 <pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">let</span> genericClass <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GenericClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 genericClass<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'mss'</span><span class="token punctuation">;</span></code></pre>
@@ -748,12 +747,12 @@ genericClass<span class="token punctuation">.</span>name <span class="token oper
 <p>这也是合理的。</p>
 <h3 id="泛型的高级用法"><a href="#泛型的高级用法" class="headerlink" title="泛型的高级用法"></a>泛型的高级用法</h3><p>1、使用泛型确保访问对象时不会访问到对象不存在的属性。</p>
 <p>定义一个泛型：</p>
-<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">function</span> getProperty<span class="token operator">&lt;</span>T<span class="token punctuation">,</span> K <span class="token keyword">extends</span> <span class="token class-name">keyof</span> T<span class="token operator">></span><span class="token punctuation">(</span>obj<span class="token punctuation">:</span> T<span class="token punctuation">,</span> key<span class="token punctuation">:</span> K<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">function</span> getProperty<span class="token operator">&lt;</span>T<span class="token punctuation">,</span> K <span class="token keyword">extends</span> <span class="token class-name">keyof</span> T<span class="token operator">></span><span class="token punctuation">(</span>obj<span class="token punctuation">:</span> T<span class="token punctuation">,</span> key<span class="token punctuation">:</span> K<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> obj<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
 <p>注意这里是的<code>keyof</code>是TypeScript中给我们提供的遍历对象属性值的操作符。</p>
 <p>然后我们这样使用：</p>
-<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token punctuation">{</span> a<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> c<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span> d<span class="token punctuation">:</span> <span class="token number">4</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> a<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> c<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span> d<span class="token punctuation">:</span> <span class="token number">4</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
 
 <span class="token function">getProperty</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// 1</span>
@@ -761,28 +760,10 @@ genericClass<span class="token punctuation">.</span>name <span class="token oper
 <span class="token function">getProperty</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token string">"m"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// Argument of type '"m"' is not assignable to parameter of type '"a" | "b" | "c" | "d"'.</span></code></pre>
 <p>2、类的构造函数和泛型一起使用</p>
-<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">function</span> create<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span>c<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token keyword">new</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> T <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">:</span> T <span class="token punctuation">{</span>
+<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">function</span> create<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span>c<span class="token punctuation">:</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token keyword">new</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> T <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">:</span> T <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">c</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+
             </div>
             <hr/>
 
@@ -1221,7 +1202,7 @@ ECMAScript: 由 ECMA-262 定义并提供核心功能。
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">80.8k</span> 字
+                <span class="white-color">84.5k</span> 字
             
 
             

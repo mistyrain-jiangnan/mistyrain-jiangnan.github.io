@@ -652,7 +652,7 @@ bo">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        225
+                        189
                     </div>
                     
 
@@ -679,20 +679,20 @@ bo">
                 <h3 id="首先来看组件的需求"><a href="#首先来看组件的需求" class="headerlink" title="首先来看组件的需求"></a>首先来看组件的需求</h3><ul>
 <li>左右两边的横线在移动端显示为 1px。</li>
 <li>中间内容部分可以随意传入文字内容。</li>
-<li>同时不论文字的多少，两边的横线会随着内容增大而减小，直到内容占据的最大宽度为 40%。 <img src="https://cdn.jsdelivr.net/gh//cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://cdn.nlark.com/yuque/0/2021/png/12838787/1628238681577-84096e47-92c3-4e15-b67a-b31d8ef7c709.png#align=left&amp;display=inline&amp;height=63&amp;margin=%5Bobject%20Object%5D&amp;originHeight=63&amp;originWidth=943&amp;size=0&amp;status=done&amp;style=none&amp;width=943" alt=""></li>
+<li>同时不论文字的多少，两边的横线会随着内容增大而减小，直到内容占据的最大宽度为 40%。 <img src="https://cdn.jsdelivr.net/gh//cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://cdn.nlark.com/yuque/0/2021/png/12838787/1628238681577-84096e47-92c3-4e15-b67a-b31d8ef7c709.png#align=left&display=inline&height=63&margin=%5Bobject%20Object%5D&originHeight=63&originWidth=943&size=0&status=done&style=none&width=943" alt=""></li>
 <li>根据以上需求，我们来制定步骤。</li>
 <li>简单的实现需求</li>
 </ul>
-<pre class=" language-javascript"><code class="language-javascript">border<span class="token operator">-</span>box<span class="token punctuation">{</span>
+<pre class=" language-javascript"><code class="language-javascript">border<span class="token operator">-</span>box<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   border<span class="token punctuation">:</span> 1px solid #ccc<span class="token punctuation">;</span>
   position<span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
   padding<span class="token punctuation">:</span> 25px 15px 10px<span class="token punctuation">;</span>
   margin<span class="token operator">-</span>bottom<span class="token punctuation">:</span> 35px<span class="token punctuation">;</span>
   margin<span class="token operator">-</span>top<span class="token punctuation">:</span> 12px<span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span><span class="token punctuation">:</span>last<span class="token operator">-</span>child<span class="token punctuation">{</span>
+  <span class="token operator">&amp;</span><span class="token punctuation">:</span>last<span class="token operator">-</span>child<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     margin<span class="token operator">-</span>bottom<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-  <span class="token punctuation">.</span>title <span class="token punctuation">{</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token punctuation">.</span>title <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     line<span class="token operator">-</span>height<span class="token punctuation">:</span> 38px<span class="token punctuation">;</span>
     font<span class="token operator">-</span>size<span class="token punctuation">:</span> 15px<span class="token punctuation">;</span>
     position<span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
@@ -700,36 +700,18 @@ bo">
     padding<span class="token punctuation">:</span> <span class="token number">0</span> 30px<span class="token punctuation">;</span>
     top<span class="token punctuation">:</span> <span class="token operator">-</span>19px<span class="token punctuation">;</span>
     left<span class="token punctuation">:</span> 25px<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-  <span class="token punctuation">.</span>group <span class="token punctuation">{</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token punctuation">.</span>group <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     font<span class="token operator">-</span>size<span class="token punctuation">:</span> 14px<span class="token punctuation">;</span>
     line<span class="token operator">-</span>height<span class="token punctuation">:</span> 28px<span class="token punctuation">;</span>
     border<span class="token operator">-</span>bottom<span class="token punctuation">:</span> 1px solid #ccc<span class="token punctuation">;</span>
     margin<span class="token operator">-</span>bottom<span class="token punctuation">:</span> 15px<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
 <h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"border-box"</span><span class="token operator">></span>
   <span class="token operator">&lt;</span>h3 <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"title"</span><span class="token operator">></span>未完待续<span class="token operator">&lt;</span><span class="token operator">/</span>h3<span class="token operator">></span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></code></pre>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+
             </div>
             <hr/>
 
@@ -918,8 +900,8 @@ bo">
                     <div class="summary block-with-text">
                         
                             v-character支持 input 框的特殊字符校验
-代码 Codeimport { specialCharacterReg } from './regRules'  //引入正则规则
-const findEle = (parent, 
+代码 Codeimport &amp;#123; specialCharacterReg &amp;#125; from './regRules'  //引入正则规则
+const f
                         
                     </div>
                     <div class="publish-info">
@@ -1169,7 +1151,7 @@ const findEle = (parent,
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">80.8k</span> 字
+                <span class="white-color">84.5k</span> 字
             
 
             
