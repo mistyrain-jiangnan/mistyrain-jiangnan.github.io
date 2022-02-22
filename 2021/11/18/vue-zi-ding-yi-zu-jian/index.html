@@ -70,7 +70,8 @@
         </script>
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
     <body>
 
@@ -672,7 +673,7 @@
             <div id="articleContent">
                 <h2 id="使用-vue-use-以插件形式注册全局组件"><a href="#使用-vue-use-以插件形式注册全局组件" class="headerlink" title="使用 vue.use() 以插件形式注册全局组件"></a>使用 vue.use() 以插件形式注册全局组件</h2><p>vue.use( ) 可以扩展 vue 的功能<br>例如：vuex ，组件库，vurRouter（路由） 都是通过 vue.use()进行扩展的<br>那么，我们也可以通过它把自己的代码扩展到 vue 中</p>
 <h2 id="vue-ues（）解析"><a href="#vue-ues（）解析" class="headerlink" title="vue.ues（）解析"></a>vue.ues（）解析</h2><p>vue.use ( ) 它的参数是一个对象 ，在这个对象中存有一个 install() 方法<br>在这个方法内进行扩展<br>在 vue2 中 这个方法的参数是 vue 的构造函数 Vue<br>在 vue3 中 这个方法的参数是 vue 的应用实例 app</p>
-<h2 id="注册全局组件"><a href="#注册全局组件" class="headerlink" title="注册全局组件"></a>注册全局组件</h2><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 单独定义js文件</span>
+<h2 id="注册全局组件"><a href="#注册全局组件" class="headerlink" title="注册全局组件"></a>注册全局组件</h2><pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 单独定义js文件</span>
 <span class="token comment" spellcheck="true">// 先引入 组件</span>
  <span class="token comment" spellcheck="true">// vue2</span>
 <span class="token keyword">export</span> <span class="token keyword">default</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
@@ -691,9 +692,9 @@
  <span class="token comment" spellcheck="true">// vue2</span>
 Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>功能名<span class="token punctuation">)</span>
  <span class="token comment" spellcheck="true">// vue3中</span>
-<span class="token function">createApp</span><span class="token punctuation">(</span>App<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>store<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>router<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>组件<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span></code></pre>
+<span class="token function">createApp</span><span class="token punctuation">(</span>App<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>store<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>router<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>组件<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="自动注册"><a href="#自动注册" class="headerlink" title="自动注册"></a>自动注册</h2><p>使用上述方法，手动注册在组件多的情况下会耗费大量的时间<br>使用 webpack 提供的方法加载当前文件夹下所有的 .vue 文件</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// context(目录路径，是否加载子目录，加载文件的匹配正则)</span>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// context(目录路径，是否加载子目录，加载文件的匹配正则)</span>
 <span class="token keyword">const</span> importFn <span class="token operator">=</span> require<span class="token punctuation">.</span><span class="token function">context</span><span class="token punctuation">(</span><span class="token string">"./"</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token regex">/\.vue$/</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token function">install</span><span class="token punctuation">(</span>app<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
@@ -705,7 +706,7 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
       app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span>component<span class="token punctuation">.</span>name<span class="token punctuation">,</span> component<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="配置完成后只要在这个文件夹中添加的组件都会被注册为全局组件"><a href="#配置完成后只要在这个文件夹中添加的组件都会被注册为全局组件" class="headerlink" title="配置完成后只要在这个文件夹中添加的组件都会被注册为全局组件"></a>配置完成后只要在这个文件夹中添加的组件都会被注册为全局组件</h2><p>​</p>
 <h2 id="注意：所有的自定义标签名都会使用组件名-，就是组件的-name-属性，注意为自己的组件添加这个属性"><a href="#注意：所有的自定义标签名都会使用组件名-，就是组件的-name-属性，注意为自己的组件添加这个属性" class="headerlink" title="注意：所有的自定义标签名都会使用组件名 ，就是组件的 name 属性，注意为自己的组件添加这个属性"></a>注意：所有的自定义标签名都会使用组件名 ，就是组件的 name 属性，注意为自己的组件添加这个属性</h2><p>​</p>
 
@@ -1146,12 +1147,17 @@ export function g
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">84.5k</span> 字
+                <span class="white-color">82.2k</span> 字
             
 
             
             <br>
-
+            
+                <span id="icp"><img src="https://cdn.jsdelivr.net/gh/mobaijun/blog_css_js/image/icp.png"
+                                    style="vertical-align: text-bottom;"/>
+                <a href="https://beian.miit.gov.cn" target="_blank">皖ICP备2021016286号</a>
+            </span>
+            
         </div>
 
         <div class="col s12 m4 l4 social-link social-statis">
@@ -1216,7 +1222,7 @@ export function g
             minutes) / seconds);
         document.getElementById("sitetime").innerHTML = "本站已勉强运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
             " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
-    } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    } 
     siteTime();
 </script>
 
@@ -1373,5 +1379,5 @@ $(function () {
             </script>
         
 
-    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":200},"mobile":{"show":true},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+    <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":200},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
 </html>

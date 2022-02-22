@@ -71,7 +71,8 @@
         </script>
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
     <body>
 
@@ -672,9 +673,9 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>字面量类型是，使用<code>type</code>关键字，直接命名变量的类型范围，使用字面量类型的范围为：<code>number</code>、<code>string</code>、<code>boolean</code>。</p>
-<h3 id="命名字符串类型"><a href="#命名字符串类型" class="headerlink" title="命名字符串类型"></a>命名字符串类型</h3><pre class=" language-typescript"><code class="language-typescript">type  Name <span class="token operator">=</span> <span class="token string">"mss"</span> <span class="token operator">|</span> <span class="token string">"szl"</span> <span class="token operator">|</span> <span class="token string">"no"</span></code></pre>
+<h3 id="命名字符串类型"><a href="#命名字符串类型" class="headerlink" title="命名字符串类型"></a>命名字符串类型</h3><pre class="line-numbers language-typescript"><code class="language-typescript">type  Name <span class="token operator">=</span> <span class="token string">"mss"</span> <span class="token operator">|</span> <span class="token string">"szl"</span> <span class="token operator">|</span> <span class="token string">"no"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>然后我们就可以根据不同的<code>Name</code>做不同的操作：</p>
-<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">function</span> <span class="token punctuation">(</span>name<span class="token punctuation">:</span> Name<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">function</span> <span class="token punctuation">(</span>name<span class="token punctuation">:</span> Name<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span>name <span class="token operator">==</span> <span class="token string">'mss'</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
 
   <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">'szl'</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
@@ -682,12 +683,12 @@
   <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>name <span class="token operator">==</span> <span class="token string">'no'</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
 
   <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这里传入的<code>name</code>只能是<code>mss</code>、<code>szl</code>、<code>no</code>三者之一。</p>
-<h3 id="命名数值类型"><a href="#命名数值类型" class="headerlink" title="命名数值类型"></a>命名数值类型</h3><pre class=" language-typescript"><code class="language-typescript">type LessThan4 <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">|</span> <span class="token number">2</span> <span class="token operator">|</span> <span class="token number">3</span></code></pre>
+<h3 id="命名数值类型"><a href="#命名数值类型" class="headerlink" title="命名数值类型"></a>命名数值类型</h3><pre class="line-numbers language-typescript"><code class="language-typescript">type LessThan4 <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">|</span> <span class="token number">2</span> <span class="token operator">|</span> <span class="token number">3</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>使用方式和字符串类型一样。</p>
 <p>3.命名布尔类型</p>
-<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">interface</span> <span class="token class-name">Sucess</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">interface</span> <span class="token class-name">Sucess</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   flag<span class="token punctuation">:</span> <span class="token keyword">true</span>
   <span class="token keyword">do</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">void</span>
 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
@@ -697,7 +698,7 @@
   <span class="token keyword">do</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">void</span>
 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
-type ValidationResult <span class="token operator">=</span> Sucess <span class="token operator">|</span> Failure</code></pre>
+type ValidationResult <span class="token operator">=</span> Sucess <span class="token operator">|</span> Failure<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr/>
@@ -1134,12 +1135,17 @@ type ValidationResult <span class="token operator">=</span> Sucess <span class="
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">84.5k</span> 字
+                <span class="white-color">82.2k</span> 字
             
 
             
             <br>
-
+            
+                <span id="icp"><img src="https://cdn.jsdelivr.net/gh/mobaijun/blog_css_js/image/icp.png"
+                                    style="vertical-align: text-bottom;"/>
+                <a href="https://beian.miit.gov.cn" target="_blank">皖ICP备2021016286号</a>
+            </span>
+            
         </div>
 
         <div class="col s12 m4 l4 social-link social-statis">
@@ -1204,7 +1210,7 @@ type ValidationResult <span class="token operator">=</span> Sucess <span class="
             minutes) / seconds);
         document.getElementById("sitetime").innerHTML = "本站已勉强运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
             " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
-    } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    } 
     siteTime();
 </script>
 
@@ -1361,5 +1367,5 @@ $(function () {
             </script>
         
 
-    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":200},"mobile":{"show":true},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+    <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":200},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
 </html>

@@ -72,7 +72,8 @@
         </script>
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
     <body>
 
@@ -681,7 +682,7 @@
 <p>文章中例子都放在了 github 源码上，也可以点击直接看例子</p>
 <h1 id="如何动态注册路由？"><a href="#如何动态注册路由？" class="headerlink" title="如何动态注册路由？"></a>如何动态注册路由？</h1><p>文中的每个修饰符例子都由一个页面承载，聪明的你肯定不想手动引入几十个.vue 文件并配置路由.<br>有什么办法可以帮我们自动完成路由注册呢？</p>
 <h2 id="1-文件目录结构"><a href="#1-文件目录结构" class="headerlink" title="1. 文件目录结构"></a>1. 文件目录结构</h2><p>目录结构（已去除其他文件目录）大概如下</p>
-<pre class=" language-javascript"><code class="language-javascript">├── <span class="token keyword">package</span><span class="token punctuation">.</span>json
+<pre class="line-numbers language-javascript"><code class="language-javascript">├── <span class="token keyword">package</span><span class="token punctuation">.</span>json
 └── src
     ├── App<span class="token punctuation">.</span>vue
     ├── main<span class="token punctuation">.</span>js
@@ -697,9 +698,9 @@
             ├── prevent<span class="token punctuation">.</span>vue
             ├── self<span class="token punctuation">.</span>vue
             └── stop<span class="token punctuation">.</span>vue
-            └── <span class="token operator">...</span></code></pre>
+            └── <span class="token operator">...</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-期望的路由配置"><a href="#2-期望的路由配置" class="headerlink" title="2. 期望的路由配置"></a>2. 期望的路由配置</h2><p>最终给到 vue-router 的配置大概长下面这个样子，每个配置最重要的部分分别是 path、name 和 component</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token punctuation">[</span>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token punctuation">[</span>
   <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token string">"path"</span><span class="token punctuation">:</span> <span class="token string">"/home"</span><span class="token punctuation">,</span>
     <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"home"</span><span class="token punctuation">,</span>
@@ -737,9 +738,9 @@
     <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
   <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
   <span class="token operator">...</span> <span class="token comment" spellcheck="true">// 其他路由配置</span>
-<span class="token punctuation">]</span></code></pre>
+<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="3-require-context-实现动态注册路由"><a href="#3-require-context-实现动态注册路由" class="headerlink" title="3. require.context 实现动态注册路由"></a>3. require.context 实现动态注册路由</h2><p>借助 webpack require.context 的能力，可以非常方便地实现上面目录到路由配置的映射工作，源码如下</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">const</span> registerRoutes <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">const</span> registerRoutes <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token keyword">const</span> contextInfo <span class="token operator">=</span> require<span class="token punctuation">.</span><span class="token function">context</span><span class="token punctuation">(</span><span class="token string">"./views"</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token regex">/.vue$/</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">const</span> routes <span class="token operator">=</span> contextInfo<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>filePath<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token comment" spellcheck="true">// filePath 形如 ./Home.vue、./modifiers/capture.vue</span>
@@ -762,10 +763,10 @@
   <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
   <span class="token keyword">return</span> routes<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>​</p>
 <p><strong>效果</strong><br>经过上面的简单处理，动态注册路由就完成啦！您也可以点击 vue-demos 查看效果</p>
-<h1 id="事件修饰符"><a href="#事件修饰符" class="headerlink" title="事件修饰符"></a>事件修饰符</h1><h2 id="1-阻止冒泡的两种方式"><a href="#1-阻止冒泡的两种方式" class="headerlink" title="1. 阻止冒泡的两种方式"></a>1. 阻止冒泡的两种方式</h2><pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+<h1 id="事件修饰符"><a href="#事件修饰符" class="headerlink" title="事件修饰符"></a>事件修饰符</h1><h2 id="1-阻止冒泡的两种方式"><a href="#1-阻止冒泡的两种方式" class="headerlink" title="1. 阻止冒泡的两种方式"></a>1. 阻止冒泡的两种方式</h2><pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
   <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"parent"</span> @click<span class="token operator">=</span><span class="token string">"onClickParent"</span><span class="token operator">></span>
     我是爸爸
     <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"child"</span> @click<span class="token operator">=</span><span class="token string">"onClickChild"</span><span class="token operator">></span>
@@ -784,19 +785,19 @@
       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'我是儿子'</span><span class="token punctuation">)</span>
     <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
   <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>点<strong>击子节点</strong>的时候因为事件冒泡的缘故不仅会打印出我是儿子还会打印我是爸爸。有什么办法可以阻止子节点的<strong>事件冒泡</strong>呢？<br><img src="https://cdn.jsdelivr.net/gh//cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://cdn.nlark.com/yuque/0/2021/gif/12838787/1637744717267-b64bf757-8e0a-4acf-8499-ff28cfb0e9a5.gif#clientId=ube0a7b57-a3b9-4&from=paste&id=ufdb6c334&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1&originWidth=1&originalType=url%E2%88%B6=1&size=70&status=done&style=none&taskId=u3a2a87aa-6cbd-4bcb-a622-0c7fdbb416c" alt="image.png"></p>
 <h3 id="1-stop"><a href="#1-stop" class="headerlink" title="1 .stop"></a>1 .stop</h3><p>只要加.stop 修饰符即可，阻止事件冒泡的及简方式，很方便是不是。<br>当添加上.stop 修饰符时，只会出现我是儿子</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
   <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"parent"</span> @click<span class="token operator">=</span><span class="token string">"onClickParent"</span><span class="token operator">></span>
     我是爸爸
     <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"child"</span> @click<span class="token punctuation">.</span>stop<span class="token operator">=</span><span class="token string">"onClickChild"</span><span class="token operator">></span>
       我是儿子
     <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
   <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span></code></pre>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="2-event-stopPropagation"><a href="#2-event-stopPropagation" class="headerlink" title="2. event.stopPropagation"></a>2. event.stopPropagation</h3><p>当然了，我们也可以通过调用 event.stopPropagation 来阻止冒泡。不过更加推荐修饰符的做法，这样你的函数会更加专注在逻辑处理上，而不用关心 DOM 事件细节</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   name<span class="token punctuation">:</span> <span class="token string">"stop"</span><span class="token punctuation">,</span>
   methods<span class="token punctuation">:</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token function">onClickChild</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
@@ -804,9 +805,9 @@
       event<span class="token punctuation">.</span><span class="token function">stopPropagation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
   <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-阻止默认事件的两种方式"><a href="#2-阻止默认事件的两种方式" class="headerlink" title="2. 阻止默认事件的两种方式"></a>2. 阻止默认事件的两种方式</h2><p>vue 中阻止冒泡有两种方式，那阻止默认事件呢？</p>
-<h3 id="1-prevent"><a href="#1-prevent" class="headerlink" title="1 .prevent"></a>1 .prevent</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+<h3 id="1-prevent"><a href="#1-prevent" class="headerlink" title="1 .prevent"></a>1 .prevent</h3><pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
   <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"prevent"</span><span class="token operator">></span>
     <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"https://juejin.cn/"</span> @click<span class="token operator">=</span><span class="token string">"onNoPrevent"</span><span class="token operator">></span>点击跳转掘金<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
 
@@ -827,10 +828,10 @@
       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'阻止默认事件'</span><span class="token punctuation">)</span>
     <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
   <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>只要添加.prevent 轻松实现阻止默认事件</p>
 <h3 id="2-event-preventDefault"><a href="#2-event-preventDefault" class="headerlink" title="2.event.preventDefault()"></a>2.event.preventDefault()</h3><p>和阻止冒泡一样，我们也可以通过调用事件对象的 preventDefault 方法来阻止默认事件</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   name<span class="token punctuation">:</span> <span class="token string">"prevent"</span><span class="token punctuation">,</span>
   methods<span class="token punctuation">:</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token function">onPrevent</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
@@ -838,9 +839,9 @@
       event<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
   <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="3-capture"><a href="#3-capture" class="headerlink" title="3 .capture"></a>3 .capture</h2><p>默认情况下，事件流是以冒泡(由里向外)的形式传递的，如果想以捕获（由外向里）的形式应该怎么办呢？</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
   <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"capture parent"</span> @click<span class="token punctuation">.</span>capture<span class="token operator">=</span><span class="token string">"onClickParent"</span><span class="token operator">></span>
     父节点
     <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"child"</span> @click<span class="token punctuation">.</span>capture<span class="token operator">=</span><span class="token string">"onClickChild"</span><span class="token operator">></span>自节点<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
@@ -857,11 +858,11 @@
       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'我是子节点'</span><span class="token punctuation">)</span>
     <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
   <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>​</p>
 <p>不加 catpture 修饰符，点击<strong>子节点</strong>会陆续打印我是父节点以及我是子节点，加了之后，则是反过来了</p>
 <h2 id="4-self"><a href="#4-self" class="headerlink" title="4 .self"></a>4 .self</h2><p>只有当 event.target 是当前元素自身时才会触发事件回调函数</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
   <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"self"</span> @click<span class="token punctuation">.</span>self<span class="token operator">=</span><span class="token string">"onClickSelf"</span><span class="token operator">></span>
     <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"inner"</span> @click<span class="token operator">=</span><span class="token string">"onClickInner"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
   <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
@@ -877,11 +878,11 @@
       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'我是inner节点'</span><span class="token punctuation">)</span>
     <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
   <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>​</p>
 <p>不加 self 修饰符的话，点击 inner 节点也会触发 self 的事件，加了之后只有触发事件的元素本身是 self，才会打印出我是 self 节点</p>
 <h2 id="暂停一下：修饰符的顺序如何理解？"><a href="#暂停一下：修饰符的顺序如何理解？" class="headerlink" title="暂停一下：修饰符的顺序如何理解？"></a>暂停一下：修饰符的顺序如何理解？</h2><p>已经回顾了 4 个修饰符，单独使用的时候很容易理解，但是注意官网有这么一句话<br><img src="https://cdn.jsdelivr.net/gh//cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://cdn.nlark.com/yuque/0/2021/gif/12838787/1637744717749-e6349a30-d17e-494e-bda7-01e582b7022f.gif#clientId=ube0a7b57-a3b9-4&from=paste&id=ue6c22681&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1&originWidth=1&originalType=url%E2%88%B6=1&size=70&status=done&style=none&taskId=u4fe3b80c-310b-44fe-8997-3fbdc0a61e3" alt="image.png"><br>image.png<br><strong>怎么理解呢？我们来看两个栗子</strong></p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
   <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"order"</span><span class="token operator">></span>
     <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"order-0"</span><span class="token operator">></span>
       <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"https://juejin.cn/"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"order-parent"</span> @click<span class="token punctuation">.</span>self<span class="token punctuation">.</span>prevent<span class="token operator">=</span><span class="token string">"onClickParent"</span><span class="token operator">></span>
@@ -918,7 +919,7 @@
     <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
   <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>您可以猜一下，上面的代码会发生什么，以下三点是可以明确的？</p>
 <ol>
 <li>首先可以明确的是点击上面和下面的子节点都不会触发父节点的点击事件</li>
@@ -928,7 +929,7 @@
 <p>但是点击上面的子节点，父节点会不会跳转至掘金呢？答案是<strong>会</strong><br><strong>为什么？</strong><br><a href="mailto:a@click.self.prevent">a@click.self.prevent</a>=”onClickParent”的意思是当点击的元素是 a 元素本身时，会阻止默认事件（可以解释 3，不会发生跳转），并且执行 onClickParent 回调。<br>而点击 span 元素时，由于冒泡的缘故，点击事件会传递给 a，但是此时 a 会判断出该事件不是由自身触发的也就不会阻止默认事件(此时也就发生跳转了)，当然也不会触发 onClickParent 回调<br>同理来我们分析一下<a href="mailto:a@click.prevent.self">a@click.prevent.self</a>=”onClickParent”<br>不管是子节点还是自身点击，都是先阻止默认事件，只有当触发点击事件是 a 元素本身时才会执行 onClickParent 回调函数。</p>
 <p><strong>回过头看，你理解事件的顺序含义了吗？</strong></p>
 <h2 id="5-once"><a href="#5-once" class="headerlink" title="5. once"></a>5. once</h2><p>顾名思义，事件只会触发一次</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
   <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"once"</span> @click<span class="token punctuation">.</span>once<span class="token operator">=</span><span class="token string">"onClickOnce"</span><span class="token operator">></span>
     只触发一次
   <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
@@ -941,10 +942,10 @@
       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'once，我只会触发一次点击事件回调'</span><span class="token punctuation">)</span>
     <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
   <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>触发一次点击之后，任我再怎么点，回调怎也不会触发了。</p>
 <h2 id="6-native"><a href="#6-native" class="headerlink" title="6 .native"></a>6 .native</h2><p>我们知道在自定义组件上，只能监听自定义事件，一些原生事件（比如 click）是没有办法直接触发的，但是使用.native 修饰符可以帮我们办到这点<br><strong>native.vue</strong></p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
   <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"native-custom"</span><span class="token operator">></span>
     <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"text"</span> @keydown<span class="token operator">=</span><span class="token string">"onKeydown"</span><span class="token operator">></span>
   <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
@@ -957,9 +958,9 @@
       <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'onKeydown'</span><span class="token punctuation">)</span>
     <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
   <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>custom.vue</strong></p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
   <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"native"</span><span class="token operator">></span>
     <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 加上<span class="token punctuation">.</span>native之后原生事件才得以监听成功 <span class="token operator">--</span><span class="token operator">></span>
     <span class="token operator">&lt;</span>NativeCustom @onKeydown<span class="token operator">=</span><span class="token string">"onKeydown"</span> @click<span class="token punctuation">.</span>native<span class="token operator">=</span><span class="token string">"onClick"</span> <span class="token operator">/</span><span class="token operator">></span>
@@ -982,13 +983,13 @@
     <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
   <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="7-passive"><a href="#7-passive" class="headerlink" title="7 .passive"></a>7 .passive</h2><p>vue 对应 addEventListener 中的 passive 选项提供了 .passive 修饰符</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 滚动事件的默认行为 <span class="token punctuation">(</span>即滚动行为<span class="token punctuation">)</span> 将会立即触发 <span class="token operator">--</span><span class="token operator">></span>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 滚动事件的默认行为 <span class="token punctuation">(</span>即滚动行为<span class="token punctuation">)</span> 将会立即触发 <span class="token operator">--</span><span class="token operator">></span>
 <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 而不会等待 <span class="token template-string"><span class="token string">`onScroll`</span></span> 完成 <span class="token operator">--</span><span class="token operator">></span>
 <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 这其中包含 <span class="token template-string"><span class="token string">`event.preventDefault()`</span></span> 的情况 <span class="token operator">--</span><span class="token operator">></span>
 
-<span class="token operator">&lt;</span>div v<span class="token operator">-</span>on<span class="token punctuation">:</span>scroll<span class="token punctuation">.</span>passive<span class="token operator">=</span><span class="token string">"onScroll"</span><span class="token operator">></span><span class="token operator">...</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></code></pre>
+<span class="token operator">&lt;</span>div v<span class="token operator">-</span>on<span class="token punctuation">:</span>scroll<span class="token punctuation">.</span>passive<span class="token operator">=</span><span class="token string">"onScroll"</span><span class="token operator">></span><span class="token operator">...</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>这个修饰符对于滚动性能的提升，一直没找到合适的例子，跪求广大掘友有例子啊</strong><br><strong>这个修饰符对于滚动性能的提升，一直没找到合适的例子，跪求广大掘友有例子啊</strong><br><strong>这个修饰符对于滚动性能的提升，一直没找到合适的例子，跪求广大掘友有例子啊</strong></p>
 <h1 id="v-bind-修饰符"><a href="#v-bind-修饰符" class="headerlink" title="v-bind 修饰符"></a>v-bind 修饰符</h1><h2 id="8-sync"><a href="#8-sync" class="headerlink" title="8 .sync"></a>8 .sync</h2><p>当我们想要在父组件和子组件之间对某个属性值进行双向绑定时,有什么便捷的方式？是的只要.sync 修饰符即可办到</p>
 <h2 id="9-camel"><a href="#9-camel" class="headerlink" title="9 .camel"></a>9 .camel</h2><p>.camel 修饰符允许在使用 DOM 模板时将 v-bind property 名称驼峰化，例如 SVG 的 viewBox property：​</p>
@@ -998,7 +999,7 @@
 <li>防止污染 HTML 结构</li>
 </ol>
 <p>比如有以下代码</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
   <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"prop"</span><span class="token operator">></span>
     <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"prop-item"</span> <span class="token punctuation">:</span>my<span class="token operator">-</span>name<span class="token operator">=</span><span class="token string">"prop"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
     <span class="token comment" spellcheck="true">// 最终变成了 &lt;div my-name="hello prop" class="prop-item">&lt;/div></span>
@@ -1026,10 +1027,10 @@
     <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
   <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>从示例上可以看出未使用.prop 修饰符的 my-name 属性会绑定到 dom 节点的 attribute，从而出现暴露的情况。</p>
 <h1 id="鼠标修饰符"><a href="#鼠标修饰符" class="headerlink" title="鼠标修饰符"></a>鼠标修饰符</h1><p>当咱们想监听用户点击了左键、右键或者中键时也有修饰符可以快捷使用，分别是.left、.right、middle，来看个例子试试<br>根据 MDN MouseEvent.button，介绍。<br>在最外层 div.mouse 监听 mousedown 事件，看下用户点击的是鼠标哪个键，三个 button 分别用三个修饰符快捷方式监听左键、中键、右键并打印出 left、middle、right</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
   <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"mouse"</span> @mousedown<span class="token operator">=</span><span class="token string">"onMousedown"</span><span class="token operator">></span>
     <span class="token operator">&lt;</span>button @click<span class="token punctuation">.</span>left<span class="token operator">=</span><span class="token string">"onClickBtn('left')"</span><span class="token operator">></span>left<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
     <span class="token operator">&lt;</span>button @click<span class="token punctuation">.</span>middle<span class="token operator">=</span><span class="token string">"onClickBtn('middle')"</span><span class="token operator">></span>middle<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
@@ -1055,13 +1056,13 @@
       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'点击了'</span><span class="token punctuation">,</span> mosueMsgMap<span class="token punctuation">[</span>event<span class="token punctuation">.</span>button<span class="token punctuation">]</span><span class="token punctuation">)</span>
     <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
   <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>没有带鼠标回来，中键点击暂时不能演示，后续会补上</strong><br><img src="https://cdn.jsdelivr.net/gh//cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://cdn.nlark.com/yuque/0/2021/gif/12838787/1637744718538-11650970-9341-438b-b845-a67688ff5897.gif#clientId=ube0a7b57-a3b9-4&from=paste&id=u4ad4c271&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1&originWidth=1&originalType=url%E2%88%B6=1&size=70&status=done&style=none&taskId=u74db735d-39da-43ad-b642-b24eee0ddf1" alt="image.png"><br>mouse.gif</p>
 <h2 id="11-left"><a href="#11-left" class="headerlink" title="11 .left"></a>11 .left</h2><p>同上例子，监听鼠标左键点击</p>
 <h2 id="12-right"><a href="#12-right" class="headerlink" title="12 .right"></a>12 .right</h2><p>同上例子，监听鼠标右键点击</p>
 <h2 id="13-middle"><a href="#13-middle" class="headerlink" title="13 .middle"></a>13 .middle</h2><p>同上例子，监听鼠标中键点击</p>
 <h1 id="表单相关修饰符"><a href="#表单相关修饰符" class="headerlink" title="表单相关修饰符"></a>表单相关修饰符</h1><h2 id="14-trim"><a href="#14-trim" class="headerlink" title="14 .trim"></a>14 .trim</h2><p>对于输入的内容，希望可以过滤首尾空格应该怎么做呢？</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
   <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"trim"</span><span class="token operator">></span>
     <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"trim-item"</span><span class="token operator">></span>
       <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"text"</span> v<span class="token operator">-</span>model<span class="token operator">=</span><span class="token string">"name"</span><span class="token operator">></span>
@@ -1090,10 +1091,10 @@
       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`'----$&amp;#123;newVal&amp;#125;----'`</span></span><span class="token punctuation">)</span>
     <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
   <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>.trim 修饰符可以很方便做到</strong></p>
 <h2 id="15-lazy"><a href="#15-lazy" class="headerlink" title="15 .lazy"></a>15 .lazy</h2><p>v-model 大家都很熟悉，默认情况下，每次 input 事件触发的时候都会将输入框的值与其绑定的数据进行实时同步。但是如果想要实现光标离开的时候再更新数据如何实现呢？<br><strong>思路 1：</strong> 绑定 change 事件，在事件回调中手动获取 target 的值<br><strong>思路 2：</strong> 直接使用.lazy 修饰符即可达到效果</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
   <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"lazy"</span><span class="token operator">></span>
     <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"lazy-item"</span><span class="token operator">></span>
       <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"text"</span> v<span class="token operator">-</span>model<span class="token operator">=</span><span class="token string">"text"</span><span class="token operator">></span>
@@ -1115,10 +1116,10 @@
       text2<span class="token punctuation">:</span> <span class="token string">''</span>
     <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
   <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>可以看到添加了.lazy 修饰符之后，第二个输入框输入的值不会实时反应在下面，而是光标离开实，text2 的数据才更新了</p>
 <h2 id="16-number"><a href="#16-number" class="headerlink" title="16 .number"></a>16 .number</h2><p>我们知道 input 输入框的 type 哪怕是 number 得到的值的类型也是 string，如果我们想直接拿到 number 类型的数据，有不想麻烦的手动转换应该怎么办呢？</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
   <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"number"</span><span class="token operator">></span>
     <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"number-item"</span><span class="token operator">></span>
       <span class="token operator">&lt;</span>p<span class="token operator">></span>无<span class="token punctuation">.</span>number <span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
@@ -1155,7 +1156,7 @@
       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> newVal<span class="token punctuation">,</span> newVal<span class="token punctuation">)</span>
     <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
   <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ol>
 <li>第一个输入框的类型是 number，但是得到的值是 string</li>
 <li>第二个输入框的类型是 text,但是添加了 number 修饰符，得到的值可以是 number（如果这个值无法被 parseFloat() 解析，则会返回原始的值。）</li>
@@ -1168,7 +1169,7 @@
 <li>分别给四个按钮加上 .ctrl、.alt、.shift、.meta 修饰符并配合点击事件，验证是否同时按下指定按键，再点击才会生效</li>
 </ol>
 <p><strong>注明：电脑 ctrl 键 + 点击估计和浏览器快捷配置冲突了，导致没触发</strong></p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
   <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"system"</span><span class="token operator">></span>
     <span class="token operator">&lt;</span>p<span class="token operator">></span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> msg <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
     <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"buttons"</span><span class="token operator">></span>
@@ -1214,7 +1215,7 @@
       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`只有同时按下$&amp;#123;key&amp;#125;键，点击事件才会发生`</span></span><span class="token punctuation">)</span>
     <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
   <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="17-ctrl"><a href="#17-ctrl" class="headerlink" title="17 .ctrl"></a>17 .ctrl</h2><p>仅在按下 ctrl 按键时才触发鼠标或键盘事件的监听器，详细例子请看上面</p>
 <h2 id="18-alt"><a href="#18-alt" class="headerlink" title="18 .alt"></a>18 .alt</h2><p>仅在按下 alt 按键时才触发鼠标或键盘事件的监听器，详细例子请看上面</p>
 <h2 id="19-shift"><a href="#19-shift" class="headerlink" title="19 .shift"></a>19 .shift</h2><p>仅在按下 shift 按键时才触发鼠标或键盘事件的监听器，详细例子请看上面</p>
@@ -1225,7 +1226,7 @@
 <li><strong>没有任何系统修饰符被按下的时候才触发点击</strong></li>
 </ol>
 <p>要实现上面的需求.exact 就派上用场了，用上面的例子稍作改造</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
   <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"extra"</span><span class="token operator">></span>
     <span class="token operator">&lt;</span>p<span class="token operator">></span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> msg <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
     <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"buttons"</span><span class="token operator">></span>
@@ -1272,9 +1273,9 @@
       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`只有同时按下$&amp;#123;key&amp;#125;键，点击事件才会发生`</span></span><span class="token punctuation">)</span>
     <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
   <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="按键修饰符"><a href="#按键修饰符" class="headerlink" title="按键修饰符"></a>按键修饰符</h1><p>在监听键盘事件时，我们经常需要检查详细的按键再执行对应的逻辑，vue 也为我们内置了至少 11+的按键修饰符。<br>如下代码，我们分别给 enter、tab、delete 等按键指定了 keydown 事件，当在指定的输入框中按下指定的键盘，会打印出 enter、tab、delete 等，其他按键在输入框中无法触发该 console</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
   <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"key-modifiers"</span><span class="token operator">></span>
     <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"key-modifiers-item"</span><span class="token operator">></span>
       enter<span class="token punctuation">:</span>
@@ -1332,7 +1333,7 @@
     <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
   <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="22-enter"><a href="#22-enter" class="headerlink" title="22 .enter"></a>22 .enter</h2><p>在按下 enter 按键时才触发鼠标或键盘事件的监听器，详细例子请看上面</p>
 <h2 id="23-tab"><a href="#23-tab" class="headerlink" title="23 .tab"></a>23 .tab</h2><p>在按下 tab 按键时才触发鼠标或键盘事件的监听器，详细例子请看上面</p>
 <h2 id="24-delete"><a href="#24-delete" class="headerlink" title="24 .delete"></a>24 .delete</h2><p>在按下 delete 按键时才触发鼠标或键盘事件的监听器，详细例子请看上面</p>
@@ -1345,7 +1346,7 @@
 <h2 id="31-page-down"><a href="#31-page-down" class="headerlink" title="31 .page-down"></a>31 .page-down</h2><p>在按下(fn + down)按键时才触发鼠标或键盘事件的监听器，详细例子请看上面</p>
 <h2 id="32-page-up"><a href="#32-page-up" class="headerlink" title="32 .page-up"></a>32 .page-up</h2><p>在按下(fn + up)按键时才触发鼠标或键盘事件的监听器，详细例子请看上面</p>
 <h1 id="如何自定义按键修饰符"><a href="#如何自定义按键修饰符" class="headerlink" title="如何自定义按键修饰符"></a>如何自定义按键修饰符</h1><p>vue 本身给我们内置了很多实用的按键修饰符，大部分情况下可以满足我们的日常需求了，那么有没有办法可以自定义按键修饰符呢？<br>通过以下配置即可定义一个属于我们自己的按键修饰符, 比如我们定义 q 为按下 q 的快捷键。</p>
-<pre class=" language-javascript"><code class="language-javascript">Vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>keyCodes <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-javascript"><code class="language-javascript">Vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>keyCodes <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   q<span class="token punctuation">:</span> <span class="token number">81</span>
 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
@@ -1360,7 +1361,7 @@
       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'按下了q'</span><span class="token punctuation">)</span>
     <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
   <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr/>
@@ -1797,12 +1798,17 @@
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">84.5k</span> 字
+                <span class="white-color">82.2k</span> 字
             
 
             
             <br>
-
+            
+                <span id="icp"><img src="https://cdn.jsdelivr.net/gh/mobaijun/blog_css_js/image/icp.png"
+                                    style="vertical-align: text-bottom;"/>
+                <a href="https://beian.miit.gov.cn" target="_blank">皖ICP备2021016286号</a>
+            </span>
+            
         </div>
 
         <div class="col s12 m4 l4 social-link social-statis">
@@ -1867,7 +1873,7 @@
             minutes) / seconds);
         document.getElementById("sitetime").innerHTML = "本站已勉强运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
             " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
-    } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    } 
     siteTime();
 </script>
 
@@ -2024,5 +2030,5 @@ $(function () {
             </script>
         
 
-    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":200},"mobile":{"show":true},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+    <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":200},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
 </html>

@@ -78,7 +78,8 @@ console.log(n">
         </script>
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
     <body>
 
@@ -685,38 +686,38 @@ console.log(n">
 <li>函数内的参数是按值传递</li>
 </ul>
 <p>举个例子：</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">let</span> num1 <span class="token operator">=</span> <span class="token number">5</span>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">let</span> num1 <span class="token operator">=</span> <span class="token number">5</span>
 <span class="token keyword">let</span> num2 <span class="token operator">=</span> num1
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num2<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 5</span></code></pre>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num2<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 5</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>上述代码发生的事情是：</p>
 <ul>
 <li>首先在内存空栈中，开辟一个新的空间用于存储num2变量</li>
 <li>然后将num1的值复制一份给num2</li>
 </ul>
 <p>由于 <code>num1</code> 和 <code>num2</code> 是 <code>按值传递</code> 的，所以修改其中一个的值，并不会对影响另外一个值。</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">let</span> num1 <span class="token operator">=</span> <span class="token number">5</span>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">let</span> num1 <span class="token operator">=</span> <span class="token number">5</span>
 <span class="token keyword">let</span> num2 <span class="token operator">=</span> num1
 num2 <span class="token operator">=</span> <span class="token number">10</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num2<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 10</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num1<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 5</span></code></pre>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num1<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 5</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>而对于引用类型来说，则是 <code>按照引用</code> 传递的，举个例子：</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> person <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> name<span class="token punctuation">:</span> <span class="token string">'Jack'</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> person <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> name<span class="token punctuation">:</span> <span class="token string">'Jack'</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> person1 <span class="token operator">=</span> person
 
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person1<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// Jack</span></code></pre>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person1<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// Jack</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>上述代码发生的事情是：</p>
 <ul>
 <li>将 person1 指向 person 引用的内存地址。<br>也就是，现在 person 和 person1 指向同一个地址，修改其中一个的值，都会修改另外一个对象的值，因为此时他们都指向的是同一个内存地址。</li>
 </ul>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> person <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> name<span class="token punctuation">:</span> <span class="token string">'Jack'</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> person <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> name<span class="token punctuation">:</span> <span class="token string">'Jack'</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> person1 <span class="token operator">=</span> person
 
 person1<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'Lucy'</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// Lucy</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person1<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// Lucy</span></code></pre>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person1<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// Lucy</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这也是我们有时候需要对对象进行深拷贝的原因，我们又想操作原始对象的属性，但是又不想原始对象受到影响。</p>
 <p>函数内的参数 都是 <code>按值传递</code> 的,这个仔细想想也是有道理的。我们肯定是希望函数内部的操作是不会影响函数外部的变量的，不然代码也太难维护了。但是有一个令人迷惑的地方，函数的参数是引用类型时，在函数内部修改参数的值，同时也会影响函数外部。</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   obj<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'Lucy'</span>
 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
@@ -724,9 +725,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
   name<span class="token punctuation">:</span> <span class="token string">'Jack'</span>
 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 <span class="token function">test</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Lucy</span></code></pre>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Lucy</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>从这个例子来看 似乎函数内部的参数是按 <code>引用</code> 传递的，再看这个例子：</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   obj<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'Lucy'</span>
   obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   obj<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"Greg"</span><span class="token punctuation">;</span>
@@ -736,23 +737,23 @@ console<span class="token punctuation">.</span><span class="token function">log<
   name<span class="token punctuation">:</span> <span class="token string">'Jack'</span>
 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 <span class="token function">test</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Lucy</span></code></pre>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Lucy</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>还是打印的是 <code>Lucy</code>,如果是按照 <code>引用传递</code> 的话，应该打印的是 <code>Greg</code>，因为 person 的引用指向了新的地址。所以，总的来说，不管是函数传递的参数是基本类型还是引用类型，都是 <code>按值传递</code> 的。</p>
 <h3 id="确定类型"><a href="#确定类型" class="headerlink" title="确定类型"></a>确定类型</h3><p>确定基本类型，使用<code>typeof</code>:</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> num <span class="token operator">=</span> <span class="token number">0</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> num<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// number</span></code></pre>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> num <span class="token operator">=</span> <span class="token number">0</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> num<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// number</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>确定引用了类型使用 <code>instanceof</code></p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj <span class="token keyword">instanceof</span> <span class="token class-name">Object</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// true</span></code></pre>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj <span class="token keyword">instanceof</span> <span class="token class-name">Object</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>当然，有个通用的做法就是,使用 <code>Object.prototype.toString.call()</code>方法：</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> num <span class="token operator">=</span> <span class="token number">0</span>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> num <span class="token operator">=</span> <span class="token number">0</span>
 <span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">// 判断基本类型</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>toString<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'[object Number]'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// true</span>
 
 <span class="token comment" spellcheck="true">// 判断引用类型</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>toString<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'[object Object]'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// true</span></code></pre>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>toString<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'[object Object]'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="上下文"><a href="#上下文" class="headerlink" title="上下文"></a>上下文</h3><p>变量和函数，都有一个 <code>上下文</code> 的概念，上下文决定了决定了它们可以访问哪些数据和变量。每个上下文都有一个<code>变量对象</code>，数据和变量都存在这个对象上。我们并不能通过代码访问这个这个对象，但是后台处理数据会用到它。</p>
 <p><code>上下文</code> 是个笼统的概念，主要分为 <code>全局上下文</code> 和 <code>局部上下文</code>。在浏览器中 <code>全局上下文</code> 就是我们常说的<code>window</code>对象，在node中则是 <code>global</code>。<code>函数上下文</code> 就属于局部上下文。<br>这里值得关注的是 <code>临时上下文</code>,又如下两种情况会增加 <code>临时上下文</code>：</p>
 <ul>
@@ -760,29 +761,29 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>with 语句with 语句<br>这两种情况下，都会在作用域链前端添加一个变量对象。对 <code>with</code>语句来说，会向作用域链前端添加指定的对象;对 <code>catch</code> 语句而言，则会创建一个新的变量对象，这个变量对象会包含要抛出的错误对象的声明。</li>
 </ul>
 <p>比如，使用<code>with</code>创建一个临时上下文：</p>
-<pre class=" language-js"><code class="language-js">  <span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-js"><code class="language-js">  <span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     name<span class="token punctuation">:</span> <span class="token string">'mss'</span><span class="token punctuation">,</span>
     age<span class="token punctuation">:</span> <span class="token number">18</span>
 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
 <span class="token keyword">with</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// mss 18</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这里一旦执行完毕，这个上下文就会立刻销毁。</p>
 <h3 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h3><p>使用 <code>var</code> 声明变量的时候，有一个令人又爱又恨的特性，就是<code>变量提升</code>。<br>看个例子：</p>
-<pre class=" language-js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// undefined</span>
-<span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">1</span></code></pre>
+<pre class="line-numbers language-js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// undefined</span>
+<span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>细心的朋友会发现，这里打印的是 <code>undefined</code>。在JavaScript中，这意味着该变量未初始化。这其实是令人困惑的，打印的时候，明明没有声明这个变量，按照正常的理解这里应该抛出错误的。但是上述的代码会被解析为：</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> num<span class="token punctuation">;</span>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> num<span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span>
-num <span class="token operator">=</span> <span class="token number">1</span></code></pre>
+num <span class="token operator">=</span> <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p><code>num</code>变量被提升到作用域顶部了，也就导致打印出了 <code>undefined</code>。</p>
 <p>为了避免这种 <code>变量提升</code>后造成的各种魔幻的问题，ES6提出了 <code>块级作用域</code>，就是一个花括号 <code>&#123;&#125;</code> 就是一个块级作用域。花括号外部无法访问花括号内部的变量。<br>如下面的例子，提前打印<code>num</code>变量，就会抛出错误 <code>num is not defined</code></p>
-<pre class=" language-js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// num is not defined</span>
+<pre class="line-numbers language-js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// num is not defined</span>
 <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token keyword">let</span> num <span class="token operator">=</span> <span class="token number">1</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 1</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr/>
@@ -1225,12 +1226,17 @@ let 和 const 都有局部作用域，优先使用const，保持变量的引用�
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">84.5k</span> 字
+                <span class="white-color">82.2k</span> 字
             
 
             
             <br>
-
+            
+                <span id="icp"><img src="https://cdn.jsdelivr.net/gh/mobaijun/blog_css_js/image/icp.png"
+                                    style="vertical-align: text-bottom;"/>
+                <a href="https://beian.miit.gov.cn" target="_blank">皖ICP备2021016286号</a>
+            </span>
+            
         </div>
 
         <div class="col s12 m4 l4 social-link social-statis">
@@ -1295,7 +1301,7 @@ let 和 const 都有局部作用域，优先使用const，保持变量的引用�
             minutes) / seconds);
         document.getElementById("sitetime").innerHTML = "本站已勉强运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
             " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
-    } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    } 
     siteTime();
 </script>
 
@@ -1452,5 +1458,5 @@ $(function () {
             </script>
         
 
-    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":200},"mobile":{"show":true},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+    <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":200},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
 </html>

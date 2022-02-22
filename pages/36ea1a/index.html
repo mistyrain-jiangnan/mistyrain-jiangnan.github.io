@@ -70,7 +70,8 @@
         </script>
     
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
     <body>
 
@@ -671,23 +672,23 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>枚举类型在其他的强类型语言中，已经是耳熟能详的概念了，TypeScript也引进了这个概念，并且在JavaScript中进行了实现。使用<code>enum</code>关键字定义枚举类型的数据，描述了一组方便维护和访问的数据集合。</p>
-<h3 id="数值型的枚举"><a href="#数值型的枚举" class="headerlink" title="数值型的枚举"></a>数值型的枚举</h3><pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">enum</span> PersonName <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<h3 id="数值型的枚举"><a href="#数值型的枚举" class="headerlink" title="数值型的枚举"></a>数值型的枚举</h3><pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">enum</span> PersonName <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   Jack <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span>
   Lucy<span class="token punctuation">,</span>
   Cap
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>我们上面的例子定义了一个名字的枚举类型，每个名字都有一个id，当我们指定了<code>Jack</code>从1开始，后面的名字都会依次递增，比如<code>Lucy</code>就是2，<code>Cap</code>就是3。</p>
-<h3 id="字符串类型的枚举"><a href="#字符串类型的枚举" class="headerlink" title="字符串类型的枚举"></a>字符串类型的枚举</h3><pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">enum</span> PersonName <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<h3 id="字符串类型的枚举"><a href="#字符串类型的枚举" class="headerlink" title="字符串类型的枚举"></a>字符串类型的枚举</h3><pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">enum</span> PersonName <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   Jack <span class="token operator">=</span> <span class="token string">"男主角"</span><span class="token punctuation">,</span>
   Lucy <span class="token operator">=</span> <span class="token string">"女主角"</span><span class="token punctuation">,</span>
   Cap <span class="token operator">=</span> <span class="token string">"路人甲"</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>字符串类型和和数字类型其实定义枚举的方式是一样的，不过相比于数值型的枚举，字符串类型的枚举的属性必须初始化。</p>
 <h3 id="混合类型枚举"><a href="#混合类型枚举" class="headerlink" title="混合类型枚举"></a>混合类型枚举</h3><p>也可以定义混合类型,比如将字符串类型和数字类型混合在一起：</p>
-<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">enum</span> PersonName <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">enum</span> PersonName <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   Jack <span class="token operator">=</span> <span class="token string">"男主角"</span><span class="token punctuation">,</span>
   Lucy <span class="token operator">=</span> <span class="token number">11</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr/>
@@ -1124,12 +1125,17 @@
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">84.5k</span> 字
+                <span class="white-color">82.2k</span> 字
             
 
             
             <br>
-
+            
+                <span id="icp"><img src="https://cdn.jsdelivr.net/gh/mobaijun/blog_css_js/image/icp.png"
+                                    style="vertical-align: text-bottom;"/>
+                <a href="https://beian.miit.gov.cn" target="_blank">皖ICP备2021016286号</a>
+            </span>
+            
         </div>
 
         <div class="col s12 m4 l4 social-link social-statis">
@@ -1194,7 +1200,7 @@
             minutes) / seconds);
         document.getElementById("sitetime").innerHTML = "本站已勉强运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
             " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
-    } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    } 
     siteTime();
 </script>
 
@@ -1351,5 +1357,5 @@ $(function () {
             </script>
         
 
-    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":200},"mobile":{"show":true},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+    <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":200},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
 </html>
