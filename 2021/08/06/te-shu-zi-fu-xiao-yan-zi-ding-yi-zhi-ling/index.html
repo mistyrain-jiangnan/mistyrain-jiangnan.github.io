@@ -10,8 +10,8 @@
     <meta name="baidu-site-verification" content="fmlEuI34ir" />
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY" />
     <meta name="description" content="v-character支持 input 框的特殊字符校验
-代码 Codeimport &amp;amp;#123; specialCharacterReg &amp;amp;#125; from &#39;./regRules&#39;  //引入正则规则
-const f">
+代码 Codeimport { specialCharacterReg } from &#39;./regRules&#39;  //引入正则规则
+const findEle = (parent, ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -648,7 +648,7 @@ const f">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        182
+                        142
                     </div>
                     
 
@@ -673,36 +673,36 @@ const f">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="v-character"><a href="#v-character" class="headerlink" title="v-character"></a>v-character</h1><p>支持 input 框的特殊字符校验</p>
-<h1 id="代码-Code"><a href="#代码-Code" class="headerlink" title="代码 Code"></a>代码 Code</h1><pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> specialCharacterReg <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">from</span> <span class="token string">'./regRules'</span>  <span class="token comment" spellcheck="true">//引入正则规则</span>
-<span class="token keyword">const</span> findEle <span class="token operator">=</span> <span class="token punctuation">(</span>parent<span class="token punctuation">,</span> type<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<h1 id="代码-Code"><a href="#代码-Code" class="headerlink" title="代码 Code"></a>代码 Code</h1><pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> specialCharacterReg <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./regRules'</span>  <span class="token comment" spellcheck="true">//引入正则规则</span>
+<span class="token keyword">const</span> findEle <span class="token operator">=</span> <span class="token punctuation">(</span>parent<span class="token punctuation">,</span> type<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> parent<span class="token punctuation">.</span>tagName<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">===</span> type <span class="token operator">?</span> parent <span class="token punctuation">:</span> parent<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span>type<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-<span class="token keyword">const</span> trigger <span class="token operator">=</span> <span class="token punctuation">(</span>el<span class="token punctuation">,</span> type<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> trigger <span class="token operator">=</span> <span class="token punctuation">(</span>el<span class="token punctuation">,</span> type<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> e <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createEvent</span><span class="token punctuation">(</span><span class="token string">'HTMLEvents'</span><span class="token punctuation">)</span>
   e<span class="token punctuation">.</span><span class="token function">initEvent</span><span class="token punctuation">(</span>type<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
   el<span class="token punctuation">.</span><span class="token function">dispatchEvent</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
 <span class="token keyword">const</span> character <span class="token operator">=</span>
-  Vue<span class="token punctuation">.</span><span class="token function">directive</span><span class="token punctuation">(</span><span class="token string">'character'</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    bind<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>el<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  Vue<span class="token punctuation">.</span><span class="token function">directive</span><span class="token punctuation">(</span><span class="token string">'character'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    bind<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>el<span class="token punctuation">)</span> <span class="token punctuation">{</span>
       <span class="token comment" spellcheck="true">// 正则规则可根据需求自定义</span>
-     <span class="token comment" spellcheck="true">// var specialCharacterReg = new RegExp(/[`~!@#$%^&amp;*()_\-+=&lt;>?:"&amp;#123;&amp;#125;|,./;'\\[\]·~！@#￥%……&amp;*（）——\-+=&amp;#123;&amp;#125;|《》？：“”【】、；‘'，。、]/ig)</span>
+     <span class="token comment" spellcheck="true">// var specialCharacterReg = new RegExp(/[`~!@#$%^&amp;*()_\-+=&lt;>?:"{}|,./;'\\[\]·~！@#￥%……&amp;*（）——\-+={}|《》？：“”【】、；‘'，。、]/ig)</span>
       <span class="token keyword">const</span> $inp <span class="token operator">=</span> <span class="token function">findEle</span><span class="token punctuation">(</span>el<span class="token punctuation">,</span> <span class="token string">'input'</span><span class="token punctuation">)</span>
       el<span class="token punctuation">.</span>$inp <span class="token operator">=</span> $inp
-      $inp<span class="token punctuation">.</span>handle <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+      $inp<span class="token punctuation">.</span>handle <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">const</span> val <span class="token operator">=</span> $inp<span class="token punctuation">.</span>value
         $inp<span class="token punctuation">.</span>value <span class="token operator">=</span> val<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>specialCharacterReg<span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
         <span class="token function">trigger</span><span class="token punctuation">(</span>$inp<span class="token punctuation">,</span> <span class="token string">'input'</span><span class="token punctuation">)</span>
-      <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
       $inp<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'keyup'</span><span class="token punctuation">,</span> $inp<span class="token punctuation">.</span>handle<span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
-    unbind<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>el<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    unbind<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>el<span class="token punctuation">)</span> <span class="token punctuation">{</span>
       el<span class="token punctuation">.</span>$inp<span class="token punctuation">.</span><span class="token function">removeEventListener</span><span class="token punctuation">(</span><span class="token string">'keyup'</span><span class="token punctuation">,</span> el<span class="token punctuation">.</span>$inp<span class="token punctuation">.</span>handle<span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token punctuation">}</span>
   <span class="token punctuation">)</span>
-<span class="token keyword">export</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> character <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token punctuation">{</span> character <span class="token punctuation">}</span>
 怎么使用它？
 在main<span class="token punctuation">.</span>js里面挂载它
 例如
@@ -895,10 +895,14 @@ const f">
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            remove 移除数组的一项const remove = (arr, el) => &amp;#123;
+                            remove 移除数组的一项const remove = (arr, el) => {
   const i = arr.indexOf(el);
-  if (i > -1) &amp;#123;
-    arr.splic
+  if (i > -1) {
+    arr.splice(i, 1);
+  }
+};
+
+/
                         
                     </div>
                     <div class="publish-info">
@@ -1151,7 +1155,7 @@ bo
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">82.2k</span> 字
+                <span class="white-color">76.6k</span> 字
             
 
             

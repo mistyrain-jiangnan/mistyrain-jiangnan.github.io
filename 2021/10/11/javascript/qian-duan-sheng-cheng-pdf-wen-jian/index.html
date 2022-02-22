@@ -650,7 +650,7 @@ import html2Canvas from &#34;html2canvas&#34;">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        303
+                        263
                     </div>
                     
 
@@ -680,12 +680,12 @@ import html2Canvas from &#34;html2canvas&#34;">
 <h2 id="javaScript"><a href="#javaScript" class="headerlink" title="javaScript"></a>javaScript</h2><pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 导出页面为PDF格式</span>
 <span class="token keyword">import</span> html2Canvas <span class="token keyword">from</span> <span class="token string">"html2canvas"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> JsPDF <span class="token keyword">from</span> <span class="token string">"jspdf"</span><span class="token punctuation">;</span>
-<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  <span class="token function">install</span><span class="token punctuation">(</span>Vue<span class="token punctuation">,</span> options<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    Vue<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>getPdf <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>title<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">install</span><span class="token punctuation">(</span>Vue<span class="token punctuation">,</span> options<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Vue<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>getPdf <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>title<span class="token punctuation">)</span> <span class="token punctuation">{</span>
       <span class="token keyword">const</span> element <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">"#pdfDom"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 这个dom元素是要导出pdf的div容器</span>
-      <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token function">html2Canvas</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>canvas<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+      <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token function">html2Canvas</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>canvas<span class="token punctuation">)</span> <span class="token punctuation">{</span>
           <span class="token keyword">const</span> contentWidth <span class="token operator">=</span> canvas<span class="token punctuation">.</span>width<span class="token punctuation">;</span>
           <span class="token keyword">const</span> contentHeight <span class="token operator">=</span> canvas<span class="token punctuation">.</span>height<span class="token punctuation">;</span>
 
@@ -705,29 +705,29 @@ import html2Canvas from &#34;html2canvas&#34;">
 
           <span class="token comment" spellcheck="true">// 有两个高度需要区分，一个是html页面的实际高度，和生成pdf的页面高度(841.89)</span>
           <span class="token comment" spellcheck="true">// 当内容未超过pdf一页显示的范围，无需分页</span>
-          <span class="token keyword">if</span> <span class="token punctuation">(</span>leftHeight <span class="token operator">&lt;</span> pageHeight<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>leftHeight <span class="token operator">&lt;</span> pageHeight<span class="token punctuation">)</span> <span class="token punctuation">{</span>
             pdf<span class="token punctuation">.</span><span class="token function">addImage</span><span class="token punctuation">(</span>pageData<span class="token punctuation">,</span> <span class="token string">"JPEG"</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> imgWidth<span class="token punctuation">,</span> imgHeight<span class="token punctuation">)</span><span class="token punctuation">;</span>
-          <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">else</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">while</span> <span class="token punctuation">(</span>leftHeight <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword">while</span> <span class="token punctuation">(</span>leftHeight <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
               pdf<span class="token punctuation">.</span><span class="token function">addImage</span><span class="token punctuation">(</span>pageData<span class="token punctuation">,</span> <span class="token string">"JPEG"</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> position<span class="token punctuation">,</span> imgWidth<span class="token punctuation">,</span> imgHeight<span class="token punctuation">)</span><span class="token punctuation">;</span>
               leftHeight <span class="token operator">-</span><span class="token operator">=</span> pageHeight<span class="token punctuation">;</span>
               position <span class="token operator">-</span><span class="token operator">=</span> <span class="token number">841.89</span><span class="token punctuation">;</span>
               <span class="token comment" spellcheck="true">// 避免添加空白页</span>
-              <span class="token keyword">if</span> <span class="token punctuation">(</span>leftHeight <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+              <span class="token keyword">if</span> <span class="token punctuation">(</span>leftHeight <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
                 pdf<span class="token punctuation">.</span><span class="token function">addPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-              <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-          <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+              <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
           pdf<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span>title <span class="token operator">+</span> <span class="token string">".pdf"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><pre class="line-numbers language-javascript"><code class="language-javascript">  printPdf <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><pre class="line-numbers language-javascript"><code class="language-javascript">  printPdf <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
       window<span class="token punctuation">.</span><span class="token function">scrollTo</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
       <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getPdf</span><span class="token punctuation">(</span><span class="token string">'缺陷分析报告'</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr/>
@@ -917,10 +917,10 @@ import html2Canvas from &#34;html2canvas&#34;">
                     <div class="summary block-with-text">
                         
                             HTML&lt;button id="button">Click on me&lt;/button>
-CSSparticle &amp;#123;
+CSSparticle {
   border-radius: 50%;
   left: 0;
-  pointer-eve
+  pointer-events: none
                         
                     </div>
                     <div class="publish-info">
@@ -973,8 +973,8 @@ CSSparticle &amp;#123;
   &lt;transition :name="transitionName">
     &lt;div
       v-if="visible"
-      :style="&amp;#123;
- 
+      :style="{
+        'r
                         
                     </div>
                     <div class="publish-info">
@@ -1171,7 +1171,7 @@ CSSparticle &amp;#123;
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">82.2k</span> 字
+                <span class="white-color">76.6k</span> 字
             
 
             

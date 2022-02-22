@@ -955,10 +955,10 @@ svg.append(&#39;circle&#39;)
                     <div class="summary block-with-text">
                         
                             一、新的变量声明方式 let/constlet 声明的变量只在 let 命令所在的代码块 （即 JavaScript 块级作用域)内有效
-&amp;#123;
+{
   let _a = 20;
-&amp;#125;
-console.log(a)
+}
+console.log(a); // a is not defi
                         
                     </div>
                     <div class="publish-info">
@@ -1008,7 +1008,8 @@ console.log(a)
                     <div class="summary block-with-text">
                         
                             1.函数类型(1) 为函数定义类型我们可以给函数定义类型，这个定义包括对参数和返回值的类型定义，我们先来看简单的定义写法：
-function add(arg1: number, arg2: number): number &amp;#123
+function add(arg1: number, arg2: number): number {
+  retur
                         
                     </div>
                     <div class="publish-info">
@@ -1205,7 +1206,7 @@ function add(arg1: number, arg2: number): number &amp;#123
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">82.2k</span> 字
+                <span class="white-color">76.6k</span> 字
             
 
             

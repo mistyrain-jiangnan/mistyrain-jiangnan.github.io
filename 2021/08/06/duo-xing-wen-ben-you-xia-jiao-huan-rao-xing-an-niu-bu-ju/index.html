@@ -650,7 +650,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        280
+                        264
                     </div>
                     
 
@@ -684,7 +684,7 @@
 Observer 和 Compiler 就通过属性来进行关联，通过 Watcher 来通知变化。
   <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-<span class="token punctuation">.</span>wrapper <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">.</span>wrapper <span class="token punctuation">{</span>
   width<span class="token punctuation">:</span> 800px<span class="token punctuation">;</span>
   margin<span class="token punctuation">:</span> 50px auto<span class="token punctuation">;</span>
   border<span class="token punctuation">:</span> 1px solid #eaecef<span class="token punctuation">;</span>
@@ -694,22 +694,22 @@ Observer 和 Compiler 就通过属性来进行关联，通过 Watcher 来通知�
   box<span class="token operator">-</span>shadow<span class="token punctuation">:</span> 20px 20px 60px #bebebe<span class="token punctuation">;</span>
   display<span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
 
-  <span class="token punctuation">.</span>w_text <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token punctuation">.</span>w_text <span class="token punctuation">{</span>
     width<span class="token punctuation">:</span> <span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>
     line<span class="token operator">-</span>height<span class="token punctuation">:</span> 26px<span class="token punctuation">;</span>
     display<span class="token punctuation">:</span> <span class="token operator">-</span>webkit<span class="token operator">-</span>box<span class="token punctuation">;</span>
     <span class="token operator">-</span>webkit<span class="token operator">-</span>box<span class="token operator">-</span>orient<span class="token punctuation">:</span> vertical<span class="token punctuation">;</span>
     <span class="token operator">-</span>webkit<span class="token operator">-</span>line<span class="token operator">-</span>clamp<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">;</span>
     overflow<span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span><span class="token punctuation">:</span><span class="token punctuation">:</span>before <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span><span class="token punctuation">:</span><span class="token punctuation">:</span>before <span class="token punctuation">{</span>
       content<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
       float<span class="token punctuation">:</span> right<span class="token punctuation">;</span>
       <span class="token comment" spellcheck="true">// height: calc(100% - 24px);</span>
       height<span class="token punctuation">:</span> <span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>
       margin<span class="token operator">-</span>bottom<span class="token punctuation">:</span> <span class="token operator">-</span>24px<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="token punctuation">.</span>btn <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token punctuation">.</span>btn <span class="token punctuation">{</span>
       background<span class="token punctuation">:</span> linear<span class="token operator">-</span><span class="token function">gradient</span><span class="token punctuation">(</span>90deg<span class="token punctuation">,</span><span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">,</span><span class="token number">179</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token number">0</span><span class="token operator">%</span><span class="token punctuation">,</span><span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">254</span><span class="token punctuation">,</span><span class="token number">140</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
       border<span class="token operator">-</span>radius<span class="token punctuation">:</span> 4px<span class="token punctuation">;</span>
       color<span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
@@ -718,9 +718,9 @@ Observer 和 Compiler 就通过属性来进行关联，通过 Watcher 来通知�
       height<span class="token punctuation">:</span> 24px<span class="token punctuation">;</span>
       float<span class="token punctuation">:</span> right<span class="token punctuation">;</span>
       clear<span class="token punctuation">:</span> both<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="用的时候直接使用就可以了"><a href="#用的时候直接使用就可以了" class="headerlink" title="用的时候直接使用就可以了"></a>用的时候直接使用就可以了</h1>
             </div>
             <hr/>
@@ -966,7 +966,8 @@ bo
                     <div class="summary block-with-text">
                         
                             使用该指令可以复制元素的文本内容。支持单击复制 v-copy、双击复制 v-copy.dblclick、点击 icon 复制 v-copy.icon 三种模式。默认使用单击复制
-代码 Codeexport default &amp;#123
+代码 Codeexport default {
+  bind(
                         
                     </div>
                     <div class="publish-info">
@@ -1163,7 +1164,7 @@ bo
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">82.2k</span> 字
+                <span class="white-color">76.6k</span> 字
             
 
             

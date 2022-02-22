@@ -695,7 +695,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <span class="token comment" spellcheck="true">// 也可以使用模版字符串</span>
 <span class="token keyword">let</span> fullName<span class="token punctuation">:</span> string <span class="token operator">=</span> <span class="token string">'马松松'</span>
-<span class="token keyword">let</span> sentence<span class="token punctuation">:</span> string <span class="token operator">=</span> <span class="token template-string"><span class="token string">`my name is $&amp;#123;fullName&amp;#125;`</span></span>
+<span class="token keyword">let</span> sentence<span class="token punctuation">:</span> string <span class="token operator">=</span> <span class="token template-string"><span class="token string">`my name is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>fullName<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>sentence<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// my name is 马松松</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">//第一种 使用变量后面加[]表示这是一个数组类型的变量</span>
@@ -720,18 +720,18 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <p>给数据集合更友好的名称，便于维护</p>
 </blockquote>
 <p>直接使用<code>enum</code>关键字进行定义</p>
-<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">enum</span> Color <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">enum</span> Color <span class="token punctuation">{</span>
   red<span class="token punctuation">,</span>
   blue<span class="token punctuation">,</span>
   lightBlue
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 <span class="token keyword">let</span> c<span class="token punctuation">:</span>Color <span class="token operator">=</span> Color<span class="token punctuation">.</span>red<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>可以手动设置枚举类型中值的索引从哪个数字开始，默认是从<code>0</code>开始。</p>
-<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">enum</span> anoterColor <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">enum</span> anoterColor <span class="token punctuation">{</span>
   red <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span>
   blue<span class="token punctuation">,</span>
   lightBlue
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 <span class="token keyword">let</span> a<span class="token punctuation">:</span><span class="token keyword">string</span> <span class="token operator">=</span> anoterColor<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> 
@@ -758,9 +758,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
 anyEle <span class="token operator">=</span> <span class="token string">"马松松"</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> anyEle<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// string</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>可以用在函数的返回值：</p>
-<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">function</span> <span class="token function">anyReturnEle</span><span class="token punctuation">(</span>key<span class="token punctuation">:</span> <span class="token keyword">any</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">any</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">function</span> <span class="token function">anyReturnEle</span><span class="token punctuation">(</span>key<span class="token punctuation">:</span> <span class="token keyword">any</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">any</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> key<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">anyReturnEle</span><span class="token punctuation">(</span><span class="token number">1314</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1314</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">anyReturnEle</span><span class="token punctuation">(</span><span class="token string">"马松松"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 马松松</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="注意-1"><a href="#注意-1" class="headerlink" title="注意"></a>注意</h4><p>1.使用<code>unknown</code>会报错</p>
@@ -786,10 +786,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <p>不是任何一种类型，比较常用于函数的返回值</p>
 </blockquote>
 <p>用在函数的返回值</p>
-<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">function</span> <span class="token function">returnNothing</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">void</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">function</span> <span class="token function">returnNothing</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">void</span> <span class="token punctuation">{</span>
 
   <span class="token comment" spellcheck="true">// 不用返回任何值</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这样表示函数没有返回值。</p>
 <p><code>void</code>类型只能被赋值为<code>null</code>或者<code>undefined</code></p>
 <pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">let</span> voidType<span class="token punctuation">:</span> <span class="token keyword">void</span> <span class="token operator">=</span> undefined<span class="token punctuation">;</span>
@@ -806,22 +806,22 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <p>表示一个函数总是会抛出一个错误或者永远返回，此时就会返回<code>never</code>类型</p>
 </blockquote>
 <p>用在抛出错误的函数</p>
-<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">function</span> <span class="token function">error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>never <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">function</span> <span class="token function">error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>never <span class="token punctuation">{</span>
   <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">"这里需要抛出错误"</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>或者是一个循环执行判断的语句</p>
-<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">function</span> <span class="token function">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> never <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token keyword">true</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">function</span> <span class="token function">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> never <span class="token punctuation">{</span>
+  <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token keyword">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
     <span class="token comment" spellcheck="true">// do something</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h3><p>你可以类似于这样使用 属性不能多也不能少 且类型要匹配</p>
-<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">let</span> obj<span class="token punctuation">:</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">,</span>age<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-obj <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">let</span> obj<span class="token punctuation">:</span><span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">,</span>age<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+obj <span class="token operator">=</span> <span class="token punctuation">{</span>
   name<span class="token punctuation">:</span><span class="token string">'马松松'</span><span class="token punctuation">,</span>
   age<span class="token punctuation">:</span> <span class="token number">18</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="Assertions"><a href="#Assertions" class="headerlink" title="Assertions"></a>Assertions</h3><blockquote>
 <p>类型断言：当你明确了变量是某种类型，可以直接断言该变量是什么类型</p>
 </blockquote>
@@ -1273,7 +1273,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">82.2k</span> 字
+                <span class="white-color">76.6k</span> 字
             
 
             

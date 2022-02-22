@@ -638,7 +638,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
   &lt;button
     class="simple-button"
     :class="[
-      type ? `simple-button--$&amp;#123;type&am
+      type ? `simple-button--${type}` : '',
+   
                                 
                             </div>
                             <div class="publish-info">
@@ -769,12 +770,13 @@ ui 框架使用 Ant Design Vue。
                                 
 
 &lt;h1>Pure CSS Typing animation.&lt;/h1>
-cssbody &amp;#123;
+cssbody {
     background: black;
     color: #fff;
-&amp;#125;
+}
 
-h1 &a
+h1 {
+    font: bold 200
                                 
                             </div>
                             <div class="publish-info">
@@ -1092,8 +1094,8 @@ git reset – files 用来撤销最后一次 g
                                 
                                 1. 下载一个 excel 文档同时适用于 word,ppt 等浏览器不会默认执行预览的文档,也可以用于下载后端接口返回的流数据，见3
 //下载一个链接
-function download(link, name) &amp;#123;
-  
+function download(link, name) {
+  if (!name
                                 
                             </div>
                             <div class="publish-info">
@@ -1338,9 +1340,11 @@ function download(link, name) &amp;#123;
                             <div class="summary block-with-text">
                                 
                                 在 ES6 非常普及的现在，被人突然问到如何使用 ES5 实现原型继承还是真是有点懵。所以特地记下。
-ES6class Animal &amp;#123;
-  constructor() &amp;#123;&amp;#125;
-&amp;
+ES6class Animal {
+  constructor() {}
+}
+class Cat extends Animal {
+  c
                                 
                             </div>
                             <div class="publish-info">
@@ -1428,7 +1432,7 @@ ES6class Animal &amp;#123;
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">82.2k</span> 字
+                <span class="white-color">76.6k</span> 字
             
 
             

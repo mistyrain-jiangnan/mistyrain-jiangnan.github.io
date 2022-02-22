@@ -647,7 +647,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        454
+                        426
                     </div>
                     
 
@@ -676,17 +676,17 @@
 <h2 id="注册全局组件"><a href="#注册全局组件" class="headerlink" title="注册全局组件"></a>注册全局组件</h2><pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 单独定义js文件</span>
 <span class="token comment" spellcheck="true">// 先引入 组件</span>
  <span class="token comment" spellcheck="true">// vue2</span>
-<span class="token keyword">export</span> <span class="token keyword">default</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
- <span class="token function">install</span><span class="token punctuation">(</span>Vue<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span><span class="token punctuation">{</span>
+ <span class="token function">install</span><span class="token punctuation">(</span>Vue<span class="token punctuation">)</span><span class="token punctuation">{</span>
    Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span>自定义标签 <span class="token punctuation">,</span>自定义组件名<span class="token punctuation">)</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
  <span class="token comment" spellcheck="true">// vue3</span>
-<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
- <span class="token function">install</span><span class="token punctuation">(</span>app<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+ <span class="token function">install</span><span class="token punctuation">(</span>app<span class="token punctuation">)</span><span class="token punctuation">{</span>
    app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span>自定义标签 <span class="token punctuation">,</span>自定义组件名<span class="token punctuation">)</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
 <span class="token comment" spellcheck="true">// main.js中 导入扩展文件 注册</span>
  <span class="token comment" spellcheck="true">// vue2</span>
@@ -696,17 +696,17 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 <h2 id="自动注册"><a href="#自动注册" class="headerlink" title="自动注册"></a>自动注册</h2><p>使用上述方法，手动注册在组件多的情况下会耗费大量的时间<br>使用 webpack 提供的方法加载当前文件夹下所有的 .vue 文件</p>
 <pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// context(目录路径，是否加载子目录，加载文件的匹配正则)</span>
 <span class="token keyword">const</span> importFn <span class="token operator">=</span> require<span class="token punctuation">.</span><span class="token function">context</span><span class="token punctuation">(</span><span class="token string">"./"</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token regex">/\.vue$/</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  <span class="token function">install</span><span class="token punctuation">(</span>app<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">install</span><span class="token punctuation">(</span>app<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">// importFn.keys()拿取所有组件 通过循环精选注册</span>
-    importFn<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    importFn<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
       <span class="token comment" spellcheck="true">// 导入组件</span>
       <span class="token keyword">const</span> component <span class="token operator">=</span> <span class="token function">importFn</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">default</span><span class="token punctuation">;</span>
       <span class="token comment" spellcheck="true">// 进行注册 以组件名作为自定义标签名</span>
       app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span>component<span class="token punctuation">.</span>name<span class="token punctuation">,</span> component<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="配置完成后只要在这个文件夹中添加的组件都会被注册为全局组件"><a href="#配置完成后只要在这个文件夹中添加的组件都会被注册为全局组件" class="headerlink" title="配置完成后只要在这个文件夹中添加的组件都会被注册为全局组件"></a>配置完成后只要在这个文件夹中添加的组件都会被注册为全局组件</h2><p>​</p>
 <h2 id="注意：所有的自定义标签名都会使用组件名-，就是组件的-name-属性，注意为自己的组件添加这个属性"><a href="#注意：所有的自定义标签名都会使用组件名-，就是组件的-name-属性，注意为自己的组件添加这个属性" class="headerlink" title="注意：所有的自定义标签名都会使用组件名 ，就是组件的 name 属性，注意为自己的组件添加这个属性"></a>注意：所有的自定义标签名都会使用组件名 ，就是组件的 name 属性，注意为自己的组件添加这个属性</h2><p>​</p>
 
@@ -947,10 +947,11 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            计算服务器时间export function isUndefined(value) &amp;#123;
+                            计算服务器时间export function isUndefined(value) {
   return typeof value === "undefined";
-&amp;#125;
-export function g
+}
+export function getTSL() {
+  var ts
                         
                     </div>
                     <div class="publish-info">
@@ -1147,7 +1148,7 @@ export function g
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">82.2k</span> 字
+                <span class="white-color">76.6k</span> 字
             
 
             

@@ -647,7 +647,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        283
+                        251
                     </div>
                     
 
@@ -672,31 +672,31 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="v-expandClick"><a href="#v-expandClick" class="headerlink" title="v-expandClick"></a>v-expandClick</h1><p>使用该指令可以扩展元素的点击范围，由于借用伪元素实现，故不会影响元素在页面上的排列布局。<br>可传入的参数为：上右下左扩展的范围，单位 px，默认向外扩展 <code>10px</code>。</p>
-<h1 id="代码-Code"><a href="#代码-Code" class="headerlink" title="代码 Code"></a>代码 Code</h1><pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>el<span class="token punctuation">,</span> binding<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<h1 id="代码-Code"><a href="#代码-Code" class="headerlink" title="代码 Code"></a>代码 Code</h1><pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>el<span class="token punctuation">,</span> binding<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> s <span class="token operator">=</span> document<span class="token punctuation">.</span>styleSheets<span class="token punctuation">[</span>document<span class="token punctuation">.</span>styleSheets<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
   <span class="token keyword">const</span> DEFAULT <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 默认向外扩展10px</span>
   <span class="token keyword">const</span> <span class="token punctuation">[</span>top<span class="token punctuation">,</span> right<span class="token punctuation">,</span> bottom<span class="token punctuation">,</span> left<span class="token punctuation">]</span> <span class="token operator">=</span>
     <span class="token punctuation">(</span>binding<span class="token punctuation">.</span>expression <span class="token operator">&amp;&amp;</span> binding<span class="token punctuation">.</span>expression<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">","</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-  <span class="token keyword">const</span> ruleStr <span class="token operator">=</span> <span class="token template-string"><span class="token string">`content:"";position:absolute;top:-$&amp;#123;
-    top || DEFAULT
-  &amp;#125;px;bottom:-$&amp;#123;bottom || DEFAULT&amp;#125;px;right:-$&amp;#123;right || DEFAULT&amp;#125;px;left:-$&amp;#123;
-    left || DEFAULT
-  &amp;#125;px;`</span></span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> ruleStr <span class="token operator">=</span> <span class="token template-string"><span class="token string">`content:"";position:absolute;top:-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>
+    top <span class="token operator">||</span> DEFAULT
+  <span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">px;bottom:-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>bottom <span class="token operator">||</span> DEFAULT<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">px;right:-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>right <span class="token operator">||</span> DEFAULT<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">px;left:-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>
+    left <span class="token operator">||</span> DEFAULT
+  <span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">px;`</span></span><span class="token punctuation">;</span>
   <span class="token keyword">const</span> classNameList <span class="token operator">=</span> el<span class="token punctuation">.</span>className<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   el<span class="token punctuation">.</span>className <span class="token operator">=</span> classNameList<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">"expand_click_range"</span><span class="token punctuation">)</span>
     <span class="token operator">?</span> classNameList<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span>
     <span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token operator">...</span>classNameList<span class="token punctuation">,</span> <span class="token string">"expand_click_range"</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   el<span class="token punctuation">.</span>style<span class="token punctuation">.</span>position <span class="token operator">=</span> el<span class="token punctuation">.</span>style<span class="token punctuation">.</span>position <span class="token operator">||</span> <span class="token string">"relative"</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>s<span class="token punctuation">.</span>insertRule<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>s<span class="token punctuation">.</span>insertRule<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     s<span class="token punctuation">.</span><span class="token function">insertRule</span><span class="token punctuation">(</span>
-      <span class="token string">".expand_click_range::before"</span> <span class="token operator">+</span> <span class="token string">"&amp;#123;"</span> <span class="token operator">+</span> ruleStr <span class="token operator">+</span> <span class="token string">"&amp;#125;"</span><span class="token punctuation">,</span>
+      <span class="token string">".expand_click_range::before"</span> <span class="token operator">+</span> <span class="token string">"{"</span> <span class="token operator">+</span> ruleStr <span class="token operator">+</span> <span class="token string">"}"</span><span class="token punctuation">,</span>
       s<span class="token punctuation">.</span>cssRules<span class="token punctuation">.</span>length
     <span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">else</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">/* IE */</span>
     s<span class="token punctuation">.</span><span class="token function">addRule</span><span class="token punctuation">(</span><span class="token string">".expand_click_range::before"</span><span class="token punctuation">,</span> ruleStr<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><h2 id="参数-Attributes"><a href="#参数-Attributes" class="headerlink" title="参数 Attributes"></a>参数 Attributes</h2><table>
 <thead>
 <tr>
@@ -913,7 +913,8 @@
                     <div class="summary block-with-text">
                         
                             使用该指令可以复制元素的文本内容。支持单击复制 v-copy、双击复制 v-copy.dblclick、点击 icon 复制 v-copy.icon 三种模式。默认使用单击复制
-代码 Codeexport default &amp;#123
+代码 Codeexport default {
+  bind(
                         
                     </div>
                     <div class="publish-info">
@@ -1163,7 +1164,7 @@
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">82.2k</span> 字
+                <span class="white-color">76.6k</span> 字
             
 
             

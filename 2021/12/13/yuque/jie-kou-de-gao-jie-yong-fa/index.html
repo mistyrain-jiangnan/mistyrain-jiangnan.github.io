@@ -10,7 +10,8 @@
     <meta name="baidu-site-verification" content="fmlEuI34ir" />
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY" />
     <meta name="description" content="1.索引类型我们可以使用接口描述索引的类型和通过索引得到的值的类型，比如一个数组[‘a’, ‘b’]，数字索引 0 对应的通过索引得到的值为’a’。我们可以同时给索引和值都设置类型，看下面的示例：
-interface RoleDic &amp;am">
+interface RoleDic {
+ ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -647,7 +648,7 @@ interface RoleDic &amp;am">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.4k
+                        1.3k
                     </div>
                     
 
@@ -672,104 +673,104 @@ interface RoleDic &amp;am">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="1-索引类型"><a href="#1-索引类型" class="headerlink" title="1.索引类型"></a>1.索引类型</h2><p>我们可以使用接口描述索引的类型和通过索引得到的值的类型，比如一个数组[‘a’, ‘b’]，数字索引 0 对应的通过索引得到的值为’a’。我们可以同时给索引和值都设置类型，看下面的示例：</p>
-<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">interface</span> <span class="token class-name">RoleDic</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">interface</span> <span class="token class-name">RoleDic</span> <span class="token punctuation">{</span>
   <span class="token punctuation">[</span>id<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> role1<span class="token punctuation">:</span> RoleDic <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> role1<span class="token punctuation">:</span> RoleDic <span class="token operator">=</span> <span class="token punctuation">{</span>
   <span class="token number">0</span><span class="token punctuation">:</span> <span class="token string">"super_admin"</span><span class="token punctuation">,</span>
   <span class="token number">1</span><span class="token punctuation">:</span> <span class="token string">"admin"</span><span class="token punctuation">,</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> role2<span class="token punctuation">:</span> RoleDic <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  s<span class="token punctuation">:</span> <span class="token string">"super_admin"</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// error 不能将类型"&amp;#123; s: string; a: string; &amp;#125;"分配给类型"RoleDic"。</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> role2<span class="token punctuation">:</span> RoleDic <span class="token operator">=</span> <span class="token punctuation">{</span>
+  s<span class="token punctuation">:</span> <span class="token string">"super_admin"</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// error 不能将类型"{ s: string; a: string; }"分配给类型"RoleDic"。</span>
   a<span class="token punctuation">:</span> <span class="token string">"admin"</span><span class="token punctuation">,</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> role3<span class="token punctuation">:</span> RoleDic <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"super_admin"</span><span class="token punctuation">,</span> <span class="token string">"admin"</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>上面的例子中 role3 定义了一个数组，索引为数值类型，值为字符串类型。<br>你也可以给索引设置 readonly，从而防止索引返回值被修改。</p>
-<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">interface</span> <span class="token class-name">RoleDic</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">interface</span> <span class="token class-name">RoleDic</span> <span class="token punctuation">{</span>
   readonly <span class="token punctuation">[</span>id<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> role<span class="token punctuation">:</span> RoleDic <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> role<span class="token punctuation">:</span> RoleDic <span class="token operator">=</span> <span class="token punctuation">{</span>
   <span class="token number">0</span><span class="token punctuation">:</span> <span class="token string">"super_admin"</span><span class="token punctuation">,</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 role<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"admin"</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// error 类型"RoleDic"中的索引签名仅允许读取</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这里有的点需要注意，你可以设置索引类型为 number。但是这样如果你将属性名设置为字符串类型，则会报错；但是如果你设置索引类型为字符串类型，那么即便你的属性名设置的是数值类型，也没问题。因为 JS 在访问属性值的时候，如果属性名是数值类型，会先将数值类型转为字符串，然后再去访问。你可以看下这个例子：</p>
-<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
   <span class="token number">123</span><span class="token punctuation">:</span> <span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 这里定义一个数值类型的123这个属性</span>
   <span class="token string">"123"</span><span class="token punctuation">:</span> <span class="token string">"b"</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 这里在定义一个字符串类型的123这个属性，这里会报错：标识符“"123"”重复。</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// &amp;#123; '123': 'b' &amp;#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// { '123': 'b' }</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>如果数值类型的属性名不会转为字符串类型，那么这里数值 123 和字符串 123 是不同的两个值，则最后对象 obj 应该同时有这两个属性；但是实际打印出来的 obj 只有一个属性，属性名为字符串”123”，而且值为”b”，说明数值类型属性名 123 被覆盖掉了，就是因为它被转为了字符串类型属性名”123”；又因为一个对象中多个相同属性名的属性，定义在后面的会覆盖前面的，所以结果就是 obj 只保留了后面定义的属性值。</p>
 <h2 id="2-继承接口"><a href="#2-继承接口" class="headerlink" title="2.继承接口"></a>2.继承接口</h2><p>接口可以继承，这和类一样，这提高了接口的可复用性。来看一个场景：<br>我们定义一个 Vegetables 接口，它会对 color 属性进行限制。再定义两个接口，一个为 Tomato，一个为 Carrot，这两个类都需要对 color 进行限制，而各自又有各自独有的属性限制，我们可以这样定义：</p>
-<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">interface</span> <span class="token class-name">Vegetables</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">interface</span> <span class="token class-name">Vegetables</span> <span class="token punctuation">{</span>
   color<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">interface</span> <span class="token class-name">Tomato</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">interface</span> <span class="token class-name">Tomato</span> <span class="token punctuation">{</span>
   color<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
   radius<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">interface</span> <span class="token class-name">Carrot</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">interface</span> <span class="token class-name">Carrot</span> <span class="token punctuation">{</span>
   color<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
   length<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> tomato<span class="token punctuation">:</span> Tomato <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  radius<span class="token punctuation">:</span> <span class="token number">1.2</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// error  Property 'color' is missing in type '&amp;#123; radius: number; &amp;#125;'</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> carrot<span class="token punctuation">:</span> Carrot <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> tomato<span class="token punctuation">:</span> Tomato <span class="token operator">=</span> <span class="token punctuation">{</span>
+  radius<span class="token punctuation">:</span> <span class="token number">1.2</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// error  Property 'color' is missing in type '{ radius: number; }'</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> carrot<span class="token punctuation">:</span> Carrot <span class="token operator">=</span> <span class="token punctuation">{</span>
   color<span class="token punctuation">:</span> <span class="token string">"orange"</span><span class="token punctuation">,</span>
   length<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>上面定义的 tomato 变量因为缺少了从 Vegetables 接口继承来的 color 属性，从而报错。<br>一个接口可以被多个接口继承，同样，一个接口也可以继承多个接口，多个接口用逗号隔开。比如我们再定义一个 Food 接口，Tomato 也可以继承 Food： extends 关键字实现继承</p>
-<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">interface</span> <span class="token class-name">Vegetables</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">interface</span> <span class="token class-name">Vegetables</span> <span class="token punctuation">{</span>
   color<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">interface</span> <span class="token class-name">Food</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">interface</span> <span class="token class-name">Food</span> <span class="token punctuation">{</span>
   type<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">interface</span> <span class="token class-name">Tomato</span> <span class="token keyword">extends</span> <span class="token class-name">Food</span><span class="token punctuation">,</span> Vegetables <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">interface</span> <span class="token class-name">Tomato</span> <span class="token keyword">extends</span> <span class="token class-name">Food</span><span class="token punctuation">,</span> Vegetables <span class="token punctuation">{</span>
   radius<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-<span class="token keyword">const</span> tomato<span class="token punctuation">:</span> Tomato <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> tomato<span class="token punctuation">:</span> Tomato <span class="token operator">=</span> <span class="token punctuation">{</span>
   type<span class="token punctuation">:</span> <span class="token string">"vegetables"</span><span class="token punctuation">,</span>
   color<span class="token punctuation">:</span> <span class="token string">"red"</span><span class="token punctuation">,</span>
   radius<span class="token punctuation">:</span> <span class="token number">1.2</span><span class="token punctuation">,</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 在定义tomato变量时将继承过来的color和type属性同时声明</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 在定义tomato变量时将继承过来的color和type属性同时声明</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="3-混合类型接口"><a href="#3-混合类型接口" class="headerlink" title="3.混合类型接口"></a>3.混合类型接口</h2><p>JS 的类型是灵活的。在 JS 中，函数是对象类型。对象可以有属性，所以有时我们的一个对象，它既是一个函数，也包含一些属性。比如我们要实现一个计数器函数，比较直接的做法是定义一个函数和一个全局变量：</p>
 <pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">let</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> countUp <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> count<span class="token operator">++</span><span class="token punctuation">;</span>
 但是这种方法需要在函数外面定义一个变量，更优一点的方法是使用闭包：
 
 <span class="token comment" spellcheck="true">// javascript</span>
-<span class="token keyword">const</span> countUp <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> countUp <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
   <span class="token keyword">let</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token operator">++</span>count<span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">countUp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">countUp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>在 TypeScript3.1 版本之前，我们需要借助命名空间来实现。但是在 3.1 版本，TypeScript 支持直接给函数添加属性，虽然这在 JS 中早就支持了：</p>
 <pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token comment" spellcheck="true">// javascript</span>
-<span class="token keyword">let</span> countUp <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> countUp <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token operator">++</span>countUp<span class="token punctuation">.</span>count<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 countUp<span class="token punctuation">.</span>count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">countUp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">countUp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>我们可以看到，我们把一个函数赋值给 countUp，又给它绑定了一个属性 count，我们的计数保存在这个 count 属性中。<br>我们可以使用混合类型接口来指定上面例子中 countUp 的类型：</p>
-<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">interface</span> <span class="token class-name">Counter</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">interface</span> <span class="token class-name">Counter</span> <span class="token punctuation">{</span>
   <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 这里定义Counter这个结构必须包含一个函数，函数的要求是无参数，返回值为void，即无返回值</span>
   count<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 而且这个结构还必须包含一个名为count、值的类型为number类型的属性</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> getCounter <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> Counter <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> getCounter <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> Counter <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
   <span class="token comment" spellcheck="true">// 这里定义一个函数用来返回这个计数器</span>
-  <span class="token keyword">const</span> c <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> c <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">// 定义一个函数，逻辑和前面例子的一样</span>
     c<span class="token punctuation">.</span>count<span class="token operator">++</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
   c<span class="token punctuation">.</span>count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 再给这个函数添加一个count属性初始值为0</span>
   <span class="token keyword">return</span> c<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 最后返回这个函数对象</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> counter<span class="token punctuation">:</span> Counter <span class="token operator">=</span> <span class="token function">getCounter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 通过getCounter函数得到这个计数器</span>
 <span class="token function">counter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>counter<span class="token punctuation">.</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1</span>
@@ -965,7 +966,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
                     <div class="summary block-with-text">
                         
                             1.函数类型(1) 为函数定义类型我们可以给函数定义类型，这个定义包括对参数和返回值的类型定义，我们先来看简单的定义写法：
-function add(arg1: number, arg2: number): number &amp;#123
+function add(arg1: number, arg2: number): number {
+  retur
                         
                     </div>
                     <div class="publish-info">
@@ -1212,7 +1214,7 @@ function add(arg1: number, arg2: number): number &amp;#123
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">82.2k</span> 字
+                <span class="white-color">76.6k</span> 字
             
 
             

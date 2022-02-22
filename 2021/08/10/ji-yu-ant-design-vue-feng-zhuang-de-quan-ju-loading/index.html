@@ -11,7 +11,7 @@
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY" />
     <meta name="description" content="Dom 结构&amp;lt;template&gt;
   &amp;lt;div class=&#34;upload-spin&#34; v-if=&#34;loading&#34; &gt;
-    &amp;lt;a-spin size=&#34;large&#34; :tip=&#34;showText&#34; :style=&#34;&amp;">
+    &amp;lt;a-spin size=&#34;large&#34; :tip=&#34;showText&#34; :style=&#34;{">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -648,7 +648,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        117
+                        85
                     </div>
                     
 
@@ -674,27 +674,27 @@
             <div id="articleContent">
                 <h3 id="Dom-结构"><a href="#Dom-结构" class="headerlink" title="Dom 结构"></a>Dom 结构</h3><pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
   <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"upload-spin"</span> v<span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">"loading"</span> <span class="token operator">></span>
-    <span class="token operator">&lt;</span>a<span class="token operator">-</span>spin size<span class="token operator">=</span><span class="token string">"large"</span> <span class="token punctuation">:</span>tip<span class="token operator">=</span><span class="token string">"showText"</span> <span class="token punctuation">:</span>style<span class="token operator">=</span><span class="token string">"&amp;#123;fontSize:size+'px'&amp;#125;"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">-</span>spin<span class="token operator">></span>
+    <span class="token operator">&lt;</span>a<span class="token operator">-</span>spin size<span class="token operator">=</span><span class="token string">"large"</span> <span class="token punctuation">:</span>tip<span class="token operator">=</span><span class="token string">"showText"</span> <span class="token punctuation">:</span>style<span class="token operator">=</span><span class="token string">"{fontSize:size+'px'}"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">-</span>spin<span class="token operator">></span>
   <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  props<span class="token punctuation">:</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    showText<span class="token punctuation">:</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  props<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    showText<span class="token punctuation">:</span> <span class="token punctuation">{</span>
       type<span class="token punctuation">:</span> String<span class="token punctuation">,</span>
       <span class="token keyword">default</span><span class="token punctuation">:</span> <span class="token string">"生成中"</span><span class="token punctuation">,</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
-    loading<span class="token punctuation">:</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    loading<span class="token punctuation">:</span> <span class="token punctuation">{</span>
       type<span class="token punctuation">:</span> Boolean<span class="token punctuation">,</span>
       required<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
       <span class="token keyword">default</span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
-    size<span class="token punctuation">:</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    size<span class="token punctuation">:</span> <span class="token punctuation">{</span>
       type<span class="token punctuation">:</span> String<span class="token punctuation">,</span>
       <span class="token keyword">default</span><span class="token punctuation">:</span> <span class="token string">"16"</span><span class="token punctuation">,</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Less"><a href="#Less" class="headerlink" title="Less"></a>Less</h2><pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token punctuation">.</span>upload<span class="token operator">-</span>spin <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Less"><a href="#Less" class="headerlink" title="Less"></a>Less</h2><pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token punctuation">.</span>upload<span class="token operator">-</span>spin <span class="token punctuation">{</span>
   position<span class="token punctuation">:</span> fixed<span class="token punctuation">;</span>
   top<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
   left<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
@@ -703,11 +703,11 @@
   text<span class="token operator">-</span>align<span class="token punctuation">:</span> center<span class="token punctuation">;</span>
   background<span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0.3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   z<span class="token operator">-</span>index<span class="token punctuation">:</span> <span class="token number">999</span><span class="token punctuation">;</span>
-  <span class="token punctuation">.</span>ant<span class="token operator">-</span>spin <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token punctuation">.</span>ant<span class="token operator">-</span>spin <span class="token punctuation">{</span>
     position<span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
     top<span class="token punctuation">:</span> 250px<span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr/>
@@ -1146,7 +1146,7 @@ csshtml,
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">82.2k</span> 字
+                <span class="white-color">76.6k</span> 字
             
 
             
