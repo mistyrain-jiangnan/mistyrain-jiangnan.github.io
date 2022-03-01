@@ -496,6 +496,11 @@ canvas_nest:
   opacity: 0.8 # 线条透明度（0~1）, 默认: 0.5
   zIndex: -1 # 背景的z-index属性，css属性用于控制所在层的位置, 默认: -1
   count: 150 # 线条的总数量, 默认: 99
+#ICP备案信息尾部显示
+icp:
+  enable: true
+  url: https://beian.miit.gov.cn   # 备案链接
+  text: 皖ICP备2021016286号          # 备案信息
 
 #背景静止彩带
 ribbon:

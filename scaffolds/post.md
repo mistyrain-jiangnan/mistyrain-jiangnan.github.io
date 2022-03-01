@@ -7,7 +7,7 @@ coverImg:
 top: false
 cover: false
 toc: true
-mathjax: false
+mathjax: true
 password: 
 summary: 
 tags: 

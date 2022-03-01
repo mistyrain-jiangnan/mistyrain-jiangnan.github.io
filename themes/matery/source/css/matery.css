@@ -133,15 +133,7 @@ blockquote {
     background-color: rgba(66, 185, 131, .1);
 }
 
-/*原文件的代码行样式
-pre {
-    padding: 1.5rem !important;
-    margin: 1rem 0 !important;
-    background: #272822;
-    overflow: auto;
-    border-radius: 0.35rem;
-    tab-size: 4;
-}
+
 */
 /*修改一下才能正确显示行号,而不是一条竖线 烟雨江南   */
 pre {
@@ -156,7 +148,6 @@ pre {
 code {
     padding: 1px 5px;
     font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
-    /*font-size: 0.91rem;*/
     color: #e96900;
     background-color: #f8f8f8;
     border-radius: 2px;
